@@ -493,17 +493,27 @@
         ========================================= */
         @media (max-width: 768px) {
 
-            /* FIX 2: NAV */
-            header, nav { height: auto; min-height: 64px; flex-wrap: wrap; align-items: center; }
-            .logo-wrap, header a:first-child { padding: 8px 12px; max-width: 160px; align-self: center; }
-            .logo-wrap img, header a:first-child img, .nav-logo-img { height: 32px !important; max-width: 140px !important; }
+            /* FIX 1: NAV — fixed height, no overflow, logo constrained */
+            header, nav, #nav, #nav.scrolled {
+                height: 64px; max-height: 64px; overflow: hidden;
+                flex-wrap: nowrap; align-items: stretch;
+                position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+                padding: 0;
+            }
+            header a:first-child, nav a:first-child, .logo-wrap, .brand {
+                height: 64px; max-height: 64px; padding: 0 12px;
+                overflow: hidden; flex-shrink: 0;
+            }
+            header a:first-child img, nav a:first-child img, .logo-wrap img, .brand img, .nav-logo-img {
+                height: 36px !important; max-height: 36px !important;
+                width: auto !important; max-width: 130px !important;
+                object-fit: contain; display: block;
+            }
             .nav-links, nav .nav-links { display: none; }
             .burger, .hamburger { display: flex; margin-left: auto; margin-right: 0; }
-            #nav { padding: 6px 0; }
-            #nav.scrolled { padding: 6px 0; }
 
             /* FIX 3: HERO */
-            #hero, .hero, section.hero { min-height: 100svh; background-attachment: scroll; }
+            #hero, .hero, section.hero { min-height: 100svh; background-attachment: scroll; padding-bottom: 80px; }
             .hero-h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); letter-spacing: -1px; line-height: 1.15; }
             .hero-sub { font-size: 0.9rem; line-height: 1.75; margin-bottom: 28px; }
             .hero-btns, .hero-buttons { flex-direction: column; gap: 10px; width: 100%; }
@@ -566,6 +576,15 @@
             .svc-card, .inv-card { padding: 24px 20px; }
             .contact-btns { flex-direction: column; align-items: center; }
             .container { padding: 0 5%; }
+
+            /* FIX 2: OUR STORY BUTTON + ABOUT SECTION SEPARATION */
+            .hero .btn-outline-white, .hero .btn-ghost, .hero .btn-ow, .hero a:last-child {
+                background: rgba(255,255,255,0.08);
+                border: 1.5px solid rgba(255,255,255,0.5);
+                color: #ffffff;
+                margin-bottom: 0;
+            }
+            section:nth-of-type(2), #about { padding-top: 64px; }
         }
 
         /* =========================================
