@@ -506,6 +506,76 @@
             #reviews, #connect { padding: 64px 6%; }
             .connect-inner { grid-template-columns: 1fr; gap: 40px; }
         }
+
+        /* =========================================
+           MOBILE POLISH
+        ========================================= */
+
+        /* Prevent horizontal overflow globally */
+        html, body { overflow-x: hidden; }
+
+        @media (max-width: 768px) {
+            /* NAV */
+            .nav-logo-img { height: 44px !important; max-width: 200px !important; }
+            #nav { padding: 6px 0; }
+            #nav.scrolled { padding: 6px 0; }
+
+            /* HERO */
+            .hero-sub { font-size: 0.95rem; margin-bottom: 28px; }
+            .hero-stat-strip { flex-wrap: wrap; row-gap: 20px; }
+            .hero-btns { flex-direction: column; align-items: flex-start; }
+
+            /* ABOUT */
+            .about-grid { gap: 32px; }
+            .about-img-wrap img { height: 260px !important; }
+
+            /* NETWORK */
+            .net-img img { height: 260px !important; }
+
+            /* SCHOLARSHIPS — left-align on mobile */
+            .scholar-inner { text-align: left; }
+            .scholar-inner .label { justify-content: flex-start; }
+
+            /* FOOTER */
+            .footer-main-grid {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+                padding-bottom: 40px !important;
+            }
+            .footer-logo-img { height: 72px !important; max-width: 280px !important; }
+            footer { padding: 48px 6% 0 !important; }
+
+            /* CONTACT */
+            #contact { background-attachment: scroll; padding: 80px 0; }
+        }
+
+        @media (max-width: 480px) {
+            /* Container */
+            .container { padding: 0 16px; }
+
+            /* NAV — even smaller on phones */
+            .nav-logo-img { height: 32px !important; max-width: 140px !important; }
+            #nav { padding: 4px 0; }
+            #nav.scrolled { padding: 4px 0; }
+
+            /* HERO stat strip — stack vertically on small phones */
+            .hero-stat-strip { flex-direction: column; gap: 12px !important; }
+            .hero-stat-strip > div {
+                border-right: none !important;
+                padding: 0 0 12px 0 !important;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .hero-stat-strip > div:last-child {
+                border-bottom: none !important;
+                padding-bottom: 0 !important;
+            }
+
+            /* CARDS */
+            .svc-card, .founder-card, .inv-card { padding: 24px 18px; }
+
+            /* FOOTER bar */
+            footer > div:last-child { flex-direction: column !important; text-align: center; gap: 6px !important; }
+        }
     </style>
 </head>
 <body>
@@ -514,7 +584,7 @@
 <nav id="nav" aria-label="Main navigation">
     <div class="container nav-inner">
         <a href="#" style="display:flex; align-items:center; background:#ffffff; padding:0 24px; margin:0; border-right:1px solid rgba(0,0,0,0.08); text-decoration:none; flex-shrink:0; align-self:stretch;">
-            <img src="Logo.png" alt="The Application Lab" style="height:78px; display:block; max-width:390px; object-fit:contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+            <img src="Logo.png" alt="The Application Lab" class="nav-logo-img" style="height:78px; display:block; max-width:390px; object-fit:contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
             <span style="display:none; font-size:15px; font-weight:800; color:#0f1e35;">The Application Lab</span>
         </a>
         <ul class="nav-links" role="list">
@@ -555,7 +625,7 @@
             <span class="label" style="color:#4a9fd4;">Peer-led mentorship</span>
             <h1 class="hero-h1">Get into the world's top universities with mentors who have already done it.</h1>
             <p class="hero-sub">One-to-one guidance from scholars who have won the exact scholarships and secured the exact offers you are working towards. Not generic advice. Real experience. Real results.</p>
-            <div style="display:flex; gap:0; margin-bottom:36px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1);">
+            <div class="hero-stat-strip" style="display:flex; gap:0; margin-bottom:36px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1);">
                 <div style="padding-right:32px; border-right:1px solid rgba(255,255,255,0.1);">
                     <strong style="display:block; font-size:1.8rem; font-weight:800; letter-spacing:-1px; color:#fff; line-height:1;">100+</strong>
                     <span style="display:block; font-size:0.58rem; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,0.85); font-weight:600; margin-top:6px;">Mentors Globally</span>
@@ -966,10 +1036,10 @@
 
 <!-- ======= FOOTER ======= -->
 <footer style="background:#080f18; padding:72px 7% 0;">
-  <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,0.07);">
+  <div class="footer-main-grid" style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,0.07);">
     <div>
       <div style="margin-bottom:20px;">
-        <img src="Logo.png" alt="The Application Lab" style="height:125px; display:block; max-width:494px; object-fit:contain; filter:brightness(0) invert(1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+        <img src="Logo.png" alt="The Application Lab" class="footer-logo-img" style="height:125px; display:block; max-width:494px; object-fit:contain; filter:brightness(0) invert(1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
         <div style="display:none; font-size:18px; font-weight:800; color:#ffffff; letter-spacing:-0.5px;">The Application Lab</div>
       </div>
       <p style="font-size:0.78rem; color:rgba(255,255,255,0.3); line-height:1.85; max-width:220px; font-weight:300;">A peer-led mentorship initiative supporting students from underrepresented backgrounds in navigating international university applications.</p>
