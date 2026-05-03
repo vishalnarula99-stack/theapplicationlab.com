@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lora:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { overflow-x: hidden; max-width: 100%; }
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Montserrat', sans-serif;
@@ -473,107 +474,111 @@
         .nav-links li a:not(.nav-cta):hover::after { width: 100%; }
 
         /* =========================================
-           RESPONSIVE
+           RESPONSIVE — TABLET (1024px)
         ========================================= */
         @media (max-width: 1024px) {
             .about-grid, .network-grid { grid-template-columns: 1fr; gap: 44px; }
             .about-img-wrap img { height: 420px; }
             .net-img img { height: 400px; }
-            .steps { grid-template-columns: 1fr 1fr; gap: 44px; }
-            .steps::before { display: none; }
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-        }
-        @media (max-width: 768px) {
-            .section-pad { padding: 72px 0; }
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-            .services-grid, .founders-grid, .involved-grid { grid-template-columns: 1fr; }
-            .steps { grid-template-columns: 1fr; }
-            #hero, #contact { background-attachment: scroll; }
-        }
-        @media (max-width: 600px) {
-            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-            .footer-bar-inner { flex-direction: column; text-align: center; }
-            .hero-btns, .contact-btns { flex-direction: column; align-items: flex-start; }
-            .contact-btns { align-items: center; }
-            .svc-card, .founder-card, .inv-card { padding: 30px 22px; }
-        }
-        @media (max-width: 1024px) {
+            .svc-wrap, .svc-cards, .cards { grid-template-columns: 1fr; }
+            .steps, .how-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .steps::before, .how-steps::before { display: none; }
+            .founders-wrap, .founders-grid { grid-template-columns: 1fr; }
+            .ft-grid, .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
             .review-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 768px) {
-            .review-grid { grid-template-columns: 1fr; }
-            #reviews, #connect { padding: 64px 6%; }
-            .connect-inner { grid-template-columns: 1fr; gap: 40px; }
         }
 
         /* =========================================
-           MOBILE POLISH
+           RESPONSIVE — MOBILE (768px)
         ========================================= */
-
-        /* Prevent horizontal overflow globally */
-        html, body { overflow-x: hidden; }
-
         @media (max-width: 768px) {
-            /* NAV */
-            .nav-logo-img { height: 44px !important; max-width: 200px !important; }
+
+            /* FIX 2: NAV */
+            header, nav { height: auto; min-height: 64px; flex-wrap: wrap; align-items: center; }
+            .logo-wrap, header a:first-child { padding: 8px 12px; max-width: 160px; align-self: center; }
+            .logo-wrap img, header a:first-child img, .nav-logo-img { height: 32px !important; max-width: 140px !important; }
+            .nav-links, nav .nav-links { display: none; }
+            .burger, .hamburger { display: flex; margin-left: auto; margin-right: 0; }
             #nav { padding: 6px 0; }
             #nav.scrolled { padding: 6px 0; }
 
-            /* HERO */
-            .hero-sub { font-size: 0.95rem; margin-bottom: 28px; }
-            .hero-stat-strip { flex-wrap: wrap; row-gap: 20px; }
-            .hero-btns { flex-direction: column; align-items: flex-start; }
+            /* FIX 3: HERO */
+            #hero, .hero, section.hero { min-height: 100svh; background-attachment: scroll; }
+            .hero-h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); letter-spacing: -1px; line-height: 1.15; }
+            .hero-sub { font-size: 0.9rem; line-height: 1.75; margin-bottom: 28px; }
+            .hero-btns, .hero-buttons { flex-direction: column; gap: 10px; width: 100%; }
+            .hero-btns a, .hero-buttons a { width: 100%; text-align: center; padding: 14px 20px; }
 
-            /* ABOUT */
-            .about-grid { gap: 32px; }
-            .about-img-wrap img { height: 260px !important; }
+            /* FIX 4: HERO STATS STRIP */
+            .hero-stat-strip { display: grid !important; grid-template-columns: 1fr 1fr; width: 100%; }
+            .hero-stat-strip > div { padding: 14px 10px !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .hero-stat-strip > div:last-child { border-bottom: none; }
+            .hero-stat-strip strong { font-size: 1.3rem; }
+            .hero-stat-strip span { font-size: 0.55rem !important; letter-spacing: 1.5px !important; }
 
-            /* NETWORK */
-            .net-img img { height: 260px !important; }
+            /* FIX 5: ALL MULTI-COLUMN GRIDS */
+            .about-grid, .network-grid { grid-template-columns: 1fr; gap: 28px; }
+            .services-grid, .svc-wrap, .svc-cards { grid-template-columns: 1fr; }
+            .founders-grid, .founders-wrap { grid-template-columns: 1fr; }
+            .involved-grid, .involve-wrap { grid-template-columns: 1fr; }
+            .steps, .how-steps { grid-template-columns: 1fr; }
+            .review-grid, .reviews-grid { grid-template-columns: 1fr; }
+            .connect-inner, .connect-grid { grid-template-columns: 1fr; gap: 36px; }
 
-            /* SCHOLARSHIPS — left-align on mobile */
+            /* FIX 6: SECTION PADDING */
+            .section-pad, .sec { padding: 56px 5%; }
+            section { padding-left: 5%; padding-right: 5%; }
+            .schol, #scholarships { padding: 48px 5%; }
+            .cta, #contact { padding: 72px 5%; background-attachment: scroll; }
+            #reviews, #connect { padding: 56px 5%; }
+
+            /* FIX 7: FOUNDER CARDS */
+            .founder-card, .founder, .f { padding: 24px 20px; }
+
+            /* FIX 8: REVIEW CARDS */
+            .review-grid, .reviews-grid { grid-template-columns: 1fr; }
+
+            /* FIX 9: CONNECT */
+            .connect-inner, .connect-grid, #connect > div { grid-template-columns: 1fr; flex-direction: column; }
+
+            /* FIX 10: FOOTER */
+            .footer-main-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; padding-bottom: 40px !important; }
+            .footer-logo-img { height: 72px !important; max-width: 280px !important; }
+            footer { padding: 48px 5% 0 !important; }
+            footer > div:last-child { flex-direction: column; gap: 6px; text-align: center; }
+            .footer-bar-inner { flex-direction: column; text-align: center; gap: 6px; }
+
+            /* FIX 11: TYPOGRAPHY */
+            h2, .h2, .heading { font-size: clamp(1.4rem, 5vw, 1.9rem); letter-spacing: -0.3px; }
+            h3 { font-size: clamp(0.95rem, 3.5vw, 1.1rem); }
+            p, li { font-size: 0.88rem; line-height: 1.8; }
+
+            /* FIX 12: IMAGES */
+            .about-img-wrap img { height: 220px !important; width: 100%; }
+            .net-img img { height: 220px !important; width: 100%; }
+            .about-img, .network-img, .img-frame { height: 220px; width: 100%; }
+
+            /* SCHOLARSHIPS */
             .scholar-inner { text-align: left; }
             .scholar-inner .label { justify-content: flex-start; }
 
-            /* FOOTER */
-            .footer-main-grid {
-                grid-template-columns: 1fr !important;
-                gap: 32px !important;
-                padding-bottom: 40px !important;
-            }
-            .footer-logo-img { height: 72px !important; max-width: 280px !important; }
-            footer { padding: 48px 6% 0 !important; }
-
-            /* CONTACT */
-            #contact { background-attachment: scroll; padding: 80px 0; }
+            /* MISC */
+            .svc-card, .inv-card { padding: 24px 20px; }
+            .contact-btns { flex-direction: column; align-items: center; }
+            .container { padding: 0 5%; }
         }
 
+        /* =========================================
+           RESPONSIVE — SMALL PHONES (480px)
+        ========================================= */
         @media (max-width: 480px) {
-            /* Container */
-            .container { padding: 0 16px; }
+            /* HERO stat strip — single column on very small screens */
+            .hero-stat-strip { grid-template-columns: 1fr !important; }
+            .hero-stat-strip > div { padding: 12px 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .hero-stat-strip > div:last-child { border-bottom: none !important; padding-bottom: 0 !important; }
 
-            /* NAV — even smaller on phones */
-            .nav-logo-img { height: 32px !important; max-width: 140px !important; }
-            #nav { padding: 4px 0; }
-            #nav.scrolled { padding: 4px 0; }
-
-            /* HERO stat strip — stack vertically on small phones */
-            .hero-stat-strip { flex-direction: column; gap: 12px !important; }
-            .hero-stat-strip > div {
-                border-right: none !important;
-                padding: 0 0 12px 0 !important;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-            .hero-stat-strip > div:last-child {
-                border-bottom: none !important;
-                padding-bottom: 0 !important;
-            }
-
-            /* CARDS */
-            .svc-card, .founder-card, .inv-card { padding: 24px 18px; }
-
-            /* FOOTER bar */
+            /* FOOTER — full single column on small phones */
+            .footer-main-grid { grid-template-columns: 1fr !important; }
             footer > div:last-child { flex-direction: column !important; text-align: center; gap: 6px !important; }
         }
     </style>
