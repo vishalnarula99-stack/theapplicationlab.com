@@ -147,7 +147,7 @@
             position: absolute; inset: 0;
             background: linear-gradient(135deg, rgba(8,15,24,0.92) 0%, rgba(8,15,24,0.75) 60%, rgba(8,15,24,0.55) 100%);
         }
-        .hero-body { position: relative; z-index: 1; max-width: 800px; padding-top: 80px; }
+        .hero-body, .hero-in, .hero-content, .hero-inner { position: relative; z-index: 1; max-width: 800px; padding-top: 100px; }
         .hero-h1 {
             font-size: clamp(2.2rem, 4.5vw, 3.6rem);
             font-weight: 800; color: #ffffff; line-height: 1.14; margin-bottom: 26px; text-shadow: 0 2px 20px rgba(0,0,0,0.4);
@@ -542,6 +542,17 @@
 
             /* FIX 7: FOUNDER CARDS */
             .founder-card, .founder, .f { padding: 24px 20px; }
+            .avatar {
+                width: 90px !important; height: 90px !important;
+                min-width: 90px; min-height: 90px;
+                border-radius: 50%; overflow: hidden;
+                flex-shrink: 0; display: block;
+                margin-bottom: 16px;
+            }
+            .avatar img {
+                width: 100% !important; height: 100% !important;
+                object-fit: cover !important; display: block !important;
+            }
 
             /* FIX 8: REVIEW CARDS */
             .review-grid, .reviews-grid { grid-template-columns: 1fr; }
@@ -588,7 +599,7 @@
             header a:first-child img, nav a:first-child img { height: 32px !important; max-width: 140px !important; }
 
             /* HERO SPACING — nav clearance and section separation */
-            .hero-in, .hero-content, .hero-inner { padding-top: 80px !important; }
+            .hero-in, .hero-content, .hero-inner, .hero-body { padding-top: 100px !important; }
             .hero, section.hero { padding-bottom: 100px !important; min-height: 100vh; }
             .hero-btns, .hero-buttons, .hero-in .hero-btns { margin-bottom: 40px !important; }
             .hero + section, #about { margin-top: 0 !important; padding-top: 64px !important; }
@@ -613,42 +624,55 @@
             .footer-main-grid { grid-template-columns: 1fr !important; }
             footer > div:last-child { flex-direction: column !important; text-align: center; gap: 6px !important; }
         }
+
+        /* FIX 3: MOBILE NAV SHOW/HIDE */
+        @media (max-width: 768px) {
+            #desktop-nav { display: none !important; }
+            #mob-burger { display: flex !important; }
+            #mob-menu a { display: block !important; }
+        }
+
+        /* FIX 5: DESKTOP NAV SPACING */
+        @media (min-width: 769px) {
+            #desktop-nav { gap: 32px; }
+            header a:first-child { margin-right: 40px; }
+        }
     </style>
 </head>
 <body>
 
 <!-- ======= NAV ======= -->
-<nav id="nav" aria-label="Main navigation">
-    <div class="container nav-inner">
-        <a href="#" style="display:flex; align-items:center; text-decoration:none; flex-shrink:0;">
-            <img src="Logo.png" alt="The Application Lab" style="height:72px; width:auto; display:block; object-fit:contain; filter:brightness(0) invert(1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
-            <span style="display:none; color:#fff; font-weight:800; font-size:14px;">The Application Lab</span>
-        </a>
-        <ul class="nav-links" role="list">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Mentorship</a></li>
-            <li><a href="#how">How It Works</a></li>
-            <li><a href="#founders">Founders</a></li>
-            <li><a href="#get-involved">Get Involved</a></li>
-            <li>
-                <a href="https://forms.office.com/r/70wXSkZVPF" class="nav-cta" target="_blank" rel="noopener noreferrer">Apply Now</a>
-            </li>
-        </ul>
-        <button class="hamburger" id="ham" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
-</nav>
+<header id="hdr" style="position:fixed; top:0; left:0; right:0; width:100%; height:72px; z-index:9999; display:flex; align-items:center; justify-content:space-between; padding:0 5%; background:rgba(15,30,53,0.97); box-shadow:0 2px 20px rgba(0,0,0,0.3); transition:background 0.3s;">
 
-<!-- Mobile Nav -->
-<div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-    <button id="mobile-nav-close" aria-label="Close navigation menu">&times;</button>
-    <a href="#about" class="mnl">About</a>
-    <a href="#services" class="mnl">Mentorship</a>
-    <a href="#how" class="mnl">How It Works</a>
-    <a href="#founders" class="mnl">Founders</a>
-    <a href="#get-involved" class="mnl">Get Involved</a>
-    <a href="https://forms.office.com/r/70wXSkZVPF" class="btn btn-blue" target="_blank" rel="noopener noreferrer" style="margin-top:8px;">Apply Now</a>
+  <a href="#" style="display:flex; align-items:center; text-decoration:none; flex-shrink:0; margin-right:40px;">
+    <img src="Logo.png" alt="The Application Lab" style="height:62px; width:auto; display:block; object-fit:contain; filter:brightness(0) invert(1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+    <span style="display:none; color:#fff; font-weight:800; font-size:14px;">The Application Lab</span>
+  </a>
+
+  <nav style="display:flex; align-items:center; gap:28px; margin-left:auto;" id="desktop-nav">
+    <a href="#about" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">About</a>
+    <a href="#services" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Mentorship</a>
+    <a href="#how" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">How It Works</a>
+    <a href="#founders" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Founders</a>
+    <a href="#get-involved" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Get Involved</a>
+    <a href="https://forms.office.com/r/70wXSkZVPF" target="_blank" rel="noopener noreferrer" style="font-size:0.7rem; font-weight:700; color:#fff; letter-spacing:1px; text-transform:uppercase; text-decoration:none; background:#2e8bc0; padding:10px 20px; border-radius:2px;">Apply Now</a>
+  </nav>
+
+  <button id="mob-burger" aria-label="Open menu" style="display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; margin-left:16px;">
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+  </button>
+
+</header>
+
+<div id="mob-menu" style="display:none; position:fixed; top:72px; left:0; right:0; z-index:9998; background:rgba(15,30,53,0.98); flex-direction:column; padding:16px 5%; border-top:1px solid rgba(255,255,255,0.08);">
+  <a href="#about" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">About</a>
+  <a href="#services" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Mentorship</a>
+  <a href="#how" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">How It Works</a>
+  <a href="#founders" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Founders</a>
+  <a href="#get-involved" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Get Involved</a>
+  <a href="https://forms.office.com/r/70wXSkZVPF" target="_blank" rel="noopener noreferrer" style="display:block; margin-top:16px; padding:13px 20px; font-size:0.82rem; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:1px; text-decoration:none; background:#2e8bc0; text-align:center; border-radius:2px;">Apply Now</a>
 </div>
 
 <main>
@@ -1130,48 +1154,36 @@
 </footer>
 
 <script>
-    // Sticky nav
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
+const hdr = document.getElementById('hdr');
+const burger = document.getElementById('mob-burger');
+const mobMenu = document.getElementById('mob-menu');
 
-    // Hamburger / mobile nav
-    const ham = document.getElementById('ham');
-    const mobileNav = document.getElementById('mobile-nav');
-    const mobileClose = document.getElementById('mobile-nav-close');
+// Burger toggle
+if (burger && mobMenu) {
+  burger.addEventListener('click', function() {
+    const isOpen = mobMenu.style.display === 'flex';
+    mobMenu.style.display = isOpen ? 'none' : 'flex';
+  });
+}
 
-    function openNav() {
-        mobileNav.classList.add('open');
-        ham.classList.add('open');
-        ham.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeNav() {
-        mobileNav.classList.remove('open');
-        ham.classList.remove('open');
-        ham.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    }
-
-    ham.addEventListener('click', openNav);
-    mobileClose.addEventListener('click', closeNav);
-
-    document.querySelectorAll('#mobile-nav .mnl').forEach(l => l.addEventListener('click', closeNav));
-
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && mobileNav.classList.contains('open')) closeNav();
+// Close menu when any link inside it is clicked
+if (mobMenu) {
+  mobMenu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      mobMenu.style.display = 'none';
     });
+  });
+}
 
-    // Fade up on scroll
-    const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+// Fade up on scroll
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 </script>
 
 <script>
