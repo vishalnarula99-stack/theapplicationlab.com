@@ -356,6 +356,13 @@
         .footer-bar { border-top: 1px solid rgba(255,255,255,0.07); padding: 22px 0; }
         .footer-bar-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
         .footer-bar p { font-size: 0.77rem; color: rgba(255,255,255,0.35); line-height: 1.6; }
+        .footer-main-grid {
+          display: grid;
+          grid-template-columns: 2fr 1fr 1fr 1fr;
+          gap: 48px;
+          padding-bottom: 56px;
+          border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
 
         /* =========================================
            CONNECT SECTION
@@ -561,7 +568,7 @@
             .connect-inner, .connect-grid, #connect > div { grid-template-columns: 1fr; flex-direction: column; }
 
             /* FIX 10: FOOTER */
-            .footer-main-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; padding-bottom: 40px !important; }
+            .footer-main-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
             .footer-logo-img { height: 72px !important; max-width: 280px !important; }
             footer { padding: 48px 5% 0 !important; }
             footer > div:last-child { flex-direction: column; gap: 6px; text-align: center; }
@@ -662,7 +669,7 @@
     <span style="display:none; color:#fff; font-weight:800; font-size:14px;">The Application Lab</span>
   </a>
 
-  <nav style="display:flex; align-items:center; gap:28px; margin-left:auto;" id="desktop-nav">
+  <nav id="desktop-nav" style="display:flex; align-items:center; gap:28px; margin-left:auto;">
     <a href="#about" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">About</a>
     <a href="#services" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Mentorship</a>
     <a href="#how" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">How It Works</a>
@@ -1110,7 +1117,7 @@
 
 <!-- ======= FOOTER ======= -->
 <footer style="background:#080f18; padding:72px 7% 0;">
-  <div class="footer-main-grid" style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,0.07);">
+  <div class="footer-main-grid" id="footer-grid">
     <div>
       <div style="margin-bottom:20px;">
         <img src="Logo.png" alt="The Application Lab" class="footer-logo-img" style="height:125px; display:block; max-width:494px; object-fit:contain; filter:brightness(0) invert(1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
