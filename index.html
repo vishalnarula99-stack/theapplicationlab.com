@@ -632,6 +632,19 @@
             #mob-menu a { display: block !important; }
         }
 
+        /* MOBILE ANIMATION RESET
+           animObserver sets inline opacity:0 on h2/h3/cards — on mobile the
+           observer sometimes doesn't fire, leaving content permanently hidden.
+           !important overrides inline styles, making all content visible. */
+        @media (max-width: 768px) {
+            h2, h3, .svc-card, .founder-card, .inv-card, .review-card, .step, .npt,
+            .fade-up, .fade-up.visible {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+
         /* FIX 5: DESKTOP NAV SPACING */
         @media (min-width: 769px) {
             #desktop-nav { gap: 32px; }
