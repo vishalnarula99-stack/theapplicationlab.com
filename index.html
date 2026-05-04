@@ -665,6 +665,16 @@
             #mob-burger { display: none; }
             header a:first-child { margin-right: 40px; }
         }
+        @media (max-width: 600px) {
+          #footer-col-mentorship,
+          #footer-col-about,
+          #footer-col-contact {
+            display: none;
+          }
+          .footer-main-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
     </style>
 </head>
 <body>
@@ -1145,7 +1155,7 @@
       </div>
     </div>
 
-    <div>
+    <div id="footer-col-mentorship">
       <h4 style="font-size:0.6rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:20px;">Mentorship</h4>
       <nav style="display:flex; flex-direction:column; gap:11px;">
         <a href="#services" style="font-size:0.8rem; color:rgba(255,255,255,0.45); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Lab Focus Sessions</a>
@@ -1155,7 +1165,7 @@
       </nav>
     </div>
 
-    <div>
+    <div id="footer-col-about">
       <h4 style="font-size:0.6rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:20px;">About</h4>
       <nav style="display:flex; flex-direction:column; gap:11px;">
         <a href="#about" style="font-size:0.8rem; color:rgba(255,255,255,0.45); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Why We Started</a>
@@ -1165,7 +1175,7 @@
       </nav>
     </div>
 
-    <div>
+    <div id="footer-col-contact">
       <h4 style="font-size:0.6rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:20px;">Contact</h4>
       <nav style="display:flex; flex-direction:column; gap:11px;">
         <a href="mailto:info@theapplicationlab.com" style="font-size:0.8rem; color:rgba(255,255,255,0.45); transition:color 0.2s; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Email Us</a>
