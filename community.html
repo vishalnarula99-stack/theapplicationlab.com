@@ -295,7 +295,14 @@
         /* SECTION 6 — FORM */
         #community-form { background: #f7f9fc; }
         .form-hd h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--navy); margin-bottom: 18px; }
-        .form-hd p { font-size: 0.97rem; color: var(--body-text); line-height: 1.9; margin-bottom: 56px; max-width: 680px; }
+        .form-hd p { font-size: 0.97rem; color: var(--body-text); line-height: 1.9; margin-bottom: 40px; max-width: 680px; }
+        .ms-form-iframe {
+            width: 100%; height: 900px;
+            border: none; border-radius: 4px;
+            box-shadow: 0 4px 24px rgba(15,30,53,0.08);
+            display: block;
+        }
+        @media (max-width: 768px) { .ms-form-iframe { height: 1100px; } }
         #applicationForm { max-width: 820px; }
         .fgroup-title {
             font-size: 0.62rem; font-weight: 700; letter-spacing: 4px;
@@ -707,199 +714,12 @@
             <p>Joining the TAL WhatsApp Community is completely free. We review applications on a rolling basis and places fill quickly. Apply soon.</p>
         </div>
 
-        <form id="applicationForm" novalidate>
-
-            <span class="fgroup-title">Your Details</span>
-
-            <div class="form-row-2">
-                <div class="form-grp">
-                    <label for="firstName">First name <span class="req">*</span></label>
-                    <input type="text" id="firstName" name="firstName" class="f-input" required autocomplete="given-name">
-                </div>
-                <div class="form-grp">
-                    <label for="lastName">Last name <span class="req">*</span></label>
-                    <input type="text" id="lastName" name="lastName" class="f-input" required autocomplete="family-name">
-                </div>
-            </div>
-
-            <div class="form-grp">
-                <label for="email">Email address <span class="req">*</span></label>
-                <input type="email" id="email" name="email" class="f-input" required autocomplete="email">
-            </div>
-
-            <div class="form-grp">
-                <label for="country">Country you are based in <span class="req">*</span></label>
-                <select id="country" name="country" class="f-input" required>
-                    <option value="">Select country</option>
-                    <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Andorra</option><option>Angola</option><option>Antigua and Barbuda</option><option>Argentina</option><option>Armenia</option><option>Australia</option><option>Austria</option><option>Azerbaijan</option><option>Bahamas</option><option>Bahrain</option><option>Bangladesh</option><option>Barbados</option><option>Belarus</option><option>Belgium</option><option>Belize</option><option>Benin</option><option>Bhutan</option><option>Bolivia</option><option>Bosnia and Herzegovina</option><option>Botswana</option><option>Brazil</option><option>Brunei</option><option>Bulgaria</option><option>Burkina Faso</option><option>Burundi</option><option>Cabo Verde</option><option>Cambodia</option><option>Cameroon</option><option>Canada</option><option>Central African Republic</option><option>Chad</option><option>Chile</option><option>China</option><option>Colombia</option><option>Comoros</option><option>Congo</option><option>Costa Rica</option><option>Croatia</option><option>Cuba</option><option>Cyprus</option><option>Czech Republic</option><option>Democratic Republic of the Congo</option><option>Denmark</option><option>Djibouti</option><option>Dominica</option><option>Dominican Republic</option><option>Ecuador</option><option>Egypt</option><option>El Salvador</option><option>Equatorial Guinea</option><option>Eritrea</option><option>Estonia</option><option>Eswatini</option><option>Ethiopia</option><option>Fiji</option><option>Finland</option><option>France</option><option>Gabon</option><option>Gambia</option><option>Georgia</option><option>Germany</option><option>Ghana</option><option>Greece</option><option>Grenada</option><option>Guatemala</option><option>Guinea</option><option>Guinea-Bissau</option><option>Guyana</option><option>Haiti</option><option>Honduras</option><option>Hungary</option><option>Iceland</option><option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option><option>Jamaica</option><option>Japan</option><option>Jordan</option><option>Kazakhstan</option><option>Kenya</option><option>Kiribati</option><option>Kuwait</option><option>Kyrgyzstan</option><option>Laos</option><option>Latvia</option><option>Lebanon</option><option>Lesotho</option><option>Liberia</option><option>Libya</option><option>Liechtenstein</option><option>Lithuania</option><option>Luxembourg</option><option>Madagascar</option><option>Malawi</option><option>Malaysia</option><option>Maldives</option><option>Mali</option><option>Malta</option><option>Marshall Islands</option><option>Mauritania</option><option>Mauritius</option><option>Mexico</option><option>Micronesia</option><option>Moldova</option><option>Monaco</option><option>Mongolia</option><option>Montenegro</option><option>Morocco</option><option>Mozambique</option><option>Myanmar</option><option>Namibia</option><option>Nauru</option><option>Nepal</option><option>Netherlands</option><option>New Zealand</option><option>Nicaragua</option><option>Niger</option><option>Nigeria</option><option>North Korea</option><option>North Macedonia</option><option>Norway</option><option>Oman</option><option>Pakistan</option><option>Palau</option><option>Palestine</option><option>Panama</option><option>Papua New Guinea</option><option>Paraguay</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option><option>Qatar</option><option>Romania</option><option>Russia</option><option>Rwanda</option><option>Saint Kitts and Nevis</option><option>Saint Lucia</option><option>Saint Vincent and the Grenadines</option><option>Samoa</option><option>San Marino</option><option>Sao Tome and Principe</option><option>Saudi Arabia</option><option>Senegal</option><option>Serbia</option><option>Seychelles</option><option>Sierra Leone</option><option>Singapore</option><option>Slovakia</option><option>Slovenia</option><option>Solomon Islands</option><option>Somalia</option><option>South Africa</option><option>South Korea</option><option>South Sudan</option><option>Spain</option><option>Sri Lanka</option><option>Sudan</option><option>Suriname</option><option>Sweden</option><option>Switzerland</option><option>Syria</option><option>Taiwan</option><option>Tajikistan</option><option>Tanzania</option><option>Thailand</option><option>Timor-Leste</option><option>Togo</option><option>Tonga</option><option>Trinidad and Tobago</option><option>Tunisia</option><option>Turkey</option><option>Turkmenistan</option><option>Tuvalu</option><option>Uganda</option><option>Ukraine</option><option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option><option>Uruguay</option><option>Uzbekistan</option><option>Vanuatu</option><option>Vatican City</option><option>Venezuela</option><option>Vietnam</option><option>Yemen</option><option>Zambia</option><option>Zimbabwe</option>
-                </select>
-            </div>
-
-            <div class="form-grp">
-                <label for="nationality">Nationality <span class="req">*</span></label>
-                <select id="nationality" name="nationality" class="f-input" required>
-                    <option value="">Select nationality</option>
-                    <option>Afghan</option><option>Albanian</option><option>Algerian</option><option>Andorran</option><option>Angolan</option><option>Antiguan or Barbudan</option><option>Argentine</option><option>Armenian</option><option>Australian</option><option>Austrian</option><option>Azerbaijani</option><option>Bahamian</option><option>Bahraini</option><option>Bangladeshi</option><option>Barbadian</option><option>Belarusian</option><option>Belgian</option><option>Belizean</option><option>Beninese</option><option>Bhutanese</option><option>Bolivian</option><option>Bosnian or Herzegovinian</option><option>Botswanan</option><option>Brazilian</option><option>Bruneian</option><option>Bulgarian</option><option>Burkinabe</option><option>Burundian</option><option>Cabo Verdean</option><option>Cambodian</option><option>Cameroonian</option><option>Canadian</option><option>Central African</option><option>Chadian</option><option>Chilean</option><option>Chinese</option><option>Colombian</option><option>Comorian</option><option>Congolese</option><option>Costa Rican</option><option>Croatian</option><option>Cuban</option><option>Cypriot</option><option>Czech</option><option>Danish</option><option>Djiboutian</option><option>Dominican</option><option>Ecuadorian</option><option>Egyptian</option><option>Salvadoran</option><option>Equatorial Guinean</option><option>Eritrean</option><option>Estonian</option><option>Swazi</option><option>Ethiopian</option><option>Fijian</option><option>Finnish</option><option>French</option><option>Gabonese</option><option>Gambian</option><option>Georgian</option><option>German</option><option>Ghanaian</option><option>Greek</option><option>Grenadian</option><option>Guatemalan</option><option>Guinean</option><option>Guyanese</option><option>Haitian</option><option>Honduran</option><option>Hungarian</option><option>Icelandic</option><option>Indian</option><option>Indonesian</option><option>Iranian</option><option>Iraqi</option><option>Irish</option><option>Israeli</option><option>Italian</option><option>Jamaican</option><option>Japanese</option><option>Jordanian</option><option>Kazakh</option><option>Kenyan</option><option>I-Kiribati</option><option>Kuwaiti</option><option>Kyrgyz</option><option>Lao</option><option>Latvian</option><option>Lebanese</option><option>Basotho</option><option>Liberian</option><option>Libyan</option><option>Liechtensteiner</option><option>Lithuanian</option><option>Luxembourgish</option><option>Malagasy</option><option>Malawian</option><option>Malaysian</option><option>Maldivian</option><option>Malian</option><option>Maltese</option><option>Marshallese</option><option>Mauritanian</option><option>Mauritian</option><option>Mexican</option><option>Micronesian</option><option>Moldovan</option><option>Monacan</option><option>Mongolian</option><option>Montenegrin</option><option>Moroccan</option><option>Mozambican</option><option>Burmese</option><option>Namibian</option><option>Nauruan</option><option>Nepali</option><option>Dutch</option><option>New Zealander</option><option>Nicaraguan</option><option>Nigerien</option><option>Nigerian</option><option>North Korean</option><option>Macedonian</option><option>Norwegian</option><option>Omani</option><option>Pakistani</option><option>Palauan</option><option>Palestinian</option><option>Panamanian</option><option>Papua New Guinean</option><option>Paraguayan</option><option>Peruvian</option><option>Filipino</option><option>Polish</option><option>Portuguese</option><option>Qatari</option><option>Romanian</option><option>Russian</option><option>Rwandan</option><option>Kittitian or Nevisian</option><option>Saint Lucian</option><option>Vincentian</option><option>Samoan</option><option>Sammarinese</option><option>Sao Tomean</option><option>Saudi</option><option>Senegalese</option><option>Serbian</option><option>Seychellois</option><option>Sierra Leonean</option><option>Singaporean</option><option>Slovak</option><option>Slovenian</option><option>Solomon Islander</option><option>Somali</option><option>South African</option><option>South Korean</option><option>South Sudanese</option><option>Spanish</option><option>Sri Lankan</option><option>Sudanese</option><option>Surinamese</option><option>Swedish</option><option>Swiss</option><option>Syrian</option><option>Taiwanese</option><option>Tajik</option><option>Tanzanian</option><option>Thai</option><option>Timorese</option><option>Togolese</option><option>Tongan</option><option>Trinidadian or Tobagonian</option><option>Tunisian</option><option>Turkish</option><option>Turkmen</option><option>Tuvaluan</option><option>Ugandan</option><option>Ukrainian</option><option>Emirati</option><option>British</option><option>American</option><option>Uruguayan</option><option>Uzbek</option><option>Vanuatuan</option><option>Venezuelan</option><option>Vietnamese</option><option>Yemeni</option><option>Zambian</option><option>Zimbabwean</option>
-                </select>
-            </div>
-
-            <span class="fgroup-title">Your Application</span>
-
-            <div class="form-grp">
-                <label for="applyingFor">What are you specifically applying for? <span class="req">*</span></label>
-                <textarea id="applyingFor" name="applyingFor" class="f-input" rows="4" required placeholder="We add scholars to our community groups to answer questions from community members. If you can be more specific we will choose them accordingly. Don't worry if you don't know the exact programme yet. You can share your areas of interest, subject, and country too."></textarea>
-            </div>
-
-            <div class="form-grp">
-                <label for="targetUniversity">Target university or institution <span class="req">*</span></label>
-                <input type="text" id="targetUniversity" name="targetUniversity" class="f-input" required placeholder="For example: University of Cambridge, LSE, Harvard, Sciences Po, NUS">
-            </div>
-
-            <div class="form-grp">
-                <label>What level are you applying at? <span class="req">*</span></label>
-                <div class="option-cards" role="radiogroup" aria-required="true">
-                    <div class="opt-card"><input type="radio" name="level" id="lv1" value="Undergraduate" required><label for="lv1">Undergraduate</label></div>
-                    <div class="opt-card"><input type="radio" name="level" id="lv2" value="Masters or Postgraduate"><label for="lv2">Masters or Postgraduate</label></div>
-                    <div class="opt-card"><input type="radio" name="level" id="lv3" value="MBA"><label for="lv3">MBA</label></div>
-                    <div class="opt-card"><input type="radio" name="level" id="lv4" value="PhD"><label for="lv4">PhD</label></div>
-                    <div class="opt-card"><input type="radio" name="level" id="lv6" value="Not Sure Yet"><label for="lv6">Not Sure Yet</label></div>
-                </div>
-            </div>
-
-            <div class="form-grp">
-                <label for="fieldOfStudy">What did you study or are you currently studying? <span class="req">*</span></label>
-                <select id="fieldOfStudy" name="fieldOfStudy" class="f-input" required>
-                    <option value="">Select field</option>
-                    <option>STEM</option>
-                    <option>Social Sciences</option>
-                    <option>Humanities and Arts</option>
-                    <option>Law</option>
-                    <option>Medicine and Health</option>
-                    <option>Business and Economics</option>
-                    <option>Something Else</option>
-                </select>
-            </div>
-
-            <span class="fgroup-title">Your Journey</span>
-
-            <div class="form-grp">
-                <label>What is your current situation? <span class="req">*</span></label>
-                <div class="option-cards wrap-opts" role="radiogroup" aria-required="true">
-                    <div class="opt-card"><input type="radio" name="situation" id="st1" value="I am currently a student" required><label for="st1">I am currently a student</label></div>
-                    <div class="opt-card"><input type="radio" name="situation" id="st2" value="I graduated in the last two years"><label for="st2">I graduated in the last two years</label></div>
-                    <div class="opt-card"><input type="radio" name="situation" id="st3" value="I am working full time and applying alongside my job"><label for="st3">I am working full time and applying alongside my job</label></div>
-                    <div class="opt-card"><input type="radio" name="situation" id="st4" value="I took time off and am returning to study"><label for="st4">I took time off and am returning to study</label></div>
-                    <div class="opt-card"><input type="radio" name="situation" id="st5" value="None of these"><label for="st5">None of these</label></div>
-                </div>
-            </div>
-
-            <div class="form-grp">
-                <label>When are you planning to submit your application? <span class="req">*</span></label>
-                <div class="option-cards" role="radiogroup" aria-required="true">
-                    <div class="opt-card"><input type="radio" name="timeline" id="tl1" value="Within the next month" required><label for="tl1">Within the next month</label></div>
-                    <div class="opt-card"><input type="radio" name="timeline" id="tl2" value="1 to 3 months from now"><label for="tl2">1 to 3 months from now</label></div>
-                    <div class="opt-card"><input type="radio" name="timeline" id="tl3" value="3 to 6 months from now"><label for="tl3">3 to 6 months from now</label></div>
-                    <div class="opt-card"><input type="radio" name="timeline" id="tl4" value="6 to 12 months from now"><label for="tl4">6 to 12 months from now</label></div>
-                    <div class="opt-card"><input type="radio" name="timeline" id="tl5" value="February 2027 or later"><label for="tl5">February 2027 or later</label></div>
-                    <div class="opt-card"><input type="radio" name="timeline" id="tl6" value="Not sure yet"><label for="tl6">Not sure yet</label></div>
-                </div>
-            </div>
-
-            <div class="form-grp">
-                <label>Where are you in your application right now? <span class="req">*</span></label>
-                <div class="option-cards wrap-opts" role="radiogroup" aria-required="true">
-                    <div class="opt-card"><input type="radio" name="appStage" id="as1" value="I am actively drafting and working on it" required><label for="as1">I am actively drafting and working on it</label></div>
-                    <div class="opt-card"><input type="radio" name="appStage" id="as2" value="I know what I am applying for and am getting ready"><label for="as2">I know what I am applying for and am getting ready</label></div>
-                    <div class="opt-card"><input type="radio" name="appStage" id="as3" value="I have a target but need to build my profile first"><label for="as3">I have a target but need to build my profile first</label></div>
-                    <div class="opt-card"><input type="radio" name="appStage" id="as4" value="I am still figuring out what I want to apply for"><label for="as4">I am still figuring out what I want to apply for</label></div>
-                </div>
-            </div>
-
-            <div class="form-grp">
-                <label>Have you applied for this before? <span class="req">*</span></label>
-                <div class="option-cards" role="radiogroup" aria-required="true">
-                    <div class="opt-card"><input type="radio" name="appliedBefore" id="ab1" value="Yes this is my second or third attempt" required><label for="ab1">Yes, this is my second or third attempt</label></div>
-                    <div class="opt-card"><input type="radio" name="appliedBefore" id="ab2" value="No this is my first time"><label for="ab2">No, this is my first time</label></div>
-                </div>
-            </div>
-
-            <div class="form-grp" id="prev-outcome-wrap">
-                <label>What happened with your previous application? <span class="req">*</span></label>
-                <div class="option-cards wrap-opts" role="radiogroup">
-                    <div class="opt-card"><input type="radio" name="prevOutcome" id="po1" value="I received an offer but no scholarship funding"><label for="po1">I received an offer but no scholarship funding</label></div>
-                    <div class="opt-card"><input type="radio" name="prevOutcome" id="po2" value="I was shortlisted or interviewed but did not get through"><label for="po2">I was shortlisted or interviewed but did not get through</label></div>
-                    <div class="opt-card"><input type="radio" name="prevOutcome" id="po3" value="I did not receive an offer or shortlisting"><label for="po3">I did not receive an offer or shortlisting</label></div>
-                    <div class="opt-card"><input type="radio" name="prevOutcome" id="po4" value="I withdrew before a decision was made"><label for="po4">I withdrew before a decision was made</label></div>
-                    <div class="opt-card"><input type="radio" name="prevOutcome" id="po5" value="I am still waiting to hear back"><label for="po5">I am still waiting to hear back</label></div>
-                </div>
-            </div>
-
-            <div class="form-grp">
-                <label>How are you currently preparing? <span class="req">*</span></label>
-                <div class="option-cards wrap-opts" role="radiogroup" aria-required="true">
-                    <div class="opt-card"><input type="radio" name="preparation" id="pr1" value="Entirely on my own with no support at all" required><label for="pr1">Entirely on my own with no support at all</label></div>
-                    <div class="opt-card"><input type="radio" name="preparation" id="pr2" value="With help from my university careers service"><label for="pr2">With help from my university careers service</label></div>
-                    <div class="opt-card"><input type="radio" name="preparation" id="pr3" value="With a private consultant or coach already"><label for="pr3">With a private consultant or coach already</label></div>
-                    <div class="opt-card"><input type="radio" name="preparation" id="pr4" value="Through online resources and communities only"><label for="pr4">Through online resources and communities only</label></div>
-                    <div class="opt-card"><input type="radio" name="preparation" id="pr5" value="A mix of a few of these"><label for="pr5">A mix of a few of these</label></div>
-                </div>
-            </div>
-
-            <span class="fgroup-title">Tell Us More</span>
-
-            <div class="form-grp">
-                <label for="biggestChallenge">What is your single biggest challenge right now? <span class="req">*</span></label>
-                <span class="helper">This is the most important question on this form. We read every answer personally. Be honest and specific. There is no right answer.</span>
-                <textarea id="biggestChallenge" name="biggestChallenge" class="f-input" rows="6" required style="margin-top:10px;" placeholder="Tell us what is making your application difficult right now. The more specific you are the more we can help."></textarea>
-            </div>
-
-            <div class="form-grp">
-                <label for="cvHighlights">Copy and paste highlights from your CV here</label>
-                <span class="helper">Optional but strongly recommended. Include your education, work or research experience, and anything else that reflects your background. Plain text is perfectly fine.</span>
-                <textarea id="cvHighlights" name="cvHighlights" class="f-input" rows="6" style="margin-top:10px;" placeholder="Paste your CV highlights here. This helps us match you with the right people in the community."></textarea>
-            </div>
-
-            <div class="form-grp">
-                <label>Would you find it valuable to have one-to-one sessions with a Cambridge or Oxford scholar who has navigated your exact process? <span class="req">*</span></label>
-                <div class="option-cards wrap-opts" role="radiogroup" aria-required="true">
-                    <div class="opt-card"><input type="radio" name="oneToOne" id="ot1" value="Yes absolutely I have been looking for something like this" required><label for="ot1">Yes, absolutely. I have been looking for something like this.</label></div>
-                    <div class="opt-card"><input type="radio" name="oneToOne" id="ot2" value="Yes possibly depending on what it involves and the cost"><label for="ot2">Yes, possibly, depending on what it involves and the cost.</label></div>
-                    <div class="opt-card"><input type="radio" name="oneToOne" id="ot3" value="Maybe later but not right now"><label for="ot3">Maybe later, but not right now.</label></div>
-                    <div class="opt-card"><input type="radio" name="oneToOne" id="ot4" value="No I am just looking for the community"><label for="ot4">No, I am just looking for the community.</label></div>
-                </div>
-            </div>
-
-            <span class="fgroup-title">Privacy</span>
-
-            <div class="form-grp">
-                <div class="gdpr-wrap">
-                    <input type="checkbox" id="gdprConsent" name="gdprConsent" value="yes">
-                    <label for="gdprConsent">I am happy for The Application Lab to contact me by email with scholarship resources, application tips, webinar invites and community updates. I can unsubscribe at any time.</label>
-                </div>
-            </div>
-
-            <div class="submit-wrap">
-                <button type="submit" class="btn-submit" id="submitBtn">
-                    <span class="spinner" aria-hidden="true"></span>
-                    <span class="btn-label">Submit My Application</span>
-                </button>
-                <p class="submit-note">Joining is completely free. You will hear from us within 24 hours of applying.</p>
-                <div class="form-error" id="formError" role="alert"></div>
-            </div>
-
-        </form>
-
-        <div id="form-success" role="alert">
-            <div class="success-icon" aria-hidden="true">
-                <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="36" cy="36" r="36" fill="#2e8bc0" fill-opacity="0.1"/>
-                    <circle cx="36" cy="36" r="26" fill="#2e8bc0" fill-opacity="0.15"/>
-                    <polyline points="22,36 31,45 50,26" stroke="#2e8bc0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <h2>Application received.</h2>
-            <p>Thank you for applying to join the TAL WhatsApp Community. We review every application personally and will be in touch within 24 hours.</p>
-        </div>
+        <iframe
+            src="https://forms.office.com/Pages/ResponsePage.aspx?id=ZldQ1eKX7kW0nLUo2ez547I4Sf-N7GNIlrkyjuVy09FUQjlHM1hMVDJIVEw2TDY3UzJCWTFIME1ZUi4u&embed=true"
+            class="ms-form-iframe"
+            frameborder="0" marginwidth="0" marginheight="0"
+            allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
+        </iframe>
 
     </div>
 </section>
