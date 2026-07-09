@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Graphic · Rhodes Webinar · TAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #b0b8c4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px;
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── 1080×1080 square ── */
+        .card {
+            width: 1080px;
+            height: 1080px;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Oxford background covers entire card */
+        .bg {
+            position: absolute; inset: 0;
+            background: #0b1829 url('Oxford.png') center 35% / cover no-repeat;
+        }
+        .bg-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                170deg,
+                rgba(4,12,26,0.50) 0%,
+                rgba(4,12,26,0.55) 35%,
+                rgba(4,12,26,0.92) 70%,
+                rgba(4,12,26,0.97) 100%
+            );
+        }
+
+        /* ── TOP BAR ── */
+        .top-bar {
+            position: relative; z-index: 2;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 36px 52px 0;
+        }
+        .tal-logo {
+            height: 80px;
+            filter: brightness(0) invert(1);
+        }
+        .tal-logo-text {
+            display: none;
+            font-size: 18px; font-weight: 800; color: #fff;
+        }
+        .top-pill {
+            background: rgba(201,168,76,0.18);
+            border: 1px solid rgba(201,168,76,0.5);
+            color: #e8c96a;
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; padding: 10px 24px; border-radius: 100px;
+        }
+
+        /* ── MAIN CONTENT ── */
+        .main {
+            position: relative; z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 52px 40px;
+        }
+        .eyebrow {
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 7px;
+            text-transform: uppercase; color: #2e8bc0;
+            display: flex; align-items: center; gap: 14px;
+            margin-bottom: 20px;
+        }
+        .eyebrow::before {
+            content: ''; display: block;
+            width: 28px; height: 2px; background: #2e8bc0; flex-shrink: 0;
+        }
+        .headline {
+            font-size: 5.2rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 28px;
+        }
+        .headline .accent { color: #7ac8e8; }
+
+        .desc-box {
+            background: rgba(4, 14, 32, 0.55);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-left: 3px solid rgba(46,139,192,0.7);
+            padding: 16px 20px;
+            margin-bottom: 40px;
+            max-width: 680px;
+        }
+        .desc-text {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.08rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.88);
+            line-height: 1.65;
+        }
+
+        /* ── SPEAKERS ROW ── */
+        .speakers-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+        .speaker {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-top: 3px solid #2e8bc0;
+            padding: 18px 24px;
+            flex: 1;
+        }
+        .speaker-photo {
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255,255,255,0.15);
+            background: linear-gradient(135deg, #143555, #2e8bc0);
+            flex-shrink: 0;
+        }
+        .speaker-photo img {
+            width: 130%; height: 130%;
+            object-fit: cover; object-position: center top;
+            display: block;
+            margin-left: -15%; margin-top: -5%;
+        }
+        .speaker-photo-fallback {
+            width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; font-weight: 800; color: #fff;
+        }
+        .speaker-info { display: flex; flex-direction: column; gap: 6px; }
+        .speaker-badge {
+            font-size: 0.6rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: #2e8bc0;
+        }
+        .speaker-name {
+            font-size: 1.05rem; font-weight: 800; color: #fff;
+            letter-spacing: -0.3px; line-height: 1.2;
+        }
+        .speaker-degree {
+            font-size: 0.75rem; color: rgba(255,255,255,0.55); line-height: 1.5;
+        }
+
+        /* ── DATE STRIP ── */
+        .date-strip {
+            position: relative; z-index: 2;
+            background: #0f1e35;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            border-top: 2px solid #2e8bc0;
+        }
+        .date-cell {
+            flex: 1;
+            padding: 18px 16px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.07);
+        }
+        .date-cell:last-child { border-right: none; }
+        .date-cell-label {
+            font-size: 0.55rem; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; color: rgba(255,255,255,0.3);
+            display: block; margin-bottom: 6px;
+        }
+        .date-cell-value {
+            font-size: 0.95rem; font-weight: 700; color: #fff;
+        }
+        .date-cell-value.gold { color: #c9a84c; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="bg"></div>
+    <div class="bg-overlay"></div>
+
+    <!-- TOP -->
+    <div class="top-bar">
+        <img src="logo.png" alt="The Application Lab" class="tal-logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <span class="tal-logo-text">The Application Lab</span>
+        <span class="top-pill">Free Online Webinar</span>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+        <div class="eyebrow">TAL Presents</div>
+        <div class="headline">
+            Unlocking<br>
+            the <span class="accent">Rhodes</span><br>
+            Scholarship
+        </div>
+
+        <div class="desc-box">
+            <p class="desc-text">Thinking of applying for the Rhodes Scholarship but unsure where to start? Join two Oxford Rhodes Scholars for a practical and honest session breaking down what the application actually requires.</p>
+        </div>
+
+        <div class="speakers-row">
+            <div class="speaker">
+                <div class="speaker-photo">
+                    <img src="iman-iftikhar.png" alt="Iman Iftikhar"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="speaker-photo-fallback" style="display:none;">II</div>
+                </div>
+                <div class="speaker-info">
+                    <span class="speaker-badge">Rhodes · Pakistan 2024</span>
+                    <div class="speaker-name">Iman Iftikhar</div>
+                    <div class="speaker-degree">MPhil Political Theory<br>University of Oxford</div>
+                </div>
+            </div>
+            <div class="speaker">
+                <div class="speaker-photo">
+                    <img src="shubham-narwal.png" alt="Shubham Narwal"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="speaker-photo-fallback" style="display:none;">SN</div>
+                </div>
+                <div class="speaker-info">
+                    <span class="speaker-badge">Rhodes · India 2025</span>
+                    <div class="speaker-name">Shubham Narwal</div>
+                    <div class="speaker-degree">DPhil Women's &amp; Reproductive Health<br>University of Oxford</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DATE STRIP -->
+    <div class="date-strip">
+        <div class="date-cell">
+            <span class="date-cell-label">Date</span>
+            <span class="date-cell-value">20 June 2026</span>
+        </div>
+        <div class="date-cell">
+            <span class="date-cell-label">Time</span>
+            <span class="date-cell-value">2:30 – 3:30 PM BST</span>
+        </div>
+        <div class="date-cell">
+            <span class="date-cell-label">Format</span>
+            <span class="date-cell-value">Online · Live</span>
+        </div>
+        <div class="date-cell">
+            <span class="date-cell-label">Cost</span>
+            <span class="date-cell-value gold">Free</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

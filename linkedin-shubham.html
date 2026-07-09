@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn · Shubham Narwal · TAL Rhodes Webinar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #b0b8c4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px;
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bg {
+            position: absolute; inset: 0;
+            background: #0b1829 url('Oxford.png') center 35% / cover no-repeat;
+        }
+        .bg-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(4,12,26,0.55) 0%,
+                rgba(4,12,26,0.70) 40%,
+                rgba(4,12,26,0.96) 72%,
+                rgba(4,12,26,0.99) 100%
+            );
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            position: relative; z-index: 2;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 36px 52px 0;
+            flex-shrink: 0;
+        }
+        .tal-logo {
+            height: 108px;
+            filter: brightness(0) invert(1);
+        }
+        .tal-logo-text {
+            display: none;
+            font-size: 18px; font-weight: 800; color: #fff;
+        }
+        .top-pill {
+            background: rgba(201,168,76,0.18);
+            border: 1px solid rgba(201,168,76,0.5);
+            color: #e8c96a;
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; padding: 10px 24px; border-radius: 100px;
+        }
+
+        /* CENTER CONTENT */
+        .center {
+            position: relative; z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 52px;
+            text-align: center;
+        }
+
+        .meet-label {
+            font-size: 1.3rem; font-weight: 700; letter-spacing: 6px;
+            text-transform: uppercase; color: #2e8bc0;
+            margin-bottom: 28px;
+            display: flex; align-items: center; gap: 14px;
+        }
+        .meet-label::before, .meet-label::after {
+            content: ''; display: block;
+            width: 36px; height: 2px; background: #2e8bc0; flex-shrink: 0;
+        }
+
+        .speaker-photo-wrap {
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid rgba(46,139,192,0.55);
+            background: linear-gradient(135deg, #143555, #2e8bc0);
+            box-shadow: 0 0 0 12px rgba(46,139,192,0.10), 0 24px 64px rgba(0,0,0,0.5);
+            margin-bottom: 36px;
+            flex-shrink: 0;
+        }
+        .speaker-photo-wrap img {
+            width: 130%; height: 130%;
+            object-fit: cover; object-position: center top;
+            display: block;
+            margin-left: -15%; margin-top: -5%;
+        }
+        .speaker-photo-fallback {
+            width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 4rem; font-weight: 800; color: #fff;
+        }
+
+        .speaker-name-large {
+            font-size: 4.6rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 0.92;
+            letter-spacing: -4px;
+            margin-bottom: 20px;
+        }
+
+        .badge-pill {
+            display: inline-block;
+            background: rgba(46,139,192,0.15);
+            border: 1px solid rgba(46,139,192,0.4);
+            color: #7ac8e8;
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; padding: 8px 20px; border-radius: 100px;
+            margin-bottom: 14px;
+        }
+
+        .speaker-degree-text {
+            font-size: 0.92rem; font-weight: 600;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: rgba(46,139,192,0.4);
+            margin: 0 auto 28px;
+        }
+
+        .webinar-label {
+            font-size: 0.6rem; font-weight: 700; letter-spacing: 5px;
+            text-transform: uppercase; color: rgba(255,255,255,0.35);
+            margin-bottom: 10px;
+        }
+        .webinar-title {
+            font-size: 1.9rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+        }
+        .webinar-title .accent { color: #7ac8e8; }
+
+        .webinar-desc {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.72);
+            line-height: 1.7;
+            max-width: 560px;
+            margin-top: 16px;
+        }
+
+        /* DATE STRIP */
+        .date-strip {
+            position: relative; z-index: 2;
+            background: #0f1e35;
+            display: flex;
+            align-items: center;
+            border-top: 2px solid #2e8bc0;
+            flex-shrink: 0;
+        }
+        .date-cell {
+            flex: 1;
+            padding: 20px 16px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.07);
+        }
+        .date-cell:last-child { border-right: none; }
+        .date-cell-label {
+            font-size: 0.55rem; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; color: rgba(255,255,255,0.3);
+            display: block; margin-bottom: 6px;
+        }
+        .date-cell-value {
+            font-size: 0.95rem; font-weight: 700; color: #fff;
+        }
+        .date-cell-value.gold { color: #c9a84c; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="bg"></div>
+    <div class="bg-overlay"></div>
+
+    <!-- TOP -->
+    <div class="top-bar">
+        <img src="logo.png" alt="The Application Lab" class="tal-logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <span class="tal-logo-text">The Application Lab</span>
+        <span class="top-pill">Free Online Webinar</span>
+    </div>
+
+    <!-- CENTER -->
+    <div class="center">
+        <div class="meet-label">Meet your speaker</div>
+
+        <div class="speaker-photo-wrap">
+            <img src="shubham-narwal.png" alt="Shubham Narwal"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="speaker-photo-fallback" style="display:none;">SN</div>
+        </div>
+
+        <div class="speaker-name-large">Shubham Narwal</div>
+        <div class="badge-pill">Rhodes Scholar · India 2025</div>
+        <div class="speaker-degree-text">DPhil Women's &amp; Reproductive Health · University of Oxford</div>
+
+        <div class="divider"></div>
+
+        <div class="webinar-label">Speaking at</div>
+        <div class="webinar-title">Unlocking the <span class="accent">Rhodes</span> Scholarship</div>
+        <p class="webinar-desc">A free online session on what the Rhodes application actually requires and how to build one that stands out.</p>
+    </div>
+
+    <!-- DATE STRIP -->
+    <div class="date-strip">
+        <div class="date-cell">
+            <span class="date-cell-label">Date</span>
+            <span class="date-cell-value">20 June 2026</span>
+        </div>
+        <div class="date-cell">
+            <span class="date-cell-label">Time</span>
+            <span class="date-cell-value">2:30 – 3:30 PM UK time</span>
+        </div>
+        <div class="date-cell">
+            <span class="date-cell-label">Format</span>
+            <span class="date-cell-value">Online · Live</span>
+        </div>
+        <div class="date-cell">
+            <span class="date-cell-label">Cost</span>
+            <span class="date-cell-value gold">Free</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

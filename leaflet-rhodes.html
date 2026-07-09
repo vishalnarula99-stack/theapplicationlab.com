@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhodes Scholarship Webinar · The Application Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        @page { size: A4 portrait; margin: 0; }
+
+        body {
+            background: #c8cdd4;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 40px 20px;
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── POSTER SHELL: A4 width, content-height ── */
+        .poster {
+            width: 794px;
+            flex-shrink: 0;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 16px 64px rgba(0,0,0,0.3);
+        }
+
+        /* ══════════════════════════════════
+           1. HERO
+        ══════════════════════════════════ */
+        .hero {
+            flex-shrink: 0;
+            min-height: 300px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #0b1829 url('Oxford.png') center 35% / cover no-repeat;
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                160deg,
+                rgba(4,10,20,0.55) 0%,
+                rgba(4,10,20,0.45) 45%,
+                rgba(4,10,20,0.88) 100%
+            );
+        }
+
+        /* top strip inside hero */
+        .hero-top {
+            position: relative; z-index: 2;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 32px;
+        }
+        .tal-logo {
+            height: 76px;
+            filter: brightness(0) invert(1);
+        }
+        .tal-logo-text {
+            display: none;
+            font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.5px;
+        }
+        .hero-pill {
+            background: rgba(201,168,76,0.2);
+            border: 1px solid rgba(201,168,76,0.55);
+            color: #e8c96a;
+            font-size: 0.6rem; font-weight: 700; letter-spacing: 3.5px;
+            text-transform: uppercase; padding: 7px 18px; border-radius: 100px;
+        }
+
+        /* bottom text block */
+        .hero-bottom {
+            position: relative; z-index: 2;
+            padding: 0 32px 24px;
+        }
+        .hero-eyebrow {
+            font-size: 0.6rem; font-weight: 700; letter-spacing: 6px;
+            text-transform: uppercase; color: #2e8bc0;
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 14px;
+        }
+        .hero-eyebrow::before {
+            content: ''; width: 22px; height: 1.5px;
+            background: #2e8bc0; display: block; flex-shrink: 0;
+        }
+        .hero-h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.0;
+            letter-spacing: -2.5px;
+            margin-bottom: 18px;
+        }
+        .hero-h1 .accent { color: #7ac8e8; }
+        .hero-sub {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.92);
+            line-height: 1.65;
+            max-width: 500px;
+            background: rgba(4, 14, 32, 0.52);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 12px 16px;
+            border-left: 2px solid rgba(46,139,192,0.7);
+        }
+
+        /* ══════════════════════════════════
+           2. EVENT DETAILS STRIP
+        ══════════════════════════════════ */
+        .details-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: #0f1e35;
+            flex-shrink: 0;
+        }
+        .detail-cell {
+            padding: 11px 12px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.08);
+        }
+        .detail-cell:last-child { border-right: none; }
+        .detail-cell-label {
+            display: block;
+            font-size: 0.5rem; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; color: rgba(255,255,255,0.3);
+            margin-bottom: 5px;
+        }
+        .detail-cell-value {
+            font-size: 0.85rem; font-weight: 700; color: #fff;
+            white-space: nowrap;
+        }
+        .detail-cell-value.gold { color: #c9a84c; }
+
+        /* ══════════════════════════════════
+           3. SPEAKERS
+        ══════════════════════════════════ */
+        .speakers {
+            background: #fff;
+            padding: 22px 32px 20px;
+            flex-shrink: 0;
+            border-bottom: 1px solid #eaeef4;
+        }
+        .sec-label {
+            font-size: 0.56rem; font-weight: 700; letter-spacing: 5px;
+            text-transform: uppercase; color: #2e8bc0;
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 6px;
+        }
+        .sec-label::before {
+            content: ''; width: 18px; height: 1.5px;
+            background: #2e8bc0; display: block; flex-shrink: 0;
+        }
+        .sec-title {
+            font-size: 1.15rem; font-weight: 800; color: #0f1e35;
+            letter-spacing: -0.5px; line-height: 1.25; margin-bottom: 16px;
+        }
+
+        .cards-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+        .mentor-card {
+            border: 1px solid #dde4f0;
+            border-top: 3px solid #2e8bc0;
+            padding: 18px 14px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .mentor-photo {
+            width: 110px; height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #dde4f0;
+            background: linear-gradient(135deg, #143555, #2e8bc0);
+            flex-shrink: 0;
+            margin-bottom: 12px;
+        }
+        .mentor-photo img {
+            width: 130%; height: 130%;
+            object-fit: cover; object-position: center top;
+            display: block;
+            margin-left: -15%; margin-top: -5%;
+        }
+        .mentor-photo-fallback {
+            width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; font-weight: 800; color: #fff; letter-spacing: -1px;
+        }
+        .mentor-badge-pill {
+            display: inline-block;
+            background: rgba(46,139,192,0.08);
+            border: 1px solid rgba(46,139,192,0.22);
+            color: #2e8bc0;
+            font-size: 0.56rem; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; padding: 4px 10px; border-radius: 100px;
+            margin-bottom: 10px;
+        }
+        .mentor-name {
+            font-size: 1rem; font-weight: 800; color: #0f1e35;
+            letter-spacing: -0.3px; line-height: 1.2; margin-bottom: 8px;
+        }
+        .mentor-ox-degree {
+            font-size: 0.74rem; font-weight: 600; color: #2e8bc0;
+            line-height: 1.5; margin-bottom: 5px;
+        }
+        .mentor-prior {
+            font-size: 0.7rem; color: #7a8fa8;
+            line-height: 1.55;
+        }
+
+        /* ══════════════════════════════════
+           4. TOPICS
+        ══════════════════════════════════ */
+        .topics {
+            background: #f4f7fb;
+            padding: 18px 32px 16px;
+            flex-shrink: 0;
+            border-bottom: 1px solid #dde4f0;
+        }
+        .topics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 24px;
+            margin-top: 12px;
+        }
+        .topic-row {
+            display: flex; align-items: flex-start; gap: 10px;
+        }
+        .topic-bullet {
+            width: 5px; height: 5px; border-radius: 50%;
+            background: #2e8bc0; flex-shrink: 0; margin-top: 5px;
+        }
+        .topic-copy {
+            font-size: 0.8rem; color: #3d4f63; line-height: 1.5; font-weight: 500;
+        }
+
+        /* ══════════════════════════════════
+           5. CTA
+        ══════════════════════════════════ */
+        .cta {
+            background: #0f1e35;
+            padding: 7px 32px;
+            display: flex; align-items: center;
+            justify-content: flex-start; gap: 10px;
+            flex-shrink: 0;
+        }
+        .cta-left-label {
+            font-size: 0.52rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: rgba(255,255,255,0.35);
+        }
+        .cta-divider {
+            color: rgba(255,255,255,0.2); font-size: 0.7rem;
+        }
+        .cta-email {
+            font-size: 0.72rem; font-weight: 700; color: #7ac8e8;
+            text-decoration: none;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #2e8bc0; color: #fff;
+            padding: 13px 28px; font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            border-radius: 2px; text-decoration: none; white-space: nowrap;
+        }
+
+        /* ══════════════════════════════════
+           6. FOOTER
+        ══════════════════════════════════ */
+        .poster-footer {
+            background: #060c16;
+            padding: 6px 32px;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .footer-copy { font-size: 0.5rem; color: rgba(255,255,255,0.2); }
+        .footer-url  { font-size: 0.5rem; color: rgba(255,255,255,0.2); text-decoration: none; }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .poster { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="poster">
+
+    <!-- 1. HERO -->
+    <div class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-top">
+            <img src="logo.png" alt="The Application Lab" class="tal-logo"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="tal-logo-text">The Application Lab</span>
+            <span class="hero-pill">Free &nbsp;·&nbsp; Online Webinar</span>
+        </div>
+
+        <div class="hero-bottom">
+            <div class="hero-eyebrow">TAL Presents</div>
+            <h1 class="hero-h1">
+                Unlocking the<br>
+                <span class="accent">Rhodes</span><br>
+                Scholarship
+            </h1>
+            <p class="hero-sub">Thinking of applying for the Rhodes Scholarship but unsure where to start? Join two Oxford Rhodes Scholars for a practical and honest session breaking down what the application actually requires and how to approach each component strategically.</p>
+        </div>
+    </div>
+
+    <!-- 2. EVENT DETAILS -->
+    <div class="details-strip">
+        <div class="detail-cell">
+            <span class="detail-cell-label">Date</span>
+            <span class="detail-cell-value">20 June 2026</span>
+        </div>
+        <div class="detail-cell">
+            <span class="detail-cell-label">Time</span>
+            <span class="detail-cell-value">2:30 – 3:30 PM BST</span>
+        </div>
+        <div class="detail-cell">
+            <span class="detail-cell-label">Format</span>
+            <span class="detail-cell-value">Online · Live Q&amp;A</span>
+        </div>
+        <div class="detail-cell">
+            <span class="detail-cell-label">Cost</span>
+            <span class="detail-cell-value gold">Free</span>
+        </div>
+    </div>
+
+    <!-- 3. SPEAKERS -->
+    <div class="speakers">
+        <div class="sec-label">Your Speakers</div>
+        <div class="sec-title">Two Rhodes scholars. Two disciplines. Two unique journeys to Oxford.</div>
+
+        <div class="cards-row">
+
+            <!-- IMAN -->
+            <div class="mentor-card">
+                <div class="mentor-photo">
+                    <img src="iman-iftikhar.png" alt="Iman Iftikhar"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="mentor-photo-fallback" style="display:none;">II</div>
+                </div>
+                <span class="mentor-badge-pill">Rhodes · Pakistan 2024</span>
+                <div class="mentor-name">Iman Iftikhar</div>
+                <div class="mentor-ox-degree">MPhil Political Theory</div>
+            </div>
+
+            <!-- SHUBHAM -->
+            <div class="mentor-card">
+                <div class="mentor-photo">
+                    <img src="shubham-narwal.png" alt="Shubham Narwal"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="mentor-photo-fallback" style="display:none;">SN</div>
+                </div>
+                <span class="mentor-badge-pill">Rhodes · India 2025</span>
+                <div class="mentor-name">Shubham Narwal</div>
+                <div class="mentor-ox-degree">DPhil Women's &amp; Reproductive Health</div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- 4. TOPICS -->
+    <div class="topics">
+        <div class="sec-label">What We'll Cover</div>
+        <div class="topics-grid">
+            <div class="topic-row">
+                <span class="topic-bullet"></span>
+                <span class="topic-copy">What Rhodes is actually looking for beyond academic excellence</span>
+            </div>
+            <div class="topic-row">
+                <span class="topic-bullet"></span>
+                <span class="topic-copy">Breaking down the personal statement and building a compelling narrative</span>
+            </div>
+            <div class="topic-row">
+                <span class="topic-bullet"></span>
+                <span class="topic-copy">Approaching the academic statement strategically</span>
+            </div>
+            <div class="topic-row">
+                <span class="topic-bullet"></span>
+                <span class="topic-copy">Structuring the CV and presenting leadership, service and extracurriculars effectively</span>
+            </div>
+            <div class="topic-row">
+                <span class="topic-bullet"></span>
+                <span class="topic-copy">Choosing and securing references strategically</span>
+            </div>
+            <div class="topic-row">
+                <span class="topic-bullet"></span>
+                <span class="topic-copy">What to expect in the interview process</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. CTA -->
+    <div class="cta">
+        <span class="cta-left-label">Learn more at</span>
+        <a href="https://www.theapplicationlab.com" class="cta-email">theapplicationlab.com</a>
+        <span class="cta-divider">·</span>
+        <span class="cta-left-label">Contact us at</span>
+        <a href="mailto:info@theapplicationlab.com" class="cta-email">info@theapplicationlab.com</a>
+    </div>
+
+    <!-- 6. FOOTER -->
+    <div class="poster-footer">
+        <span class="footer-copy">© 2026 The Application Lab &nbsp;·&nbsp; Edspire Labs Ltd &nbsp;·&nbsp; Cambridge, UK</span>
+        <a href="index.html" class="footer-url">theapplicationlab.com</a>
+    </div>
+
+</div>
+</body>
+</html>
