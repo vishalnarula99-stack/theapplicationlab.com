@@ -751,16 +751,20 @@
             <p class="hero-sub">One-to-one guidance from scholars who have successfully secured the scholarships and offers you are working towards. No generic advice, just real experience and proven results.</p>
             <div class="hero-stat-strip" style="display:flex; gap:0; margin-bottom:36px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1);">
                 <div style="padding-right:32px; border-right:1px solid rgba(255,255,255,0.1);">
-                    <strong style="display:block; font-size:1.8rem; font-weight:800; letter-spacing:-1px; color:#fff; line-height:1;">100+</strong>
+                    <strong style="display:block; font-size:1.8rem; font-weight:800; letter-spacing:-1px; color:#fff; line-height:1;">150+</strong>
                     <span style="display:block; font-size:0.58rem; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,0.85); font-weight:600; margin-top:6px;">Mentors Globally</span>
                 </div>
                 <div style="padding:0 32px; border-right:1px solid rgba(255,255,255,0.1);">
                     <strong style="display:block; font-size:1.8rem; font-weight:800; letter-spacing:-1px; color:#fff; line-height:1;">3,000+</strong>
                     <span style="display:block; font-size:0.58rem; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,0.85); font-weight:600; margin-top:6px;">Applicants Supported</span>
                 </div>
-                <div style="padding-left:32px;">
+                <div style="padding:0 32px; border-right:1px solid rgba(255,255,255,0.1);">
                     <strong style="display:block; font-size:1.8rem; font-weight:800; letter-spacing:-1px; color:#fff; line-height:1;">97%</strong>
                     <span style="display:block; font-size:0.58rem; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,0.85); font-weight:600; margin-top:6px;">Success Rate for 1:1 Mentorship</span>
+                </div>
+                <div style="padding-left:32px;">
+                    <strong style="display:block; font-size:1.8rem; font-weight:800; letter-spacing:-1px; color:#fff; line-height:1;">£2M+</strong>
+                    <span style="display:block; font-size:0.58rem; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,0.85); font-weight:600; margin-top:6px;">Scholarships Secured</span>
                 </div>
             </div>
             <div class="hero-btns">
@@ -851,7 +855,7 @@
         <div class="scholar-inner">
             <span class="label">Scholarships and Programmes</span>
             <h2 id="scholar-h" class="fade-up">We support applications across a wide range of scholarships, fellowships, university programmes, and UK Global Talent Visa pathways worldwide.</h2>
-            <p class="scholar-body">Our community includes 100+ mentors with experience across academia, research, industry, development, public policy, consulting, and professional leadership. That means you are matched with someone who understands not just the application process, but the expectations of the field you are entering.</p>
+            <p class="scholar-body">Our community includes 150+ mentors with experience across academia, research, industry, development, public policy, consulting, and professional leadership. That means you are matched with someone who understands not just the application process, but the expectations of the field you are entering.</p>
             <p class="scholar-body" style="margin-top:0; margin-bottom:20px;">We provide tailored guidance for:</p>
             <ul style="list-style:none; text-align:left; margin:0 auto 36px; max-width:640px; display:flex; flex-direction:column; gap:14px;">
                 <li style="font-size:0.95rem; color:rgba(255,255,255,0.8); line-height:1.7; padding-left:20px; position:relative;"><span style="position:absolute; left:0; color:#2e8bc0;">→</span> <strong style="color:#fff;">MPhil and Master's applicants</strong>, including programme fit, personal statements, research interests, and interviews.</li>
@@ -908,7 +912,7 @@
         <div class="network-grid">
             <div class="network-content">
                 <span class="label">Our Mentors</span>
-                <h2 id="net-h" class="network-h2 fade-up">100+ mentors. Every discipline. Every region. One shared mission.</h2>
+                <h2 id="net-h" class="network-h2 fade-up">150+ mentors. Every discipline. Every region. One shared mission.</h2>
                 <div class="net-points">
 
                     <div class="net-point">
@@ -1266,29 +1270,31 @@ animEls.forEach(el => {
 <script>
 // Stat counters — count up when scrolled into view
 (function() {
-  function countUp(el, end, suffix, duration) {
+  function countUp(el, end, suffix, duration, prefix) {
     var start = Date.now();
+    prefix = prefix || '';
     function step() {
       var elapsed = Date.now() - start;
       var progress = Math.min(elapsed / duration, 1);
       var eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(eased * end).toLocaleString() + suffix;
+      el.textContent = prefix + Math.floor(eased * end).toLocaleString() + suffix;
       if (progress < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
 
   var statEls = document.querySelectorAll('.hero-stat-strip strong');
-  if (statEls.length < 3) return;
+  if (statEls.length < 4) return;
 
   var counted = false;
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting && !counted) {
         counted = true;
-        countUp(statEls[0], 100,  '+', 2000);
+        countUp(statEls[0], 150,  '+', 2000);
         countUp(statEls[1], 3000, '+', 2000);
         countUp(statEls[2], 97,   '%', 2000);
+        countUp(statEls[3], 2,    'M+', 2000, '£');
         observer.disconnect();
       }
     });
