@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Booking | The Application Lab</title>
+    <meta name="description" content="Session pricing, two free calls before you pay, and how The Application Lab compares to the alternatives.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.theapplicationlab.com/mentorship.html">
+    <meta property="og:title" content="Pricing & Booking | The Application Lab">
+    <meta property="og:description" content="Session pricing, two free calls before you pay, and how The Application Lab compares to the alternatives.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.theapplicationlab.com/mentorship.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lora:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { overflow-x: hidden; max-width: 100%; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #0f1e35;
+            background-color: #f7f9fc;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        :root {
+            --navy: #0f1e35;
+            --blue: #2e8bc0;
+            --bg: #f7f9fc;
+            --white: #ffffff;
+            --muted: #6b7c93;
+            --border: #dde4ee;
+            --body-text: #3d4f63;
+            --gold: #c9a84c;
+            --transition: all 0.3s ease;
+        }
+        h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.2; }
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+        .section-pad { padding: 96px 0; }
+
+        .label {
+            display: flex; align-items: center; gap: 12px;
+            font-size: 0.6rem; letter-spacing: 5px; font-weight: 700;
+            text-transform: uppercase; color: #2e8bc0; margin-bottom: 14px;
+        }
+        .label::before { content: ''; display: block; width: 24px; height: 1.5px; background: #2e8bc0; flex-shrink: 0; }
+
+        .btn {
+            display: inline-block; padding: 13px 30px;
+            font-family: 'Montserrat', sans-serif; font-size: 0.875rem; font-weight: 600;
+            letter-spacing: 0.03em; text-decoration: none; border-radius: 4px;
+            transition: var(--transition); cursor: pointer; border: 2px solid transparent; white-space: nowrap;
+        }
+        .btn-blue {
+            background: #2e8bc0; color: #fff; border: none;
+            padding: 14px 32px; font-size: 0.74rem; font-weight: 700;
+            letter-spacing: 1.5px; text-transform: uppercase; border-radius: 2px;
+            transition: all 0.25s ease;
+        }
+        .btn-blue:hover { background: #1a6fa0; box-shadow: 0 8px 28px rgba(46,139,192,0.4); transform: translateY(-2px); }
+        .btn-outline-white {
+            background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4);
+            padding: 14px 32px; font-size: 0.74rem; font-weight: 700;
+            letter-spacing: 1.5px; text-transform: uppercase; border-radius: 2px; transition: all 0.25s ease;
+        }
+        .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+        .btn-outline-navy { background: transparent; color: var(--navy); border-color: var(--navy); }
+        .btn-outline-navy:hover { background: var(--navy); color: #fff; }
+
+        /* NAV */
+        #hdr { position:fixed; top:0; left:0; right:0; width:100%; height:72px; z-index:9999; display:flex; align-items:center; justify-content:space-between; padding:0 5%; background:rgba(15,30,53,0.97); box-shadow:0 2px 20px rgba(0,0,0,0.3); }
+        section[id] { scroll-margin-top: 90px; }
+        @media (min-width: 769px) { #desktop-nav { display: flex; gap: 22px; align-items:center; } #mob-burger { display: none; } }
+        @media (max-width: 768px) { #desktop-nav { display: none !important; } #mob-burger { display: flex !important; } }
+
+        /* HERO */
+        #hero {
+            position: relative; min-height: 92vh; display: flex; align-items: center;
+            padding-top: 72px;
+            background-image: url('Image 4.jpg');
+            background-size: cover; background-position: center center; background-repeat: no-repeat;
+        }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(8,15,24,0.93) 0%, rgba(8,15,24,0.78) 60%, rgba(8,15,24,0.58) 100%); }
+        .hero-body { position: relative; z-index: 1; max-width: 760px; padding: 90px 0 60px; }
+        .hero-h1 { font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight: 800; color: #fff; line-height: 1.16; letter-spacing:-1.5px; margin-bottom: 22px; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+        .hero-sub { font-size: 1.02rem; color: rgba(255,255,255,0.88); line-height: 1.85; max-width: 620px; margin-bottom: 36px; }
+        .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+        .hero-stat-strip { display:flex; gap:0; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1); }
+        .hero-stat-strip > div { flex: 1 1 0; min-width: 0; padding: 0 20px; border-right:1px solid rgba(255,255,255,0.1); }
+        .hero-stat-strip > div:first-child { padding-left: 0; }
+        .hero-stat-strip > div:last-child { border-right: none; padding-right: 0; }
+        .hero-stat-strip strong { display:block; font-size:1.6rem; font-weight:800; letter-spacing:-1px; color:#fff; line-height:1; white-space: nowrap; }
+        .hero-stat-strip span { display:block; font-size:0.54rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.85); font-weight:600; margin-top:6px; }
+
+        /* TWO CALLS */
+        #calls { background: #fff; }
+        .calls-hd { max-width: 820px; margin: 0 auto 48px; text-align: center; }
+        .calls-hd h2 { font-size: clamp(1.5rem, 2.6vw, 2.05rem); color: var(--navy); }
+        .calls-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 980px; margin: 0 auto; }
+        .call-card {
+            background: #fff; border: 1px solid #dde6f0; border-top: 3px solid #2e8bc0;
+            padding: 32px 28px; transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .call-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(15,30,53,0.12); }
+        .call-eyebrow { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+        .call-card p { font-size: 0.9rem; color: var(--body-text); line-height: 1.85; }
+        .calls-note { text-align: center; font-size: 0.92rem; font-weight: 600; color: var(--navy); margin-top: 32px; }
+
+        /* PRICING */
+        #pricing { background: radial-gradient(ellipse at top right, #e8f4fb 0%, #f7f9fc 60%); }
+        .pricing-hd { text-align: center; margin-bottom: 20px; }
+        .pricing-hd h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--navy); margin-bottom: 16px; }
+        .pricing-hd p { font-size: 1rem; color: var(--muted); max-width: 640px; margin: 0 auto; line-height: 1.8; }
+        .service-block { margin-top: 64px; }
+        .service-head { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 2px solid var(--navy); }
+        .service-num {
+            flex-shrink: 0; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+            color: #fff; background: var(--navy); padding: 7px 14px; border-radius: 2px; margin-top: 4px; white-space: nowrap;
+        }
+        .service-head-text h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); color: var(--navy); margin-bottom: 8px; letter-spacing: -0.4px; }
+        .service-head-text p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; max-width: 680px; }
+        .price-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; align-items: stretch; }
+        .price-card {
+            background: #fff; border: 1px solid #dde6f0; border-top: 3px solid #2e8bc0;
+            padding: 28px 20px; display: flex; flex-direction: column; position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .price-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(15,30,53,0.12); }
+        .price-card.popular { border-top-color: var(--gold); box-shadow: 0 10px 40px rgba(15,30,53,0.1); }
+        .price-badge {
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--gold); color: #fff; font-size: 0.6rem; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; white-space: nowrap;
+        }
+        .price-sessions { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; }
+        .price-save { display:inline-block; font-size: 0.66rem; font-weight: 700; color: var(--blue); background: rgba(46,139,192,0.1); padding: 3px 8px; border-radius: 3px; margin-bottom: 14px; width: fit-content; }
+        .price-amount { font-size: 1.7rem; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 14px; }
+        .price-desc { font-size: 0.82rem; color: var(--body-text); line-height: 1.7; margin-bottom: 16px; flex: 1; }
+        .price-valid { font-size: 0.72rem; color: var(--muted); font-style: italic; border-top: 1px solid var(--border); padding-top: 12px; }
+        .price-note { text-align: center; font-size: 0.8rem; color: var(--muted); font-style: italic; margin-top: 28px; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+
+        .doc-review-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .doc-card {
+            background: #fff; border: 1px solid #dde6f0; border-top: 3px solid #2e8bc0;
+            padding: 34px 32px; display: flex; flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .doc-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(15,30,53,0.12); }
+        .doc-card h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 10px; }
+        .doc-price { font-size: 1.5rem; font-weight: 800; color: var(--navy); margin: 6px 0 14px; }
+        .doc-card p { font-size: 0.88rem; color: var(--body-text); line-height: 1.8; margin-bottom: 14px; flex: 1; }
+        .doc-turnaround { font-size: 0.76rem; color: var(--muted); font-style: italic; }
+
+        /* COMPARISON */
+        #comparison { background: #fff; }
+        .comparison-hd { text-align: center; margin-bottom: 20px; max-width: 780px; margin-left: auto; margin-right: auto; }
+        .comparison-hd h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--navy); margin-bottom: 16px; }
+        .comparison-hd p { font-size: 1rem; color: var(--muted); line-height: 1.85; }
+        .comparison-scroll { overflow-x: auto; margin-top: 48px; -webkit-overflow-scrolling: touch; }
+        table.comparison-table { width: 100%; min-width: 780px; border-collapse: collapse; }
+        .comparison-table th, .comparison-table td { padding: 16px 20px; text-align: left; font-size: 0.85rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .comparison-table thead th { background: var(--navy); color: #fff; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+        .comparison-table thead th:first-child { border-top-left-radius: 4px; }
+        .comparison-table thead th:last-child { border-top-right-radius: 4px; }
+        .comparison-table tbody th { font-weight: 700; color: var(--navy); font-size: 0.82rem; background: #f7f9fc; white-space: nowrap; }
+        .comparison-table tbody td { color: var(--body-text); line-height: 1.6; }
+        .comparison-table td.tal-col, .comparison-table th.tal-col {
+            background: rgba(46,139,192,0.07); color: var(--navy); font-weight: 600; border-left: 2px solid var(--blue); border-right: 2px solid var(--blue);
+        }
+        .comparison-table thead th.tal-col { background: var(--blue); border-left: 2px solid var(--blue); border-right: 2px solid var(--blue); }
+        .comparison-table tbody tr:last-child td, .comparison-table tbody tr:last-child th { border-bottom: none; }
+        .comparison-table tbody tr:last-child td.tal-col { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+
+        /* PROMISE */
+        #promise { background: var(--navy); background-image: repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px); }
+        .promise-hd { text-align: center; margin-bottom: 56px; }
+        .promise-hd .label { justify-content: center; }
+        .promise-hd h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: #fff; }
+        .promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 56px; }
+        .promise-point { display: flex; gap: 20px; align-items: flex-start; }
+        .promise-num {
+            width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+            background: rgba(46,139,192,0.14); border: 1px solid rgba(46,139,192,0.28);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; font-weight: 700; color: var(--blue);
+        }
+        .promise-point h4 { font-size: 0.98rem; color: #fff; margin-bottom: 6px; }
+        .promise-point p { font-size: 0.87rem; color: rgba(255,255,255,0.62); line-height: 1.8; }
+
+        /* TRUSTED */
+        #trusted { background: var(--bg); }
+        .trusted-hd { text-align: center; margin-bottom: 40px; }
+        .trusted-hd h2 { font-size: clamp(1.4rem, 2.4vw, 1.85rem); color: var(--navy); margin-bottom: 12px; }
+        .trusted-hd p { font-size: 1.05rem; color: var(--muted); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .stat-hl { color: var(--blue); font-weight: 800; font-size: 1.15em; }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 900px; margin: 0 auto; }
+        .badge-pill { font-size: 0.78rem; font-weight: 600; color: var(--navy); background: #fff; border: 1px solid var(--border); padding: 9px 18px; border-radius: 20px; }
+        .badge-divider { text-align: center; font-size: 0.6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin: 28px 0 18px; }
+
+        /* REVIEWS */
+        #reviews { background: #fff; padding: 88px 0; }
+        .reviews-hd { text-align: center; margin-bottom: 12px; }
+        .reviews-hd h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); color: var(--navy); }
+        .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #dde6f0; margin-top: 40px; }
+        .review-card { background: #fff; padding: 28px 24px; border-top: 3px solid #2e8bc0; }
+        .review-stars { font-size: 13px; color: #f5a623; margin-bottom: 14px; }
+        .review-text { font-family: 'Lora', serif; font-style: italic; font-size: 13px; color: #4a5568; line-height: 1.9; margin-bottom: 16px; }
+        .review-name { display: block; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #0f1e35; }
+        .review-source { display: block; font-weight: 300; font-size: 10px; color: #888; margin-top: 3px; }
+
+        /* FAQ */
+        #faq { background: var(--navy); background-image: repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px); padding: 88px 0; }
+        .faq-hd { text-align: center; margin-bottom: 12px; }
+        .faq-hd .label { justify-content: center; }
+        .faq-hd h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); color: #fff; }
+        .faq-list { max-width: 780px; margin: 40px auto 0; }
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.12); }
+        .faq-item summary {
+            list-style: none; cursor: pointer; padding: 22px 4px;
+            font-size: 0.98rem; font-weight: 700; color: #fff;
+            display: flex; justify-content: space-between; align-items: center; gap: 16px;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; font-size: 1.4rem; font-weight: 400; color: var(--blue); flex-shrink: 0; transition: transform 0.2s ease; }
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-item p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.85; padding: 0 4px 24px; }
+
+        /* BOOK CALL */
+        #book { background: #f7f9fc; padding: 96px 0; }
+        .book-hd { max-width: 780px; margin: 0 auto 40px; text-align: center; padding: 0 28px; }
+        .book-hd h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--navy); margin-bottom: 14px; }
+        .book-hd p { font-size: 0.97rem; color: var(--body-text); line-height: 1.85; }
+        .book-alt { text-align: center; margin-top: 28px; font-size: 0.82rem; color: var(--muted); }
+        .book-alt a { color: var(--blue); font-weight: 600; text-decoration: none; }
+
+        .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .price-grid { grid-template-columns: 1fr 1fr; }
+            .doc-review-grid { grid-template-columns: 1fr; }
+            .promise-grid { grid-template-columns: 1fr; }
+            .review-grid { grid-template-columns: 1fr 1fr; }
+            .calls-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            header, #hdr { height: 64px; padding: 0 5%; }
+            #hdr a:first-child img { height: 34px !important; }
+            #hero { min-height: 100svh; }
+            .hero-h1 { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+            .hero-btns { flex-direction: column; gap: 10px; width: 100%; }
+            .hero-btns a { width: 100%; text-align: center; }
+            .hero-stat-strip { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+            .hero-stat-strip > div { padding: 12px 10px !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .section-pad, #calls, #pricing, #comparison, #promise, #trusted { padding: 56px 5%; }
+            #hero .container, #calls .container, #pricing .container, #comparison .container, #promise .container, #trusted .container { padding: 0; }
+            .price-grid { grid-template-columns: 1fr; }
+            .service-head { flex-direction: column; gap: 10px; }
+            .comparison-scroll { margin-left: -5%; margin-right: -5%; padding: 0 5%; }
+            .review-grid { grid-template-columns: 1fr; }
+            .book-hd { padding: 0 5%; }
+            h2 { font-size: clamp(1.4rem, 5vw, 1.9rem); }
+        }
+    </style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="index.html" style="display:flex; align-items:center; text-decoration:none; flex-shrink:0; margin-right:20px;">
+    <img src="logo.png" alt="The Application Lab" width="1920" height="1080" style="height:56px; width:auto; display:block; object-fit:contain; filter:brightness(0) invert(1);"/>
+  </a>
+  <nav id="desktop-nav">
+    <a href="index.html#about" style="font-size:0.68rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.7px; text-transform:uppercase; text-decoration:none;">About</a>
+    <a href="index.html#services" style="font-size:0.68rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.7px; text-transform:uppercase; text-decoration:none;">Mentorship</a>
+    <a href="index.html#how" style="font-size:0.68rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.7px; text-transform:uppercase; text-decoration:none;">How It Works</a>
+    <a href="index.html#founders" style="font-size:0.68rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.7px; text-transform:uppercase; text-decoration:none;">Founders</a>
+    <a href="community.html" style="font-size:0.68rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.7px; text-transform:uppercase; text-decoration:none;">Community</a>
+    <a href="mentorship.html" style="font-size:0.68rem; font-weight:600; color:#fff; letter-spacing:0.7px; text-transform:uppercase; text-decoration:none;">Pricing</a>
+    <a href="#book" style="font-size:0.68rem; font-weight:700; color:#fff; letter-spacing:1px; text-transform:uppercase; text-decoration:none; background:#2e8bc0; padding:10px 18px; border-radius:2px; white-space:nowrap;">Book a Call</a>
+  </nav>
+  <button id="mob-burger" aria-label="Open menu" style="flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; margin-left:16px;">
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+  </button>
+</header>
+
+<div id="mob-menu" style="display:none; position:fixed; top:64px; left:0; right:0; z-index:9998; background:rgba(15,30,53,0.98); flex-direction:column; padding:16px 5%; border-top:1px solid rgba(255,255,255,0.08);">
+  <a href="index.html#about" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">About</a>
+  <a href="index.html#services" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Mentorship</a>
+  <a href="index.html#how" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">How It Works</a>
+  <a href="index.html#founders" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Founders</a>
+  <a href="community.html" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Community</a>
+  <a href="mentorship.html" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:#fff; text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Pricing</a>
+  <a href="#book" style="display:block; margin-top:16px; padding:13px 20px; font-size:0.82rem; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:1px; text-decoration:none; background:#2e8bc0; text-align:center; border-radius:2px;">Book a Call</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section id="hero">
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+        <div class="hero-body">
+            <span class="label" style="color:#4a9fd4;">The Application Lab · 2026-27</span>
+            <h1 class="hero-h1">Your application, guided by someone who has been there.</h1>
+            <p class="hero-sub">Thank you for reaching out. This page walks you through who we are, what we offer, and our pricing, so you can decide what fits and book your free discovery call with the team.</p>
+            <div class="hero-btns">
+                <a href="#pricing" class="btn btn-blue">See Pricing</a>
+                <a href="#book" class="btn btn-outline-white">Book Your Call</a>
+            </div>
+            <div class="hero-stat-strip">
+                <div><strong>150+</strong><span>Mentors Globally</span></div>
+                <div><strong>3,000+</strong><span>Applicants Supported</span></div>
+                <div><strong>94%</strong><span>Success Rate, 1:1 Mentorship</span></div>
+                <div><strong>£2M+</strong><span>Scholarships Secured</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TWO CALLS -->
+<section id="calls" class="section-pad">
+    <div class="container">
+        <div class="calls-hd">
+            <span class="label" style="justify-content:center;">Before You Pay Anything</span>
+            <h2 class="fade-up">You will have spoken to us twice before you spend anything.</h2>
+        </div>
+        <div class="calls-grid">
+            <div class="call-card fade-up">
+                <span class="call-eyebrow">Call one · Discovery, with the TAL team · 20 minutes</span>
+                <p>We get to know you properly: what you are applying for, your deadlines, where you have got to, and what you are most stuck on. We tell you honestly what kind of support we think you need, including if that is less than you expected. No package is sold on this call.</p>
+            </div>
+            <div class="call-card fade-up">
+                <span class="call-eyebrow">Call two · Introduction, with your matched mentor · 20 minutes</span>
+                <p>Time with the mentor we have matched you to, so you can hear how they approached the same application and decide whether the fit is right. You only go ahead if you want to. If the match is not right, we find you someone else and you meet them the same way.</p>
+            </div>
+        </div>
+        <p class="calls-note">Both calls are free and there is no obligation after either one.</p>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section-pad">
+    <div class="container">
+        <div class="pricing-hd">
+            <span class="label" style="justify-content:center;">Our Services</span>
+            <h2 class="fade-up">Two ways to get support. Straightforward pricing either way.</h2>
+            <p class="fade-up">Not sure which is right for you? Write to us and we will suggest the most suitable option based on your situation and how much time you have before your deadline.</p>
+        </div>
+
+        <div class="service-block">
+        <div class="service-head">
+            <span class="service-num">Service 01</span>
+            <div class="service-head-text">
+                <h3>Lab Focus: 60 Minute 1:1 Sessions</h3>
+                <p>Live sessions with a mentor matched to your exact application. Use the time however is most useful: an essay, your strategy, interview prep, or programme choices. Choose the package that fits where you are in your journey.</p>
+            </div>
+        </div>
+        <div class="price-grid">
+
+            <div class="price-card fade-up">
+                <div class="price-sessions">1 Session</div>
+                <div class="price-amount">£54.99</div>
+                <p class="price-desc">One specific thing to work through: a single essay, a second opinion on your shortlist, or one part of your application before you submit.</p>
+                <div class="price-valid">Valid 30 days from purchase</div>
+            </div>
+
+            <div class="price-card fade-up">
+                <div class="price-sessions">2 Sessions</div>
+                <span class="price-save">Save 4.54%</span>
+                <div class="price-amount">£104.99</div>
+                <p class="price-desc">A draft ready for structured feedback, then a follow-up to review your revisions. Or a full application review plus a mock interview.</p>
+                <div class="price-valid">Valid 60 days from purchase</div>
+            </div>
+
+            <div class="price-card popular fade-up">
+                <span class="price-badge">Most Popular</span>
+                <div class="price-sessions">4 Sessions</div>
+                <span class="price-save">Save 9.08%</span>
+                <div class="price-amount">£199.99</div>
+                <p class="price-desc">What most applicants need for a single strong application: strategy, two rounds of feedback on your main documents, and interview prep or a final review.</p>
+                <div class="price-valid">Valid 120 days from purchase</div>
+            </div>
+
+            <div class="price-card fade-up">
+                <div class="price-sessions">6 Sessions</div>
+                <span class="price-save">Save 12.11%</span>
+                <div class="price-amount">£289.99</div>
+                <p class="price-desc">Thorough support from the beginning: build your narrative from scratch, go through multiple rounds of document feedback, shortlist universities, and prepare for interviews.</p>
+                <div class="price-valid">Valid 180 days from purchase</div>
+            </div>
+
+            <div class="price-card fade-up">
+                <div class="price-sessions">10 Sessions</div>
+                <span class="price-save">Save 14.53%</span>
+                <div class="price-amount">£469.99</div>
+                <p class="price-desc">For students working on multiple applications at once, such as university and scholarship applications side by side, each with their own essays and deadlines.</p>
+                <div class="price-valid">Valid 12 months from purchase</div>
+            </div>
+
+        </div>
+        <p class="price-note">Session validity periods are strictly observed. Sessions not used within the validity window from your purchase date are forfeited, so choose a package that matches your actual timeline and book early.</p>
+        </div>
+
+        <div class="service-block">
+        <div class="service-head">
+            <span class="service-num">Service 02</span>
+            <div class="service-head-text">
+                <h3>Document Review: No Session Booking Required</h3>
+                <p>Detailed, mentor-led written feedback on your documents. No live session to schedule. Once you submit, a mentor who has been through the same scholarship or application reviews your work and returns comments within 7 working days.</p>
+            </div>
+        </div>
+        <div class="doc-review-grid">
+            <div class="doc-card fade-up">
+                <h3>CV and Statement of Purpose / Personal Essay</h3>
+                <div class="doc-price">£49.99</div>
+                <p>Both documents reviewed together by a mentor who has been through your target scholarship or programme, covering structure, content, how clearly your story comes through, and how well it speaks to your target application.</p>
+                <div class="doc-turnaround">Returned within 7 working days</div>
+            </div>
+            <div class="doc-card fade-up">
+                <h3>Scholarship, Writing Sample &amp; Research Proposal Review</h3>
+                <div class="doc-price">Tailored Pricing</div>
+                <p>For major scholarship applications, including Chevening, Gates Cambridge, Commonwealth, Rhodes, Fulbright and Fulbright-Nehru, Inlaks Foundation, Erasmus Mundus, Weidenfeld-Hoffmann, Mastercard Foundation, university scholarships, PhD proposals, and writing samples, your reviewer brings first-hand experience of that exact award.</p>
+                <div class="doc-turnaround">Write to us with your scholarship name and we'll confirm cost</div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="comparison" class="section-pad">
+    <div class="container">
+        <div class="comparison-hd">
+            <span class="label" style="justify-content:center;">Business Model &amp; Positioning</span>
+            <h2 class="fade-up">Free mentorship isn't always sustainable. Expensive mentorship isn't always accessible.</h2>
+            <p class="fade-up">TAL is built for sustainable impact: a modest fee creates commitment from both students and mentors, mentors stay engaged throughout the admissions cycle, and personalised support is provided at a fraction of traditional consultancy costs.</p>
+        </div>
+        <div class="comparison-scroll">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Free Communities</th>
+                        <th>Traditional Consultancies</th>
+                        <th>Premium Consultancies</th>
+                        <th class="tal-col">TAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Cost</th>
+                        <td>Free</td>
+                        <td>Moderate</td>
+                        <td>High (above £1,000)</td>
+                        <td class="tal-col">Affordable (£54.99/hr)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Personalisation</th>
+                        <td>Inconsistent</td>
+                        <td>Limited</td>
+                        <td>High</td>
+                        <td class="tal-col">High</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Mentors</th>
+                        <td>Volunteer-based</td>
+                        <td>Consultants</td>
+                        <td>Professional consultants</td>
+                        <td class="tal-col">Peer mentors who've achieved the same opportunities</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Incentives</th>
+                        <td>Volunteer availability</td>
+                        <td>Often commission-driven</td>
+                        <td>Client fees</td>
+                        <td class="tal-col">Student outcomes</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Continuity</th>
+                        <td>Can be inconsistent</td>
+                        <td>Transactional</td>
+                        <td>High</td>
+                        <td class="tal-col">End-to-end support</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- PROMISE -->
+<section id="promise" class="section-pad">
+    <div class="container">
+        <div class="promise-hd">
+            <span class="label">Our Promise</span>
+            <h2 class="fade-up">What you can expect from every TAL mentor.</h2>
+        </div>
+        <div class="promise-grid">
+            <div class="promise-point fade-up">
+                <div class="promise-num">1</div>
+                <div>
+                    <h4>They have been where you are</h4>
+                    <p>Our mentors have navigated similar applications, often to the same scholarships and institutions, with journeys that closely reflect your own starting point.</p>
+                </div>
+            </div>
+            <div class="promise-point fade-up">
+                <div class="promise-num">2</div>
+                <div>
+                    <h4>Honest, not just encouraging</h4>
+                    <p>TAL mentors will tell you what actually needs to change, not just what sounds good. The most useful feedback is not always the most comfortable.</p>
+                </div>
+            </div>
+            <div class="promise-point fade-up">
+                <div class="promise-num">3</div>
+                <div>
+                    <h4>Reliable and responsive</h4>
+                    <p>Sessions are booked directly with your mentor. Document reviews come back within 7 working days. If something doesn't work, we sort it out.</p>
+                </div>
+            </div>
+            <div class="promise-point fade-up">
+                <div class="promise-num">4</div>
+                <div>
+                    <h4>We stay with you after your offer</h4>
+                    <p>Once you secure your place, you join the TAL peer and alumni network, and when you're ready, we hope you'll return as a mentor yourself.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUSTED -->
+<section id="trusted" class="section-pad">
+    <div class="container">
+        <div class="trusted-hd">
+            <span class="label" style="justify-content:center;">Track Record</span>
+            <h2 class="fade-up">Our mentors have supported applications to leading awards and institutions.</h2>
+            <p class="fade-up"><strong class="stat-hl">150+</strong> mentors, <strong class="stat-hl">£2M+</strong> in scholarships secured, and a <strong class="stat-hl">94%</strong> success rate for 1:1 mentorship.</p>
+        </div>
+        <div class="badge-divider">Scholarships &amp; Fellowships</div>
+        <div class="badge-row">
+            <span class="badge-pill">Chevening</span>
+            <span class="badge-pill">Gates Cambridge</span>
+            <span class="badge-pill">Commonwealth</span>
+            <span class="badge-pill">Rhodes</span>
+            <span class="badge-pill">Fulbright &amp; Fulbright-Nehru</span>
+            <span class="badge-pill">Inlaks Foundation</span>
+            <span class="badge-pill">Erasmus Mundus</span>
+            <span class="badge-pill">Weidenfeld-Hoffmann</span>
+            <span class="badge-pill">Mastercard Foundation</span>
+        </div>
+        <div class="badge-divider">Universities</div>
+        <div class="badge-row">
+            <span class="badge-pill">Cambridge</span>
+            <span class="badge-pill">Oxford</span>
+            <span class="badge-pill">King's College London</span>
+            <span class="badge-pill">UCL</span>
+            <span class="badge-pill">Edinburgh</span>
+            <span class="badge-pill">LSE</span>
+            <span class="badge-pill">Toronto</span>
+            <span class="badge-pill">Melbourne</span>
+            <span class="badge-pill">NUS</span>
+            <span class="badge-pill">Stanford</span>
+            <span class="badge-pill">Sciences Po</span>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+    <div class="container">
+        <div class="reviews-hd">
+            <span class="label" style="justify-content:center;">What Our Mentees Say</span>
+            <h2 class="fade-up">Do not take our word for it.</h2>
+        </div>
+        <div class="review-grid">
+            <div class="review-card fade-up">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">What sets The Application Lab apart is their near-peer approach. Being mentored by someone who actually speaks your academic language and has recently walked in your shoes changes the game.</p>
+                <span class="review-name">Hrishikesh Suryawanshi</span>
+                <span class="review-source">Verified Google Review</span>
+            </div>
+            <div class="review-card fade-up">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">TAL has been an incredible support system for students aspiring to pursue Master's and PhD programs, especially for those who rely heavily on funding opportunities. I am truly grateful for their guidance.</p>
+                <span class="review-name">Shraddha Gogoi</span>
+                <span class="review-source">Verified Google Review</span>
+            </div>
+            <div class="review-card fade-up">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Kanupriya and Vishal have been amazing with their support, responding to questions with patience, empathy, and accuracy which goes a long way in alleviating the anxiety that comes with a process like this.</p>
+                <span class="review-name">Gokul Prabhu</span>
+                <span class="review-source">Verified Google Review</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <div class="container">
+        <div class="faq-hd">
+            <span class="label" style="justify-content:center;">Questions</span>
+            <h2 class="fade-up">A few things people ask before booking.</h2>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Will my mentor write my essays?</summary>
+                <p>No, and we would not help if you asked. They will tell you what is working, what a panel will actually take from a paragraph, and what is missing. The writing stays yours.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What if the mentor is not right for me?</summary>
+                <p>That is what the second call is for: you meet them for 20 minutes and decide before any money changes hands. If it stops working later, tell us and we will move you. You do not lose sessions over a bad match.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Which package should I choose?</summary>
+                <p>Book the call and ask. We would rather sell you four sessions you use than ten you do not.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What happens if I do not use my sessions in time?</summary>
+                <p>They expire at the end of the validity period, so pick a package that matches your timeline. If something significant changes, write to us before it runs out.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- BOOK CALL -->
+<section id="book">
+    <div class="book-hd">
+        <span class="label" style="justify-content:center;">Your Next Step</span>
+        <h2 class="fade-up">Ready to get started? Book your free discovery call.</h2>
+        <p class="fade-up">Pick a time that works for you and we'll confirm your mentor match on the call. If you are unsure which package is right for you, just say so and we will help you figure it out.</p>
+        <a href="#" class="btn btn-blue js-book-cta" target="_blank" rel="noopener noreferrer" style="margin-top:8px;">Book Your Free Discovery Call</a>
+    </div>
+    <p class="book-alt">Prefer email? Write to us directly at <a href="mailto:info@theapplicationlab.com">info@theapplicationlab.com</a></p>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="background:#080f18; padding:56px 7% 0;">
+  <div style="max-width:1180px; margin:0 auto;">
+    <div style="margin-bottom:20px;">
+      <img src="logo.png" alt="The Application Lab" width="1920" height="1080" style="height:80px; display:block; max-width:320px; object-fit:contain; filter:brightness(0) invert(1);"/>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:22px 0; flex-wrap:wrap; gap:8px; border-top:1px solid rgba(255,255,255,0.07); margin-top:24px;">
+      <span style="font-size:0.68rem; color:rgba(255,255,255,0.2);">© 2026 The Application Lab. All rights reserved.</span>
+      <span style="font-size:0.68rem; color:rgba(255,255,255,0.2);">Edspire Labs Ltd &nbsp;·&nbsp; Company No. 16751243 &nbsp;·&nbsp; Cambridge, UK</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const BOOKING_URL = "https://outlook.office.com/bookwithme/user/aa732f2216a24407a0ba2a8c2a003860@theapplicationlab.com/meetingtype/3Mx1flBkTUqpZQTp8olMcQ2?bookingcode=2d99210e-da9c-4497-bb7d-d057f6ec674b&anonymous&ismsaljsauthenabled&ep=mlink";
+document.querySelectorAll('.js-book-cta').forEach(a => a.href = BOOKING_URL);
+
+const burger = document.getElementById('mob-burger');
+const mobMenu = document.getElementById('mob-menu');
+if (burger && mobMenu) {
+  burger.addEventListener('click', function() {
+    const isOpen = mobMenu.style.display === 'flex';
+    mobMenu.style.display = isOpen ? 'none' : 'flex';
+  });
+  mobMenu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() { mobMenu.style.display = 'none'; });
+  });
+}
+
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+</script>
+
+</body>
+</html>

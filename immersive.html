@@ -498,7 +498,8 @@
     <a href="index.html#how">How It Works</a>
     <a href="index.html#founders">Founders</a>
     <a href="immersive.html" class="nav-active">The Immersive Lab</a>
-    <a href="apply.html" class="nav-cta-link">Apply Now</a>
+    <a href="mentorship.html">Pricing</a>
+    <a href="#" class="js-book-cta nav-cta-link" target="_blank" rel="noopener noreferrer">Book your free discovery call</a>
   </nav>
 
   <button id="mob-burger" aria-label="Open menu">
@@ -512,7 +513,8 @@
   <a href="index.html#how">How It Works</a>
   <a href="index.html#founders">Founders</a>
   <a href="immersive.html" class="mob-active">The Immersive Lab</a>
-  <a href="apply.html" class="mob-cta">Apply Now</a>
+  <a href="mentorship.html">Pricing</a>
+  <a href="#" class="js-book-cta mob-cta" target="_blank" rel="noopener noreferrer">Book your free discovery call</a>
 </div>
 
 <main>
@@ -866,6 +868,9 @@
 </footer>
 
 <script>
+const BOOKING_URL = "https://outlook.office.com/bookwithme/user/aa732f2216a24407a0ba2a8c2a003860@theapplicationlab.com/meetingtype/3Mx1flBkTUqpZQTp8olMcQ2?bookingcode=2d99210e-da9c-4497-bb7d-d057f6ec674b&anonymous&ismsaljsauthenabled&ep=mlink";
+document.querySelectorAll('.js-book-cta').forEach(a => a.href = BOOKING_URL);
+
 const burger = document.getElementById('mob-burger');
 const mobMenu = document.getElementById('mob-menu');
 

@@ -4,5 +4,6 @@ Disallow: /linkedin-iman.html
 Disallow: /linkedin-rhodes.html
 Disallow: /linkedin-shubham.html
 Disallow: /leaflet-rhodes.html
+Disallow: /brochure.html
 
 Sitemap: https://www.theapplicationlab.com/sitemap.xml
