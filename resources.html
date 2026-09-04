@@ -145,6 +145,13 @@
         .collection-hd p { font-size: 0.94rem; color: var(--muted); max-width: 560px; margin: 0; }
         .collection-tag { flex-shrink: 0; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); background: var(--blue-050); border: 1px solid rgba(46,139,192,0.25); border-radius: 20px; padding: 6px 14px; white-space: nowrap; }
 
+        .video-feature { max-width: 720px; margin: 0 auto 32px; text-align: center; }
+        .video-label { display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); background: var(--blue-050); border: 1px solid rgba(46,139,192,0.25); border-radius: 20px; padding: 5px 14px; margin-bottom: 14px; }
+        .video-feature h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: 8px; }
+        .video-feature p { font-size: 0.88rem; color: var(--muted); margin-bottom: 20px; }
+        .video-embed { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 34px rgba(15,30,53,0.14); }
+        .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
         .dl-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
         .dl-card {
             display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border);
@@ -357,6 +364,16 @@
         </div>
         <span class="collection-tag">5 Guides · Free</span>
     </div>
+
+    <div class="video-feature">
+        <span class="video-label">Free Webinar</span>
+        <h3>Unlocking the Chevening Scholarship: Strategy, Stories, Success</h3>
+        <p>Three Chevening Scholars share what actually worked in their applications, hosted by The Application Lab.</p>
+        <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/W14vM16_Hu8?si=itS-QaQeyQCsFDgG" title="Unlocking the Chevening Scholarship: Strategy, Stories, Success | 3 Scholars Share What Works" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </div>
+
     <div class="dl-grid">
         <div class="dl-card">
             <span class="dl-num">Guide 1 / 5</span>
