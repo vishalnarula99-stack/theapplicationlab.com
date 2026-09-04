@@ -137,20 +137,35 @@
         .dark-section .callout-rule { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.18); color: #fff; }
         .dark-section .callout-rule strong.tag { background: var(--blue); }
 
-        /* DOWNLOADS GRID */
-        .dl-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 8px; }
+        /* COLLECTION BLOCK (reusable pattern for each resource category) */
+        .collection-block { max-width: 1100px; margin: 0 auto; padding: 56px 24px; border-bottom: 1px solid var(--border); }
+        .collection-hd { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
+        .collection-hd .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+        .collection-hd h2 { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--navy); font-size: clamp(1.4rem, 2.7vw, 1.8rem); letter-spacing: -0.5px; margin-bottom: 8px; }
+        .collection-hd p { font-size: 0.94rem; color: var(--muted); max-width: 560px; margin: 0; }
+        .collection-tag { flex-shrink: 0; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); background: var(--blue-050); border: 1px solid rgba(46,139,192,0.25); border-radius: 20px; padding: 6px 14px; white-space: nowrap; }
+
+        .dl-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
         .dl-card {
             display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border);
-            border-top: 3px solid var(--blue); border-radius: 4px; padding: 18px 16px; text-decoration: none;
+            border-top: 3px solid var(--blue); border-radius: 4px; padding: 18px 16px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .dl-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(15,30,53,0.12); }
         .dl-num { font-family: 'Lora', serif; font-style: italic; font-weight: 600; font-size: 0.8rem; color: var(--blue); margin-bottom: 8px; }
         .dl-title { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
-        .dl-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; margin-bottom: 14px; flex: 1; }
-        .dl-btn { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); }
+        .dl-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; margin-bottom: 16px; flex: 1; }
+        .dl-actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 12px; border-top: 1px solid var(--border); }
+        .dl-actions a.dl-read { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--blue); text-decoration: none; }
+        .dl-actions a.dl-read:hover { text-decoration: underline; }
+        .dl-actions a.dl-pdf { font-size: 0.68rem; font-weight: 600; color: var(--muted); text-decoration: none; }
+        .dl-actions a.dl-pdf:hover { color: var(--navy); }
         @media (max-width: 900px) { .dl-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 480px) { .dl-grid { grid-template-columns: 1fr; } }
+
+        /* MORE COLLECTIONS PLACEHOLDER */
+        .more-collections { max-width: 1100px; margin: 0 auto; padding: 40px 24px; text-align: center; }
+        .more-collections p { font-size: 0.86rem; color: var(--muted); }
 
         /* PATTERNS OVERVIEW GRID */
         .patterns-intro { font-size: 0.97rem; color: var(--body-text); margin-bottom: 24px; }
@@ -312,490 +327,93 @@
     <div class="hero-guide-inner">
         <span class="kicker">Free Resources · The Application Lab</span>
         <h1>Free Guides for Your Application</h1>
-        <p class="byline">Free, downloadable resources built by TAL mentors, starting with the complete Chevening essay guide series.</p>
+        <p class="byline">Free resources built by TAL mentors. Browse by collection below — we add more over time.</p>
         <p class="org">The Application Lab</p>
     </div>
 </section>
 
 <div id="facts">
     <div class="facts-strip">
-        <div><strong>5</strong><span>Free PDF Guides</span></div>
-        <div><strong>4</strong><span>Chevening Essays Covered</span></div>
+        <div><strong>1</strong><span>Collection Live</span></div>
+        <div><strong>5</strong><span>Chevening Guides</span></div>
         <div><strong>£0</strong><span>Cost, No Sign-Up</span></div>
-        <div><strong>More</strong><span>Guides Added Over Time</span></div>
+        <div><strong>More</strong><span>Collections Coming</span></div>
     </div>
 </div>
 
-<section id="downloads" style="max-width:1100px; margin:0 auto; padding:56px 24px 8px;">
-    <span style="display:flex; align-items:center; gap:10px; font-size:0.66rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:14px;">Free Resource Library</span>
-    <h2 style="font-family:'Montserrat',sans-serif; font-weight:800; color:var(--navy); font-size:clamp(1.4rem,2.7vw,1.8rem); letter-spacing:-0.5px; margin-bottom:12px;">The Chevening Essay Guides</h2>
-    <p class="patterns-intro">Five free PDFs covering the strategy behind a winning application and all four essays. Download any of them below, or read the full breakdown online further down this page.</p>
+<!-- ============================================================ -->
+<!-- COLLECTION: Chevening Scholarship                              -->
+<!-- To add a new collection later (Videos, Other Scholarships,     -->
+<!-- CV & SOP Guides), duplicate this <section class="collection-   -->
+<!-- block"> block, give it a new id, and reuse the .dl-grid /       -->
+<!-- .dl-card pattern for its resource cards.                       -->
+<!-- ============================================================ -->
+<section class="collection-block" id="chevening">
+    <div class="collection-hd">
+        <div>
+            <span class="eyebrow">Scholarship Guide</span>
+            <h2>Chevening Scholarship</h2>
+            <p>Five free guides covering the strategy behind a winning application and all four essays — read online or download as a PDF.</p>
+        </div>
+        <span class="collection-tag">5 Guides · Free</span>
+    </div>
     <div class="dl-grid">
-        <a class="dl-card" href="resources/TAL-Chevening-Guide-1-General-Guide.pdf" target="_blank" rel="noopener">
+        <div class="dl-card">
             <span class="dl-num">Guide 1 / 5</span>
             <span class="dl-title">General Guide</span>
             <span class="dl-desc">What Chevening is actually funding, the evidence rules, and the golden thread across all four essays.</span>
-            <span class="dl-btn">Download PDF ↓</span>
-        </a>
-        <a class="dl-card" href="resources/TAL-Chevening-Guide-2-Leadership.pdf" target="_blank" rel="noopener">
+            <div class="dl-actions">
+                <a class="dl-read" href="resources/chevening/general-guide.html">Read Guide →</a>
+                <a class="dl-pdf" href="resources/chevening/general-guide.pdf" target="_blank" rel="noopener">PDF ↓</a>
+            </div>
+        </div>
+        <div class="dl-card">
             <span class="dl-num">Guide 2 / 5</span>
             <span class="dl-title">Essay 1: Leadership</span>
             <span class="dl-desc">Choosing, structuring and writing the leadership essay with the STARL method and two worked examples.</span>
-            <span class="dl-btn">Download PDF ↓</span>
-        </a>
-        <a class="dl-card" href="resources/TAL-Chevening-Guide-3-Relationship-Building.pdf" target="_blank" rel="noopener">
+            <div class="dl-actions">
+                <a class="dl-read" href="resources/chevening/essay-1-leadership.html">Read Guide →</a>
+                <a class="dl-pdf" href="resources/chevening/essay-1-leadership.pdf" target="_blank" rel="noopener">PDF ↓</a>
+            </div>
+        </div>
+        <div class="dl-card">
             <span class="dl-num">Guide 3 / 5</span>
             <span class="dl-title">Essay 2: Relationships</span>
             <span class="dl-desc">Turning a professional relationship into evidence of influence, not just a contact list.</span>
-            <span class="dl-btn">Download PDF ↓</span>
-        </a>
-        <a class="dl-card" href="resources/TAL-Chevening-Guide-4-Course-Choice.pdf" target="_blank" rel="noopener">
+            <div class="dl-actions">
+                <a class="dl-read" href="resources/chevening/essay-2-relationship-building.html">Read Guide →</a>
+                <a class="dl-pdf" href="resources/chevening/essay-2-relationship-building.pdf" target="_blank" rel="noopener">PDF ↓</a>
+            </div>
+        </div>
+        <div class="dl-card">
             <span class="dl-num">Guide 4 / 5</span>
             <span class="dl-title">Essay 3: Course Choice</span>
             <span class="dl-desc">Connecting your capability gap to a course, university and UK priority area, without naming a ranking.</span>
-            <span class="dl-btn">Download PDF ↓</span>
-        </a>
-        <a class="dl-card" href="resources/TAL-Chevening-Guide-5-Career-Plan.pdf" target="_blank" rel="noopener">
+            <div class="dl-actions">
+                <a class="dl-read" href="resources/chevening/essay-3-course-choice.html">Read Guide →</a>
+                <a class="dl-pdf" href="resources/chevening/essay-3-course-choice.pdf" target="_blank" rel="noopener">PDF ↓</a>
+            </div>
+        </div>
+        <div class="dl-card">
             <span class="dl-num">Guide 5 / 5</span>
             <span class="dl-title">Essay 4: Career Plan</span>
             <span class="dl-desc">Building a medium- and long-term impact plan that is specific, measurable and tied to Chevening.</span>
-            <span class="dl-btn">Download PDF ↓</span>
-        </a>
+            <div class="dl-actions">
+                <a class="dl-read" href="resources/chevening/essay-4-career-plan.html">Read Guide →</a>
+                <a class="dl-pdf" href="resources/chevening/essay-4-career-plan.pdf" target="_blank" rel="noopener">PDF ↓</a>
+            </div>
+        </div>
     </div>
 </section>
 
-<p style="text-align:center; font-size:0.86rem; color:var(--muted); margin:8px 0 8px;">Prefer to read online first? The full breakdown continues below.</p>
-
-<nav class="toc-wrap" aria-label="Table of contents">
-    <h2>In This Guide</h2>
-    <ul class="toc-list">
-        <li><a href="#s0">0. Why this guide exists</a></li>
-        <li><a href="#s1">1. What the shorter format changes</a></li>
-        <li><a href="#s2">2. The sub-question audit</a></li>
-        <li><a href="#s3">3. What kind of experience counts</a></li>
-        <li><a href="#s4">4. The eleven patterns<span class="toc-sub">P1–P11</span></a></li>
-        <li><a href="#s5">5. Word budgets at 300 words</a></li>
-        <li><a href="#s6">6. Compression</a></li>
-        <li><a href="#s7">7. Red flags</a></li>
-        <li><a href="#s8">8. Pre-submit checklist</a></li>
-        <li><a href="#s9">9. Scoring rubric</a></li>
-    </ul>
-</nav>
-
-<div class="guide-layout">
-<nav class="guide-sidebar" aria-label="Section navigation">
-    <h2>In This Guide</h2>
-    <ul>
-        <li><a href="#s0" data-nav>0. Why this guide exists</a></li>
-        <li><a href="#s1" data-nav>1. What the shorter format changes</a></li>
-        <li><a href="#s2" data-nav>2. The sub-question audit</a></li>
-        <li><a href="#s3" data-nav>3. What kind of experience counts</a></li>
-        <li><a href="#s4" data-nav>4. The eleven patterns</a></li>
-        <li><a href="#s5" data-nav>5. Word budgets at 300 words</a></li>
-        <li><a href="#s6" data-nav>6. Compression</a></li>
-        <li><a href="#s7" data-nav>7. Red flags</a></li>
-        <li><a href="#s8" data-nav>8. Pre-submit checklist</a></li>
-        <li><a href="#s9" data-nav>9. Scoring rubric</a></li>
-    </ul>
-</nav>
-<article class="guide-main">
-
-<section class="guide-section" id="s0">
-    <span class="section-label">Section 0</span>
-    <h2>Why this guide exists</h2>
-    <p class="lede">The new essay format is close to a black box.</p>
-    <p>Chevening rewrote the questions and cut the length of each answer by roughly half. Nobody outside the reading committees knows how the four areas are weighted against each other, how a strong answer in one area offsets a weak answer in another, or where the line sits between shortlisted and not. Chevening states only that the four areas are equally weighted and that the essays give the first impression of who you are.</p>
-    <p>That leaves applicants in a difficult position. Four answers, sixteen sub-questions, and a few hundred words in total to separate yourself from tens of thousands of capable people who also care about their country and also want to study in the UK. On that amount of evidence, no reader can reliably measure one applicant against another on the strength of their ideas alone. What a reader can do is notice structure: whether the questions were answered, whether the claims are checkable, whether the four answers describe one person.</p>
-    <p>So rather than guess at the scoring, we did the only thing available. We read a number of successful essay sets, across different countries, different subjects and different career stages, and looked for what they have in common. This guide is that list.</p>
-    <p><strong>How to read the observations below.</strong> Everything here is drawn from sets that worked. Where the guide points out a weakness, it is a weakness that appeared in a set that succeeded anyway. Those are the most useful places to look, because they are the cheapest ways for you to be better than the benchmark rather than merely equal to it.</p>
-    <p><strong>What is anonymised.</strong> No applicant, institution, country, academic, organisation or case is identified anywhere in this document. Every worked example is an invented composite written to illustrate a structural point. Nothing is quoted or adapted from a real application.</p>
-</section>
-
-<section class="guide-section alt-bg" id="s1">
-    <span class="section-label">Section 1</span>
-    <h2>What the shorter format actually changes</h2>
-    <p>Each answer now runs to roughly three hundred words, down from five hundred. Confirm the live limit inside the application portal, because Chevening does not publish word limits on its public pages.</p>
-    <p>Almost every sample, template and past scholar guide circulating online was written for the longer format. Applicants who copy that structure overrun by half, then cut in a panic, and they almost always cut the wrong material. They keep the background and lose the outcome.</p>
-    <p>Three consequences follow, and they run through the rest of this guide.</p>
-    <ol>
-        <li><strong>Context becomes expensive.</strong> A paragraph explaining why your issue matters is now a sixth of your answer. The reader already knows it matters.</li>
-        <li><strong>A missing sub-question is fatal in a way it was not before.</strong> Four sub-questions and three hundred words means each one is worth about seventy five words. Skip one and a quarter of the answer is absent.</li>
-        <li><strong>Reflection has to shrink to a single line.</strong> Long closing passages about what leadership means were affordable at five hundred words. They are not affordable now.</li>
-    </ol>
-</section>
-
-<section class="guide-section" id="s2">
-    <span class="section-label">Section 2</span>
-    <h2>Start here: the sub-question audit</h2>
-    <p>This is the cheapest mark on the whole application, and successful sets still drop it.</p>
-    <p>Each of the four questions carries four explicit sub-questions. They are not stylistic prompts. They are the structure the reader marks against. Across the sets we studied, the same omissions recur.</p>
-    <p>One answer describes at length what the writer gained from a professional relationship and never states what the writer contributed to it. Another is asked what barriers the applicant will face and instead describes a difficulty in the policy field, with no mitigation offered. A third answers three sub-questions richly and disposes of the fourth in one generic sentence.</p>
-    <p>Before you edit anything else, paste the sub-questions above each draft and mark in the draft where each one is answered.</p>
-    <div class="table-scroll">
-    <table>
-        <thead>
-            <tr><th>Question</th><th>First</th><th>Second</th><th>Third</th><th>Fourth</th></tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">Leadership</th>
-                <td>Context or challenge</td><td>Your specific actions</td><td>Outcome and what you learned</td><td>How it shaped your approach</td>
-            </tr>
-            <tr>
-                <th scope="row">Relationship</th>
-                <td>How it formed and why it mattered</td><td><strong>What you contributed</strong> and what you gained</td><td>How you sustained or developed it</td><td>How this helps you in the Chevening community</td>
-            </tr>
-            <tr>
-                <th scope="row">Course choice</th>
-                <td>The priority area</td><td>How the course equips you</td><td>Why this university</td><td>How you will apply it immediately</td>
-            </tr>
-            <tr>
-                <th scope="row">Career plan</th>
-                <td>Impact at home</td><td>Link to your course and the priority</td><td><strong>Barriers and how you will overcome them</strong></td><td>How Chevening helps</td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
-    <p>The two in bold are the ones applicants skip most often.</p>
-    <p>If a sentence in your draft cannot be assigned to a sub-question, it is decoration and it goes.</p>
-</section>
-
-<section class="guide-section dark-section" id="s3">
-    <span class="section-label">Section 3</span>
-    <h2>What kind of experience counts</h2>
-    <p>Two things are true at once here, and applicants usually only hear the first.</p>
-    <p><strong>Certain kinds of experience make the essays easier to write.</strong> Across successful sets, a pattern is visible in the raw material. Work in the impact sector, a competitive fellowship, a research or advisory role attached to a named institution, a secondment into government or a policy body: these supply exactly what the four questions ask for. They come with a named beneficiary, a named counterpart, a defined problem, a formal role and an outcome someone else can verify. An applicant who has held a fellowship does not have to construct standing. The role already gave it to them.</p>
-    <p><strong>But the selection is not confined to those fields.</strong> Engineers are selected. So are clinicians, accountants, teachers, journalists and people running small businesses. Nothing in the questions asks what sector you work in. This guide is deliberately subject agnostic, and so is the award.</p>
-    <p>What actually separates usable experience from unusable experience is not the field. It is whether your work passes three tests.</p>
-    <ul>
-        <li><strong>A beneficiary you can name.</strong> Not "the public" or "the industry". A group, a community, a category of user, a set of institutions.</li>
-        <li><strong>A change you can point to.</strong> Something that is different now because you did the work, and that would still be different if you left.</li>
-        <li><strong>A counterpart who can confirm it.</strong> A ministry, a regulator, a utility, an employer, a partner organisation, a named team.</li>
-    </ul>
-    <p>Any background can pass these tests once it is described in the right terms. Two composite examples, used throughout the rest of this guide, show the same structure in very different fields.</p>
-    <p><strong>Composite one, policy.</strong> Someone working on access to crop insurance claims for smallholder farmers. Beneficiary: farmers whose claims were rejected on documentation grounds. Change: a revised claims form adopted by the state agency. Counterpart: the agency and a farmers' association.</p>
-    <p><strong>Composite two, technical.</strong> A water utility engineer working on losses in a distribution network. Beneficiary: households in districts receiving intermittent supply. Change: a leak detection protocol now used across the utility's zones, and supply hours restored in the pilot district. Counterpart: the utility and the municipal authority.</p>
-    <p>The engineer's material is exactly as strong as the policy specialist's, and stronger than a policy specialist who can only describe reports written and meetings attended. The mistake technical applicants make is describing the system they built rather than the people it served. The mistake policy applicants make is describing the issue rather than what they personally changed about it.</p>
-    <div class="callout callout-rule">
-        <p><strong class="tag">The translation test</strong>Write one sentence in this form: <em>"Because of work I led, [named group] now [specific difference], and [named institution] can confirm it."</em> If you cannot complete that sentence, choose a different example before you write a single paragraph.</p>
-    </div>
-</section>
-
-<section class="guide-section" id="s4">
-    <span class="section-label">Section 4</span>
-    <h2>The eleven patterns</h2>
-    <p class="patterns-intro">Eleven structural moves that recur across successful sets. Jump to any one, or read them in order below.</p>
-    <div class="patterns-grid">
-        <a class="pattern-card" href="#p1"><span class="pnum">P1</span><span class="ptitle">Standing before observation</span></a>
-        <a class="pattern-card" href="#p2"><span class="pnum">P2</span><span class="ptitle">One thread, four altitudes</span></a>
-        <a class="pattern-card" href="#p3"><span class="pnum">P3</span><span class="ptitle">The ladder of scale</span></a>
-        <a class="pattern-card" href="#p4"><span class="pnum">P4</span><span class="ptitle">The correction loop</span></a>
-        <a class="pattern-card" href="#p5"><span class="pnum">P5</span><span class="ptitle">Artefacts, not percentages</span></a>
-        <a class="pattern-card" href="#p6"><span class="pnum">P6</span><span class="ptitle">Reciprocity is the answer</span></a>
-        <a class="pattern-card" href="#p7"><span class="pnum">P7</span><span class="ptitle">Prior contact beats admiration</span></a>
-        <a class="pattern-card" href="#p8"><span class="pnum">P8</span><span class="ptitle">Claimed specificity</span></a>
-        <a class="pattern-card" href="#p9"><span class="pnum">P9</span><span class="ptitle">Anchor to the bilateral relationship</span></a>
-        <a class="pattern-card" href="#p10"><span class="pnum">P10</span><span class="ptitle">Choose the right barrier</span></a>
-        <a class="pattern-card" href="#p11"><span class="pnum">P11</span><span class="ptitle">Lesson as positioning</span></a>
-    </div>
-
-    <h3 id="p1">P1. Standing before observation</h3>
-    <p>Strong openings put the writer inside the problem. This does not require having suffered it. Standing arrives three ways.</p>
-    <ul>
-        <li><strong>Lived experience.</strong> You were personally denied the thing you now work on.</li>
-        <li><strong>Diagnosis.</strong> You were the person who found the problem. One set opens with a survey the writer ran which revealed which waste stream was largest, and the initiative follows directly from their own finding. That is standing earned by attention rather than by hardship.</li>
-        <li><strong>Position with proximity.</strong> You hold a role that puts you close enough to see what others miss.</li>
-    </ul>
-    <p>What fails is observation. "I saw that many people were unaware of the benefits available to them." Everyone saw that.</p>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>The first thirty words must establish why you, and not a competent stranger, are the person solving this problem. Standing cannot be concern, and it cannot be sympathy.</p></div>
-
-    <h3 id="p2">P2. One thread, four altitudes</h3>
-    <p>The strongest sets carry a single thread through all four answers and change only the altitude.</p>
-    <div class="table-scroll">
-    <table>
-        <thead><tr><th>Essay</th><th>Altitude</th><th>Composite one, policy</th><th>Composite two, technical</th></tr></thead>
-        <tbody>
-            <tr><th scope="row">Leadership</th><td>Individual to institutional</td><td>One rejected claim, then claims data published</td><td>One district's supply restored</td></tr>
-            <tr><th scope="row">Relationship</th><td>Peer coalition</td><td>A shared assessment protocol adopted by the agency</td><td>A detection method adopted across the utility</td></tr>
-            <tr><th scope="row">Course</th><td>Theory acquisition</td><td>Two named modules in policy evaluation</td><td>Two named modules in water systems and regulation</td></tr>
-            <tr><th scope="row">Career</th><td>Systems ownership</td><td>A national claims monitoring system</td><td>A national loss reduction standard</td></tr>
-        </tbody>
-    </table>
-    </div>
-    <p>The thread does not have to be a single subject. Three things can carry it, in descending order of strength.</p>
-    <ul>
-        <li><strong>An object.</strong> The same problem at four scales. Strongest, because the reader closes the file holding one person with one mission.</li>
-        <li><strong>A place.</strong> Different work, same region, with that region's specific condition named. One successful set does this: an early project and a long term goal sit in the same province, and the damage to that province is described concretely. It works, but the reader has to hold two subjects at once.</li>
-        <li><strong>A lens.</strong> The same analytical stance applied to different objects. Weakest, and it only survives if you name the lens explicitly.</li>
-    </ul>
-    <p>What fails is drift: four competent projects with no stated relationship, leaving the reader to do the joining. Readers do not do the joining.</p>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>Write your thread as one sentence before drafting. If you cannot, you do not have four essays. You have four anecdotes.</p></div>
-
-    <h3 id="p3">P3. The ladder of scale</h3>
-    <p>Strong leadership answers are visible ladders. One person helped directly, then dozens through a service that keeps running, then institutions trained or changed, then a national effect. One set shows a pilot with two groups growing to twelve. Another shows one individual, then a hundred, then a set of district offices.</p>
-    <p>This does what no adjective can. It proves you scale what you build. Chevening is not funding what you have already done. It is funding the next rung, and the ladder is what lets the reader see it.</p>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>Show at least two rungs, and make one of them a single individual. The smallest rung is also the most human.</p></div>
-
-    <h3 id="p4">P4. The correction loop</h3>
-    <p>This is the most underused move, and the one that most reliably separates a strong leadership answer from a merely competent one.</p>
-    <p>One successful leadership essay is a chain of things going wrong and being fixed. The community partners raise a concern about unreliable supply and late payment, so the writer maps suppliers and builds a logistics channel. The pilot works, but the product range is too narrow, so they run skills workshops. The range widens, but there is no reliable buyer, so they connect the group to a market platform. Four adaptation cycles in one paragraph.</p>
-    <p>A committee cannot assess judgement from a plan that worked first time. They can assess it from a plan that broke and was repaired. It is also the most efficient use of three hundred words, because each loop carries a problem, a decision and a result in about twenty five words.</p>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>Name at least one thing that went wrong and what you changed in response. An essay in which nothing fails is an essay in which nothing is being tested.</p></div>
-
-    <h3 id="p5">P5. Outcomes as artefacts, not percentages</h3>
-    <p>The strongest outcomes are things that now exist in the world. A formal appointment. A dataset made public. A revised protocol written into official guidance. A logistics channel still operating. A co-authored publication. A service still running.</p>
-    <p>Weaker outcomes are metrics on their own. A twenty three per cent rise in awareness. An eighteen per cent rise in uptake. Percentages are contestable on attribution, unverifiable by the reader, and indistinguishable from four hundred other applications.</p>
-    <p>Two refinements are worth noting.</p>
-    <ul>
-        <li><strong>Small honest numbers beat large vague ones.</strong> One set reports first month revenue of a few thousand rupees. It is a modest figure stated plainly, and it reads as true, which makes the larger claim beside it credible too.</li>
-        <li><strong>Pair the number with the artefact that produced it.</strong> The number is evidence. The artefact is the thing that outlives you.</li>
-    </ul>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>At least one outcome in your set must be an artefact. Use one number, in the place where it does the most work, rather than five.</p></div>
-
-    <h3 id="p6">P6. Reciprocity is the whole relationship answer</h3>
-    <p>The strongest version states the exchange explicitly.</p>
-    <ul>
-        <li><strong>Formed.</strong> A specific professional setting.</li>
-        <li><strong>Gave.</strong> A method, capability, access or output the other party lacked.</li>
-        <li><strong>Gained.</strong> Something you demonstrably used later.</li>
-        <li><strong>Sustained by.</strong> A shared goal the parties named together.</li>
-        <li><strong>Produced.</strong> A joint output such as a protocol, a publication or a programme.</li>
-        <li><strong>Transferred.</strong> The same skills visibly reused in a later and different setting.</li>
-    </ul>
-    <p>Two failure modes recur. The first is a ladder of introductions, where a senior person introduces the writer to another senior person, which reads as access seeking. The second is a mentorship narrative: a genuinely impressive multi year relationship with a senior figure, described entirely in terms of what the writer received. Being taught, supervised and mentored is not relationship building, and the contribution sub-question goes unanswered.</p>
-    <p>The fix in that second case is usually small, because the material is already there. Co-authoring a chapter with someone is a contribution. Saying so converts the whole essay.</p>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>If you cannot name what you gave, either find it in what you already did, or choose a different relationship. And name the shared goal. Relationships sustained by keeping in touch score nothing.</p></div>
-
-    <h3 id="p7">P7. Prior contact beats admiration</h3>
-    <p>Two moves work, in order of strength.</p>
-    <ol>
-        <li><strong>Documented trajectory.</strong> You interned somewhere, were taught by someone, returned in a professional role under their supervision, and produced something jointly. Sequence and duration do the work, and no adjectives are needed.</li>
-        <li><strong>Prior engagement.</strong> You have corresponded, attended or contributed, and that is how you know the fit is real.</li>
-    </ol>
-    <p>What fails is admiration. "Professor X, whose work I have closely followed over the past few years." Following someone's work is reading. It says nothing about you that a library card does not.</p>
-    <p>Note the trap that catches strong applicants. One successful set demonstrates a real multi year professional relationship with an academic in the relationship answer, then in the course answer names three academics on the basis of admiration alone. The technique was already in the application. It simply was not applied twice.</p>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>Two named modules plus one line of evidence that you have engaged with the department beats any amount of "world leading". Write to an academic early. By the time you submit you have a fit argument rather than a compliment.</p></div>
-
-    <h3 id="p8">P8. Claimed specificity is worse than none</h3>
-    <p>One set writes that the course has "specific modules" in a named area, and then names none. This is worse than saying nothing, because it advertises that the writer knew specificity mattered and did not do the work. A reader who has seen the course handbook notices at once.</p>
-    <p>The same failure appears as a superlative standing in for a reason: "there is no better place than this university for me."</p>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>Never use the word specific without immediately being specific. Name the module. If you cannot name two modules from the handbook, you have not researched the course.</p></div>
-
-    <h3 id="p9">P9. Anchor to the bilateral relationship, not only the priority area</h3>
-    <p>Naming the UK priority area in Chevening's own words is the minimum. The stronger move, which only one set makes, is to go a level further and cite the published framework between the UK and your country, whether that is a bilateral vision statement, a roadmap, a partnership or a joint declaration, and show your priority sitting inside it.</p>
-    <p>Chevening is funded by the Foreign, Commonwealth and Development Office. The award exists to build relationships that serve a stated bilateral agenda. An applicant who shows that their work advances something both governments have already committed to in writing is not asking for a favour. They are offering to deliver something already on the list.</p>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>Find your country's current published framework with the UK. Quote the commitment your work sits under. One sentence, in the course answer.</p></div>
-
-    <h3 id="p10">P10. Choose the barrier the scholarship removes</h3>
-    <p>The barrier sub-question has two failure modes.</p>
-    <ul>
-        <li><strong>Naming a difficulty in the field.</strong> "Aligning the interests of farmers, government and international norms." That is the problem you want to work on, not an obstacle to you, and it usually arrives with no mitigation attached.</li>
-        <li><strong>Naming something money solves.</strong> Funding, time, access to material. True, but trivial and predictable.</li>
-    </ul>
-    <p>The strong version names something real and uncomfortable about how you will be received. That people like you are dismissed as biased, or lack institutional standing, or are structurally underrepresented in the rooms where decisions are made. The mitigation is credibility and network, which is exactly what Chevening supplies. The barrier answer then constructs the need for the award rather than listing hurdles.</p>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>Name a barrier that Chevening's legitimacy and network remove, not one its money removes. Then say how.</p></div>
-
-    <h3 id="p11">P11. The lesson is a positioning statement, not a platitude</h3>
-    <p>The most common ending across every set is a sentence about what leadership is. Leadership is about listening, adapting and building trust. A successful team is built on transparency and trust. These are true of everyone and are therefore evidence about no one, and at three hundred words they cost roughly a seventh of the answer.</p>
-    <p>Replace it with a sentence about how you will operate: what your role now is, given what you learned, and what that commits you to next.</p>
-    <div class="callout callout-rule"><p><strong class="tag">Rule</strong>If the closing line could appear in someone else's essay, delete it. If deleting it leaves you short, you cut the wrong thing earlier.</p></div>
-</section>
-
-<section class="guide-section alt-bg" id="s5">
-    <span class="section-label">Section 5</span>
-    <h2>Word budgets at three hundred words</h2>
-    <p>Drafting targets rather than rules. The consistent failure is over spending on context.</p>
-
-    <h3>Leadership</h3>
-    <div class="table-scroll">
-    <table>
-        <thead><tr><th>Section</th><th>Words</th><th>Must contain</th></tr></thead>
-        <tbody>
-            <tr><th scope="row">Standing and context</th><td>45</td><td>Why you rather than a competent stranger. One statistic at most</td></tr>
-            <tr><th scope="row">Your actions, as correction loops</th><td>120</td><td>First person singular. At least one thing that went wrong and what you changed</td></tr>
-            <tr><th scope="row">Outcome</th><td>75</td><td>An artefact that outlived the project, plus the smallest human rung</td></tr>
-            <tr><th scope="row">Lesson</th><td>40</td><td>A positioning statement, not a definition of leadership</td></tr>
-            <tr><th scope="row">How it shaped your approach</th><td>20</td><td>One clause, which can be folded into the lesson</td></tr>
-        </tbody>
-    </table>
-    </div>
-    <div class="callout callout-trap"><p><strong class="tag">Trap</strong>Drift into "we". If a paragraph has four instances of we and one of I, it is scoring for your team.</p></div>
-
-    <h3>Relationship building</h3>
-    <div class="table-scroll">
-    <table>
-        <thead><tr><th>Section</th><th>Words</th><th>Must contain</th></tr></thead>
-        <tbody>
-            <tr><th scope="row">How it formed and why it mattered</th><td>55</td><td>A specific setting, and the person's role rather than their reputation</td></tr>
-            <tr><th scope="row">What you contributed</th><td>60</td><td>A capability, method, access or output they lacked. Never skip this</td></tr>
-            <tr><th scope="row">What you gained</th><td>45</td><td>Something you demonstrably used later</td></tr>
-            <tr><th scope="row">How you sustained it</th><td>75</td><td>The shared goal, plus one joint output</td></tr>
-            <tr><th scope="row">Application to Chevening</th><td>65</td><td>A named niche rather than "people in my field"</td></tr>
-        </tbody>
-    </table>
-    </div>
-    <div class="callout callout-trap"><p><strong class="tag">Trap</strong>Describing a mentor. Being taught, supervised or introduced is not relationship building. If the relationship genuinely is a mentorship, lead with what you produced together.</p></div>
-
-    <h3>Course choice and global challenge</h3>
-    <div class="table-scroll">
-    <table>
-        <thead><tr><th>Section</th><th>Words</th><th>Must contain</th></tr></thead>
-        <tbody>
-            <tr><th scope="row">Priority area and bilateral anchor</th><td>60</td><td>The priority area in Chevening's words, plus the framework between the UK and your country</td></tr>
-            <tr><th scope="row">Why this course</th><td>80</td><td>Two named modules, each tied to a gap in you</td></tr>
-            <tr><th scope="row">Why this university</th><td>65</td><td>A named centre or institute, and named staff with evidence of contact</td></tr>
-            <tr><th scope="row">Immediate application</th><td>95</td><td>A first action, a place, and a named counterpart</td></tr>
-        </tbody>
-    </table>
-    </div>
-    <div class="callout callout-trap"><p><strong class="tag">Trap</strong>The university's reputation. The committee knows it is good. They are testing whether you know what is inside it.</p></div>
-
-    <h3>Career plan and impact</h3>
-    <div class="table-scroll">
-    <table>
-        <thead><tr><th>Section</th><th>Words</th><th>Must contain</th></tr></thead>
-        <tbody>
-            <tr><th scope="row">Medium term</th><td>65</td><td>Concrete, and continuous with what you already do</td></tr>
-            <tr><th scope="row">Long term</th><td>65</td><td>A named institution or programme you intend to work with</td></tr>
-            <tr><th scope="row">Home anchor</th><td>50</td><td>A named region and its specific condition, not the country in general</td></tr>
-            <tr><th scope="row">Barrier and mitigation</th><td>65</td><td>An obstacle to you, and how you clear it. Never skip this</td></tr>
-            <tr><th scope="row">What Chevening supplies</th><td>55</td><td>Named: the alumni network, the Chevening Fund, a specific programme</td></tr>
-        </tbody>
-    </table>
-    </div>
-    <div class="callout callout-trap"><p><strong class="tag">Trap</strong>Committing to an outcome you do not control. A national statistic is not a career plan, because no individual delivers it. Designing and running the system that tracks it is a career plan, because one person can own that.</p></div>
-</section>
-
-<section class="guide-section" id="s6">
-    <span class="section-label">Section 6</span>
-    <h2>Compression</h2>
-    <p>The discipline is simple. Context and reflection get cut. Action, correction and outcome stay.</p>
-    <div class="table-scroll">
-    <table>
-        <thead><tr><th>Keep</th><th>Cut or compress</th></tr></thead>
-        <tbody>
-            <tr><td>The moment that gives you standing</td><td>The opening paragraph explaining why the problem matters. Earn it, do not assert it</td></tr>
-            <tr><td>One statistic, as a clause</td><td>Your job title, your employer, and how you came to hold the role</td></tr>
-            <tr><td>Each correction loop: problem, decision, result</td><td>The narration between loops, such as "Then I researched ways to"</td></tr>
-            <tr><td>Institutions and numbers reached or changed</td><td>The mechanics of how a workshop or campaign was delivered</td></tr>
-            <tr><td>The one individual you helped directly</td><td>Any self description, such as "I see myself as a"</td></tr>
-            <tr><td>A one line positioning lesson</td><td>Every general statement about what leadership or teamwork is</td></tr>
-        </tbody>
-    </table>
-    </div>
-    <p>Four heuristics.</p>
-    <ol>
-        <li>Delete every sentence that explains why the problem matters.</li>
-        <li>Convert process into result. "After a year of fieldwork I shared my findings with the department" becomes "my findings led the department to".</li>
-        <li>Convert transitions into verbs. "Thus I organised capacity building workshops in collaboration with local colleges" becomes "so I ran skills workshops with two local colleges".</li>
-        <li>Replace descriptions with numbers. "A series of workshops" becomes "eighteen district offices".</li>
-    </ol>
-    <p>Cut the closing definition of leadership first. It is almost always the least load bearing forty words in the essay.</p>
-</section>
-
-<section class="guide-section dark-section" id="s7">
-    <span class="section-label">Section 7</span>
-    <h2>Red flags</h2>
-    <ul class="checklist">
-        <li>An unanswered sub-question. The most expensive and most fixable error.</li>
-        <li>The word specific followed by nothing specific.</li>
-        <li>A named academic attached only to "whose work I have followed".</li>
-        <li>A relationship answer that describes only what you received.</li>
-        <li>A barrier that is a problem in the world rather than an obstacle to you.</li>
-        <li>A closing sentence defining leadership, teamwork or collaboration.</li>
-        <li>Duplicated or pasted twice answers. More common than you would think, and immediately visible.</li>
-        <li>Typos in an essay about your own rigour. Read aloud, and check the spelling of every institution and person you name.</li>
-        <li>"We" outnumbering "I" in the leadership answer.</li>
-        <li>Percentages with no mechanism attaching them to your actions.</li>
-        <li>A course choice that appears nowhere in the career plan.</li>
-        <li>Long term goals expressed as national statistics rather than things you will build.</li>
-        <li>A technical answer that describes the system you built rather than the people it served.</li>
-        <li>Any of: leverage, unlock, holistic, synergy, passionate about, game changer, transformative journey, no better place than.</li>
-        <li>Adversity narrated for sympathy. The strongest sets do the opposite. Hardship functions as access and accountability, never as a hardship story. This is the most copied wrong pattern in circulating samples.</li>
-    </ul>
-</section>
-
-<section class="guide-section alt-bg" id="s8">
-    <span class="section-label">Section 8</span>
-    <h2>Pre-submit checklist</h2>
-
-    <div class="checklist-group">
-    <h4>Completeness</h4>
-    <ul class="checklist">
-        <li>All sixteen sub-questions are answered, and I can point to where.</li>
-        <li>Each answer is within the stated limit and uses at least ninety per cent of it.</li>
-        <li>Nothing in any draft is decoration. Every sentence maps to a sub-question.</li>
-    </ul>
-    </div>
-
-    <div class="checklist-group">
-    <h4>Material</h4>
-    <ul class="checklist">
-        <li>Each example passes the translation test: named group, specific difference, named institution that can confirm it.</li>
-        <li>My strongest example is chosen for what it changed, not for how impressive the organisation sounds.</li>
-    </ul>
-    </div>
-
-    <div class="checklist-group">
-    <h4>Structure</h4>
-    <ul class="checklist">
-        <li>I can state my thread in one sentence, and it is an object, a place or a named lens.</li>
-        <li>The ladder of scale is visible, with at least two rungs, one of them a single individual.</li>
-        <li>At least one correction loop appears in the leadership answer.</li>
-    </ul>
-    </div>
-
-    <div class="checklist-group">
-    <h4>Evidence</h4>
-    <ul class="checklist">
-        <li>At least four named institutions across the four answers, each with my role attached.</li>
-        <li>At least one outcome that is an artefact rather than a percentage.</li>
-        <li>Two named modules, taken from the handbook rather than the marketing page.</li>
-        <li>Evidence of contact with the department rather than admiration of it.</li>
-        <li>The UK priority area named in Chevening's words, plus the framework between the UK and my country.</li>
-    </ul>
-    </div>
-
-    <div class="checklist-group">
-    <h4>Judgement</h4>
-    <ul class="checklist">
-        <li>My barrier is an obstacle to me, Chevening's legitimacy removes it, and I say how.</li>
-        <li>My long term goal is something I build, not a statistic I cannot control.</li>
-        <li>No sentence in my set defines what leadership is.</li>
-        <li>My closing lines could not appear in anyone else's application.</li>
-        <li>Every word is mine. AI was used to question and score, never to draft.</li>
-    </ul>
-    </div>
-</section>
-
-<section class="guide-section" id="s9">
-    <span class="section-label">Section 9</span>
-    <h2>Scoring rubric</h2>
-    <p>Score zero to five per dimension. Below twenty four out of thirty five is not ready to submit.</p>
-    <div class="table-scroll">
-    <table>
-        <thead><tr><th>Dimension</th><th>Five looks like</th><th>One looks like</th></tr></thead>
-        <tbody>
-            <tr><th scope="row">Sub-question completeness</th><td>All sixteen answered, each identifiable</td><td>Two or more skipped or answered generically</td></tr>
-            <tr><th scope="row">Standing</th><td>Inside the problem by the second line, whether lived, diagnosed or proximate</td><td>Observing a problem that belongs to others</td></tr>
-            <tr><th scope="row">Thread coherence</th><td>One thread, four altitudes, no restatement</td><td>Four unrelated but competent anecdotes</td></tr>
-            <tr><th scope="row">Judgement under change</th><td>Correction loops showing what broke, what changed, what resulted</td><td>A plan that worked first time</td></tr>
-            <tr><th scope="row">Evidence quality</th><td>Verifiable artefacts, named counterparts, roles held</td><td>Percentages, adjectives, unattributed outcomes</td></tr>
-            <tr><th scope="row">Reciprocity</th><td>Gave, gained, shared goal and joint output all present</td><td>An account of what a senior person did for you</td></tr>
-            <tr><th scope="row">Fit and future</th><td>Named modules, prior contact, bilateral anchor, controllable deliverable, and a barrier Chevening removes</td><td>Reputation, admiration, national statistics, and funding named as the barrier</td></tr>
-        </tbody>
-    </table>
-    </div>
-    <p style="margin-top: 20px;"><strong>Note for reviewers.</strong> The first three dimensions must be fixed before any line editing. There is no point polishing sentences in a set that skips sub-questions or carries four separate objects. In a four session package, that is the first session's entire job.</p>
-</section>
-
-</article>
+<div class="more-collections">
+    <p>More collections — CV &amp; SOP guides, a video library, and guides for other scholarships — are coming soon.</p>
 </div>
 
 <!-- MENTORSHIP + COMMUNITY CTA -->
 <section id="mentorship-cta">
     <span class="kicker">Two Ways To Keep Going With TAL</span>
-    <h2>Everything in this guide is easy to see in someone else's essay and hard to see in your own.</h2>
+    <h2>Everything in these guides is easy to see in someone else's essay and hard to see in your own.</h2>
     <p>That is what a second pair of eyes is for. Whether you want a mentor who has actually won Chevening reading your drafts, or just a place to ask questions as you go, TAL has a path that costs nothing to start.</p>
     <div class="cta-paths">
         <div class="cta-path">
@@ -833,6 +451,7 @@
         <div class="footer-links">
             <a href="index.html">Website</a>
             <a href="community.html">Free Community</a>
+            <a href="resources.html">Free Resources</a>
             <a href="mentorship.html">Mentorship &amp; Pricing</a>
             <a href="https://www.linkedin.com/company/theapplicationlab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://www.instagram.com/theapplicationlab" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -853,22 +472,6 @@ if (burger && mobMenu) {
     mobMenu.querySelectorAll('a').forEach(function(a) {
         a.addEventListener('click', function() { mobMenu.style.display = 'none'; });
     });
-}
-
-const navLinks = document.querySelectorAll('.guide-sidebar a[data-nav]');
-const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href')));
-if (navLinks.length) {
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const idx = sections.indexOf(entry.target);
-            if (idx === -1) return;
-            if (entry.isIntersecting) {
-                navLinks.forEach(a => a.classList.remove('active'));
-                navLinks[idx].classList.add('active');
-            }
-        });
-    }, { rootMargin: '-15% 0px -75% 0px', threshold: 0 });
-    sections.forEach(s => { if (s) sectionObserver.observe(s); });
 }
 </script>
 

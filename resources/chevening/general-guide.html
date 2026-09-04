@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chevening Essays: General Guide | The Application Lab</title>
+    <meta name="description" content="What Chevening is actually funding, the evidence rules, and how to build one coherent thread across all four essays.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.theapplicationlab.com/resources/chevening/general-guide.html">
+    <meta property="og:title" content="The Chevening Essays: General Guide | The Application Lab">
+    <meta property="og:description" content="What Chevening is actually funding, the evidence rules, and how to build one coherent thread across all four essays.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.theapplicationlab.com/resources/chevening/general-guide.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { overflow-x: hidden; max-width: 100%; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; color: #0f1e35; background: #f7f9fc; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        :root {
+            --navy: #0f1e35; --blue: #2e8bc0; --blue-050: #eaf4fb; --bg: #f7f9fc;
+            --muted: #6b7c93; --border: #dde4ee; --body-text: #3d4f63; --gold: #c9a84c; --amber-bg: #fbf3e6;
+        }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--navy); line-height: 1.25; }
+        section[id] { scroll-margin-top: 24px; }
+        body { padding-top: 72px; }
+        @media (min-width: 769px) { #desktop-nav { display: flex; } #mob-burger { display: none; } }
+        @media (max-width: 768px) {
+            #desktop-nav { display: none !important; } #mob-burger { display: flex !important; }
+            #hdr { height: 64px !important; } #hdr img { height: 42px !important; }
+            #mob-menu { top: 64px !important; } body { padding-top: 64px; }
+        }
+
+        .breadcrumb { max-width: 1180px; margin: 0 auto; padding: 22px 24px 0; font-size: 0.78rem; color: var(--muted); }
+        .breadcrumb a { color: var(--blue); text-decoration: none; font-weight: 600; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        #hero-guide {
+            position: relative; min-height: 46vh; display: flex; align-items: flex-end;
+            background-image: url('../../oxford-hero.jpg'); background-size: cover; background-position: center center;
+            margin-top: 18px;
+        }
+        .hero-guide-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,15,24,0.35) 0%, rgba(8,15,24,0.55) 55%, rgba(8,15,24,0.94) 100%); }
+        .hero-guide-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 44px 24px 40px; text-align: center; }
+        .hero-guide-inner .kicker { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #7ac8e8; margin-bottom: 18px; }
+        .hero-guide-inner h1 { color: #fff; font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -1px; line-height: 1.18; margin-bottom: 18px; text-shadow: 0 2px 24px rgba(0,0,0,0.4); }
+        .hero-guide-inner .byline { font-family: 'Lora', serif; font-style: italic; font-size: 1.02rem; color: rgba(255,255,255,0.88); line-height: 1.75; max-width: 580px; margin: 0 auto; }
+
+        #facts { background: var(--navy); padding: 0 24px 40px; }
+        .facts-strip { max-width: 800px; margin: 0 auto; display: flex; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 26px; }
+        .facts-strip > div { flex: 1; text-align: center; padding: 0 12px; border-right: 1px solid rgba(255,255,255,0.12); }
+        .facts-strip > div:last-child { border-right: none; }
+        .facts-strip strong { display: block; font-size: 1.3rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; line-height: 1; }
+        .facts-strip span { display: block; font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); font-weight: 600; margin-top: 8px; line-height: 1.5; }
+
+        .pdf-strip { background: var(--blue-050); border-bottom: 1px solid var(--border); text-align: center; padding: 16px 24px; }
+        .pdf-strip a { font-size: 0.82rem; font-weight: 700; color: var(--blue); text-decoration: none; }
+        .pdf-strip a:hover { text-decoration: underline; }
+
+        .guide-layout { max-width: 1180px; margin: 0 auto; padding: 48px 24px 0; display: flex; gap: 56px; align-items: flex-start; }
+        .guide-sidebar { display: none; }
+        .toc-wrap {
+            background: var(--navy); border-radius: 4px; max-width: 760px; margin: 0 auto 8px; padding: 28px 32px;
+            background-image: repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
+        }
+        .toc-wrap h2 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7ac8e8; margin-bottom: 16px; }
+        .toc-list { list-style: none; columns: 2; column-gap: 32px; }
+        .toc-list li { break-inside: avoid; margin-bottom: 10px; }
+        .toc-list a { font-size: 0.86rem; color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; }
+        .toc-list a:hover { color: #fff; }
+
+        article.guide-main { max-width: 720px; margin: 0 auto; padding: 8px 24px 0; flex: 1; min-width: 0; counter-reset: section 0; }
+        .guide-section { padding: 56px 0; border-bottom: 1px solid var(--border); counter-increment: section; }
+        .guide-section:last-of-type { border-bottom: none; }
+        .section-label { display: flex; align-items: center; gap: 12px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); margin-bottom: 18px; }
+        .section-label::before {
+            content: counter(section, decimal-leading-zero);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            width: 34px; height: 34px; border-radius: 50%; background: var(--blue-050); color: var(--blue);
+            font-family: 'Lora', serif; font-style: italic; font-weight: 600; font-size: 0.9rem; letter-spacing: 0;
+        }
+        .guide-section h2 { font-size: clamp(1.3rem, 2.5vw, 1.65rem); letter-spacing: -0.5px; margin-bottom: 20px; }
+        .guide-section h3 { font-size: 1.08rem; margin: 32px 0 14px; scroll-margin-top: 90px; }
+        .guide-section h3:first-of-type { margin-top: 0; }
+        .guide-section h4 { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 22px 0 8px; }
+        .guide-section p { font-size: 0.96rem; color: var(--body-text); margin-bottom: 16px; }
+        .guide-section p:last-child { margin-bottom: 0; }
+        .guide-section ul, .guide-section ol { margin: 0 0 16px 22px; color: var(--body-text); font-size: 0.96rem; }
+        .guide-section li { margin-bottom: 8px; }
+        .guide-section li::marker { color: var(--blue); }
+        .guide-section strong { color: var(--navy); }
+        .guide-section.alt-bg { background: #fff; border-radius: 6px; padding: 48px 36px; margin: 8px 0; border-bottom: none; box-shadow: 0 1px 0 var(--border); }
+
+        .callout { border-radius: 4px; padding: 18px 22px; margin: 0 0 20px; font-size: 0.92rem; line-height: 1.8; }
+        .callout p { margin: 0 0 12px; font-size: 0.9rem; }
+        .callout p:last-child { margin-bottom: 0; }
+        .callout strong { display: block; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+        .callout-rule { background: var(--blue-050); border: 1px solid rgba(46,139,192,0.25); color: var(--navy); }
+        .callout-trap { background: var(--amber-bg); border: 1px solid rgba(184,134,58,0.3); color: #6b4f1f; font-size: 0.84rem; }
+        .callout-trap strong { color: #8a6a2a; }
+        .meta-wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 0; }
+
+        .table-scroll { overflow-x: auto; margin: 18px 0; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.85rem; }
+        table th, table td { padding: 11px 13px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; }
+        table thead th { background: var(--navy); color: #fff; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+        table thead th:first-child { border-top-left-radius: 4px; }
+        table thead th:last-child { border-top-right-radius: 4px; }
+        table tbody th { background: var(--bg); color: var(--navy); font-weight: 700; white-space: nowrap; }
+        table tbody td { color: var(--body-text); }
+        table tbody tr:last-child td, table tbody tr:last-child th { border-bottom: none; }
+
+        ul.checklist { list-style: none; margin: 0 0 8px; }
+        ul.checklist li.chk { display: flex; gap: 12px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--body-text); }
+        ul.checklist li.chk:last-child { border-bottom: none; }
+        ul.checklist li.chk::before { content: ''; flex-shrink: 0; width: 16px; height: 16px; margin-top: 3px; border: 1.5px solid var(--blue); border-radius: 3px; }
+
+        .series-nav { max-width: 720px; margin: 0 auto; padding: 8px 24px 56px; display: flex; justify-content: space-between; gap: 16px; }
+        .series-nav a { flex: 1; text-decoration: none; border: 1px solid var(--border); border-radius: 4px; padding: 16px 18px; background: #fff; transition: box-shadow 0.2s ease, transform 0.2s ease; }
+        .series-nav a:hover { box-shadow: 0 10px 28px rgba(15,30,53,0.1); transform: translateY(-2px); }
+        .series-nav .dir { display: block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+        .series-nav .lbl { display: block; font-size: 0.88rem; font-weight: 700; color: var(--navy); }
+        .series-nav .next-item { text-align: right; }
+
+        #mentorship-cta { background: var(--navy); background-image: repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px); padding: 72px 24px; text-align: center; }
+        #mentorship-cta .kicker { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #4a9fd4; margin-bottom: 16px; }
+        #mentorship-cta h2 { color: #fff; font-size: clamp(1.4rem, 3vw, 1.9rem); max-width: 640px; margin: 0 auto 18px; }
+        #mentorship-cta p { color: rgba(255,255,255,0.78); font-size: 0.96rem; line-height: 1.85; max-width: 600px; margin: 0 auto 32px; }
+        .cta-paths { display: flex; gap: 20px; max-width: 800px; margin: 0 auto 8px; text-align: left; }
+        .cta-path { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14); border-top: 3px solid var(--blue); border-radius: 4px; padding: 28px 26px; display: flex; flex-direction: column; }
+        .cta-path:nth-child(2) { border-top-color: var(--gold); }
+        .cta-path-kicker { display: block; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #7ac8e8; margin-bottom: 12px; }
+        .cta-path:nth-child(2) .cta-path-kicker { color: #e4cb7a; }
+        .cta-path h3 { color: #fff; font-size: 1.15rem; margin-bottom: 10px; }
+        .cta-path p { color: rgba(255,255,255,0.68); font-size: 0.86rem; line-height: 1.75; margin: 0 0 16px; max-width: none; }
+        .cta-path-list { list-style: none; margin: 0 0 22px; flex: 1; }
+        .cta-path-list li { color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.6; padding-left: 18px; position: relative; margin-bottom: 8px; }
+        .cta-path-list li::before { content: '→'; position: absolute; left: 0; color: var(--blue); }
+        .cta-path:nth-child(2) .cta-path-list li::before { color: var(--gold); }
+        .btn { display: inline-block; padding: 14px 26px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.25s ease; text-align: center; }
+        .btn-blue { background: var(--blue); color: #fff; border: none; }
+        .btn-blue:hover { background: #1a6fa0; box-shadow: 0 8px 24px rgba(46,139,192,0.4); transform: translateY(-2px); }
+        .btn-outline-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
+        .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+        .cta-note { margin-top: 30px; font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+        .cta-note a { color: #7ac8e8; text-decoration: none; font-weight: 600; }
+
+        footer { background: #080f18; padding: 48px 7% 28px; }
+        footer .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+        footer img { height: 60px; width: auto; filter: brightness(0) invert(1); }
+        .footer-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+        .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.55); text-decoration: none; }
+        .footer-links a:hover { color: #fff; }
+        .footer-bottom { font-size: 0.68rem; color: rgba(255,255,255,0.25); margin-top: 6px; }
+
+        @media (min-width: 1024px) {
+            .toc-wrap { display: none; }
+            .guide-sidebar {
+                display: block; position: sticky; top: 88px; width: 230px; flex-shrink: 0;
+                max-height: calc(100vh - 112px); overflow-y: auto;
+                background: var(--navy); border-radius: 4px; padding: 26px 22px;
+                background-image: repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
+            }
+            .guide-sidebar h2 { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7ac8e8; margin-bottom: 18px; }
+            .guide-sidebar ul { list-style: none; }
+            .guide-sidebar li { margin-bottom: 4px; }
+            .guide-sidebar a {
+                display: block; font-size: 0.79rem; font-weight: 600; color: rgba(255,255,255,0.6); text-decoration: none;
+                padding: 8px 0 8px 14px; border-left: 2px solid rgba(255,255,255,0.14); transition: all 0.15s ease; line-height: 1.4;
+            }
+            .guide-sidebar a:hover { color: #fff; border-left-color: rgba(255,255,255,0.4); }
+            .guide-sidebar a.active { color: #7ac8e8; border-left-color: var(--blue); font-weight: 700; }
+        }
+        @media (max-width: 640px) {
+            .toc-list { columns: 1; }
+            .hero-guide-inner { padding: 32px 20px 32px; }
+            .facts-strip { flex-wrap: wrap; }
+            .facts-strip > div { flex: 1 1 45%; padding-bottom: 14px; }
+            .guide-section { padding: 40px 0; }
+            .guide-section.alt-bg { padding: 32px 20px; }
+            table { min-width: 460px; }
+            .cta-paths { flex-direction: column; }
+            .series-nav { flex-direction: column; }
+            .series-nav .next-item { text-align: left; }
+        }</style>
+</head>
+<body>
+
+<header id="hdr" style="position:fixed; top:0; left:0; right:0; width:100%; height:72px; z-index:9999; display:flex; align-items:center; justify-content:space-between; padding:0 5%; background:rgba(15,30,53,0.97); box-shadow:0 2px 20px rgba(0,0,0,0.3);">
+  <a href="../../index.html" style="display:flex; align-items:center; text-decoration:none; flex-shrink:0; margin-right:20px;">
+    <img src="../../logo.png" alt="The Application Lab" width="1920" height="1080" style="height:56px; width:auto; display:block; object-fit:contain; filter:brightness(0) invert(1);"/>
+  </a>
+  <nav id="desktop-nav" style="align-items:center; gap:26px; margin-left:auto;">
+    <a href="index.html#about" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">About</a>
+    <a href="index.html#services" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Mentorship</a>
+    <a href="index.html#how" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">How It Works</a>
+    <a href="index.html#founders" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Founders</a>
+    <a href="../../community.html" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Community</a>
+    <a href="../../resources.html" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Resources</a>
+    <a href="../../immersive.html" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">The Immersive Lab</a>
+    <a href="../../apply.html" style="font-size:0.7rem; font-weight:700; color:#fff; letter-spacing:1px; text-transform:uppercase; text-decoration:none; background:#2e8bc0; padding:10px 20px; border-radius:2px;">Apply Now</a>
+  </nav>
+  <button id="mob-burger" aria-label="Open menu" style="flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; margin-left:16px;">
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+  </button>
+</header>
+
+<div id="mob-menu" style="display:none; position:fixed; top:72px; left:0; right:0; z-index:9998; background:rgba(15,30,53,0.98); flex-direction:column; padding:16px 5%; border-top:1px solid rgba(255,255,255,0.08);">
+  <a href="index.html#about" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">About</a>
+  <a href="index.html#services" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Mentorship</a>
+  <a href="index.html#how" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">How It Works</a>
+  <a href="index.html#founders" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Founders</a>
+  <a href="../../community.html" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Community</a>
+  <a href="../../resources.html" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Resources</a>
+  <a href="../../immersive.html" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">The Immersive Lab</a>
+  <a href="../../apply.html" style="display:block; margin-top:16px; padding:13px 20px; font-size:0.82rem; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:1px; text-decoration:none; background:#2e8bc0; text-align:center; border-radius:2px;">Apply Now</a>
+</div>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../../resources.html">Resources</a> / <a href="../../resources.html#chevening">Chevening</a> / The Chevening Essays: General Guide
+</nav>
+
+<section id="hero-guide">
+    <div class="hero-guide-overlay" aria-hidden="true"></div>
+    <div class="hero-guide-inner">
+        <span class="kicker">Chevening Guide · 1 of 5</span>
+        <h1>The Chevening Essays: General Guide</h1>
+        <p class="byline">What Chevening is actually funding, the evidence rules, and how to build one coherent thread across all four essays.</p>
+    </div>
+</section>
+
+<div id="facts">
+    <div class="facts-strip">
+        <div><strong>16</strong><span>Sections</span></div>
+        <div><strong>4</strong><span>Essays Covered</span></div>
+        <div><strong>STARL</strong><span>Core Method</span></div>
+        <div><strong>Free</strong><span>To Read & Download</span></div>
+    </div>
+</div>
+
+<div class="pdf-strip">
+    <a href="general-guide.pdf" target="_blank" rel="noopener">Download this guide as a PDF ↓</a>
+</div>
+
+<div class="meta-wrap"><div class="callout callout-trap"><p><strong>About the examples.</strong><br>Every example in these guides is invented. The people, institutions, universities, professors, schemes and statistics do not exist. They are written solely to demonstrate technique. In your own essays every name must be real, accurate and defensible at interview.</p>
+<p><strong>Read this before anything else.</strong><br>Chevening prohibits AI-generated answers and screens applications for plagiarism, fraud and machine-written text. These guides give you structure, not sentences. Copying any part of them, or using a tool to rewrite your draft, will result in disqualification.</p>
+</div></div>
+
+
+<nav class="toc-wrap" aria-label="Table of contents">
+    <h2>In This Guide</h2>
+    <ul class="toc-list">
+        <li><a href="#s0">01. What Chevening is actually buying</a></li>
+        <li><a href="#s1">02. What the application asks of you</a></li>
+        <li><a href="#s2">03. The four UK priority areas</a></li>
+        <li><a href="#s3">04. Mistakes that end an application before the essays are read</a></li>
+        <li><a href="#s4">05. STARL: the spine of Essays 1 and 2</a></li>
+        <li><a href="#s5">06. Evidence: the underlying rules</a></li>
+        <li><a href="#s6">07. Strategic naming</a></li>
+        <li><a href="#s7">08. Twenty structural moves that make essays work</a></li>
+        <li><a href="#s8">09. Build the thread before you draft anything</a></li>
+        <li><a href="#s9">10. The work experience section</a></li>
+        <li><a href="#s10">11. Word budgets (at 300 words)</a></li>
+        <li><a href="#s11">12. The writing process</a></li>
+        <li><a href="#s12">13. Voice and style</a></li>
+        <li><a href="#s13">14. Consistency across the four essays</a></li>
+        <li><a href="#s14">15. Final quality control</a></li>
+        <li><a href="#s15">16. Fifteen questions before you submit</a></li>
+    </ul>
+</nav>
+
+<div class="guide-layout">
+<nav class="guide-sidebar" aria-label="Section navigation">
+    <h2>In This Guide</h2>
+    <ul>
+        <li><a href="#s0" data-nav>01. What Chevening is actually buying</a></li>
+        <li><a href="#s1" data-nav>02. What the application asks of you</a></li>
+        <li><a href="#s2" data-nav>03. The four UK priority areas</a></li>
+        <li><a href="#s3" data-nav>04. Mistakes that end an application before the essays are read</a></li>
+        <li><a href="#s4" data-nav>05. STARL: the spine of Essays 1 and 2</a></li>
+        <li><a href="#s5" data-nav>06. Evidence: the underlying rules</a></li>
+        <li><a href="#s6" data-nav>07. Strategic naming</a></li>
+        <li><a href="#s7" data-nav>08. Twenty structural moves that make essays work</a></li>
+        <li><a href="#s8" data-nav>09. Build the thread before you draft anything</a></li>
+        <li><a href="#s9" data-nav>10. The work experience section</a></li>
+        <li><a href="#s10" data-nav>11. Word budgets (at 300 words)</a></li>
+        <li><a href="#s11" data-nav>12. The writing process</a></li>
+        <li><a href="#s12" data-nav>13. Voice and style</a></li>
+        <li><a href="#s13" data-nav>14. Consistency across the four essays</a></li>
+        <li><a href="#s14" data-nav>15. Final quality control</a></li>
+        <li><a href="#s15" data-nav>16. Fifteen questions before you submit</a></li>
+    </ul>
+</nav>
+<article class="guide-main">
+
+<section class="guide-section" id="s0">
+    <span class="section-label">Section 1</span>
+    <h2>What Chevening is actually buying</h2>
+    <p>Chevening is not a prize for a strong CV and it is not financial aid. It is the UK government taking a position in your career and expecting a return. The question behind every criterion is: if we fund this person, what will exist in ten years that would not otherwise have existed?</p>
+<p>That reframing changes the writing task. You are not asking for tuition. You are making the case that you are an investment, and that the investment pays in two directions: a problem is solved in your country, and a durable relationship is built with the UK.</p>
+<h3>The central principle</h3>
+<p>Do not try to sound impressive. Try to be convincing.</p>
+<p>Those are different goals and they produce different sentences. An impressive essay tells the reader you are a leader. A convincing essay gives the reader enough evidence to reach that conclusion themselves.</p>
+<p>A Chevening essay is not a biography, a CV rewritten as prose, a list of achievements, a university brochure, or a collection of ambitious promises. It is an evidence-based argument about who you are, what you have already demonstrated, what you still need to learn, and what you intend to change.</p>
+<p>Read across all four essays, they answer four questions in sequence:</p>
+<ol>
+<li>Can you lead?</li>
+<li>Can you build productive relationships?</li>
+<li>Do you know exactly what you need to learn, and why?</li>
+<li>Do you have a credible plan for converting that learning into impact?</li>
+</ol>
+<p>The arc in one line: past evidence → relationships → capability gap → UK learning → future impact.</p>
+<h3>The four criteria</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Essay</th>
+<th>Criterion</th>
+<th>The question behind it</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. Leadership experience</td>
+<td>Leadership and influencing skills</td>
+<td>Did things change because of you?</td>
+</tr>
+<tr>
+<td>2. Relationship building and influence</td>
+<td>Relationship-building skills</td>
+<td>Do you turn relationships into outcomes?</td>
+</tr>
+<tr>
+<td>3. Course choice and global challenge</td>
+<td>Reasons for course and university choice</td>
+<td>Does this course close a specific gap?</td>
+</tr>
+<tr>
+<td>4. Career plan and impact</td>
+<td>Commitment to long-term impact</td>
+<td>Is the plan real, measurable and UK-connected?</td>
+</tr>
+</tbody></table></div>
+<p>Everything else on the form is read for consistency with the essays. Contradictions are among the fastest routes to rejection.</p>
+<p>Being rejected is not a final verdict. Many scholars applied more than once before being selected.</p>
+<hr>
+
+</section>
+
+<section class="guide-section alt-bg" id="s1">
+    <span class="section-label">Section 2</span>
+    <h2>What the application asks of you</h2>
+    <p><strong>Four essays, each with four sub-questions.</strong><br>The sub-bullets are not decoration. Assessors mark against them. An answer that never states what was learned, or never names an obstacle, loses marks however well written. Treat each sub-bullet as a box that must be visibly ticked, then smooth the joins.</p>
+<p><strong>Tight word limits.</strong><br>Each box carries its own limit with a live counter. The numbers are not published outside the form. Read the limit before you draft. These guides budget for roughly 300 words per essay; if your form differs, keep the proportions and scale.</p>
+<p><strong>Essay 3 covers your first-choice course only</strong>, tied to a single UK priority area.</p>
+<p><strong>Essay 4 covers medium and long term</strong> (three to five years and eight to ten), tied to a key challenge facing your country or region, with goals someone else could measure.</p>
+<p><strong>Work experience counts only after graduation.</strong><br>2,800 hours, all gained after your undergraduate degree.</p>
+<p><strong>Your own words only, in English, throughout.</strong></p>
+<p><strong>There is no CV.</strong><br>The form asks for your education history and your employment history. Each employment entry carries its own description of roles and responsibilities (around 100 words). Those entries are the only record of your career that an assessor ever sees. They are a major piece of assessed writing, not an administrative formality. Section 10 covers them in full.</p>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s2">
+    <span class="section-label">Section 3</span>
+    <h2>The four UK priority areas</h2>
+    <p>Use Chevening’s own wording exactly:</p>
+<ul>
+<li>Promoting growth and prosperity  </li>
+<li>Building resilience in a climate-vulnerable world  </li>
+<li>Strengthening security and stability in a volatile world  </li>
+<li>Supporting development for more inclusive and effective societies</li>
+</ul>
+<p>Pick one. Name it in Essay 3 in a full sentence. Let it echo, without repeating, in Essay 4.</p>
+<p>Most professional work fits two or three areas depending on framing. This is a strategic choice. Pick the area where your evidence is strongest, not the one that sounds most urgent. Once chosen, stay inside it. An essay that gestures at three areas has chosen none.</p>
+<p><strong>Chevening also states a commitment</strong> to supporting under-represented groups, advancing women’s leadership, and strengthening UK international alliances. If your work genuinely touches any of these, say so plainly. It costs a clause and aligns you with a stated priority.</p>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s3">
+    <span class="section-label">Section 4</span>
+    <h2>Mistakes that end an application before the essays are read</h2>
+    <p><strong>Citizenship.</strong> Apply from your country of citizenship wherever you live. Dual UK citizens are ineligible.</p>
+<p><strong>The work-hours arithmetic.</strong> Weeks multiplied by hours per week, toward 2,800. Common errors: entering months where weeks are asked, listing a job twice under two titles, and entering implausible hours. Roughly 35–60 hours a week across 40–50 weeks a year is the believable band.</p>
+<p><strong>Three different courses.</strong> Duplicates remove you from consideration.</p>
+<p><strong>English.</strong> The form must be completed in English or it is ineligible.</p>
+<p><strong>AI.</strong> Generated answers are prohibited, screened for, and disqualifying — including having a tool polish your own draft.</p>
+<p><strong>Proofreading.</strong> Spelling, and above all the names of institutions and people. If your essays name a dozen organisations, a dozen spellings must be correct.</p>
+<hr>
+
+</section>
+
+<section class="guide-section alt-bg" id="s4">
+    <span class="section-label">Section 5</span>
+    <h2>STARL: the spine of Essays 1 and 2</h2>
+    <p>Chevening’s committees recommend STAR. The prompts add a fifth beat by asking what you learned. The working structure is STARL.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>What it answers</th>
+<th>How it usually fails</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>S. Situation</strong></td>
+<td>What was broken, and how big was it?</td>
+<td>Autobiography or a definition instead of the problem</td>
+</tr>
+<tr>
+<td><strong>T. Task</strong></td>
+<td>What became your job, under what constraint, with what at stake?</td>
+<td>Skipped, leaving achievements ambiguously credited</td>
+</tr>
+<tr>
+<td><strong>A. Action</strong></td>
+<td>What did you personally decide and do, and whom did you move?</td>
+<td>Activities with no decisions in them</td>
+</tr>
+<tr>
+<td><strong>R. Result</strong></td>
+<td>What moved, by how much, and what followed?</td>
+<td>Adjectives where numbers should be</td>
+</tr>
+<tr>
+<td><strong>L. Learning</strong></td>
+<td>What do you now do differently?</td>
+<td>A platitude about leadership</td>
+</tr>
+</tbody></table></div>
+<p>Roughly half the marks sit in R and L. Protect them when you cut.</p>
+<h3>Converting a raw memory into STARL</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th>Raw version</th>
+<th>STARL version</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S</td>
+<td>“I worked on our medicine supply problem.”</td>
+<td>“A third of clinics in Molo District ran out of first-line antimalarials at least once last quarter, while the Central Medical Store held nine months of cover.”</td>
+</tr>
+<tr>
+<td>T</td>
+<td>“I was on the supply chain team.”</td>
+<td>“The Director of Pharmacy Services asked me to find the cause before the next procurement round: eight weeks, no budget for new systems, and a quarter of the district drug budget at risk if we simply reordered.”</td>
+</tr>
+<tr>
+<td>A</td>
+<td>“I coordinated with stakeholders and improved ordering.”</td>
+<td>“I traced 43 order cycles by hand, found reorder triggers set on annual averages rather than seasonal demand, rebuilt the trigger table with the Store’s data team, and piloted it in six clinics.”</td>
+</tr>
+<tr>
+<td>R</td>
+<td>“Things improved a lot.”</td>
+<td>“Stockouts in the pilot clinics fell from eleven to two the following quarter, and the Central Medical Store adopted the trigger table across all 43 facilities.”</td>
+</tr>
+<tr>
+<td>L</td>
+<td>“I learned the value of teamwork.”</td>
+<td>“I learned that a shortage is often a signalling problem wearing the costume of a supply problem. I now interrogate the data a system already holds before anyone proposes buying anything.”</td>
+</tr>
+</tbody></table></div>
+<p>Every cell on the right contains a name or a number somebody could check. That is the whole difference.</p>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s5">
+    <span class="section-label">Section 6</span>
+    <h2>Evidence: the underlying rules</h2>
+    <h3>The master formula</h3>
+<p>Underneath STARL sits a sequence that applies wherever you describe an experience:</p>
+<p><strong>Problem → personal action → influence → outcome → lesson → future application.</strong></p>
+<p>The influence step is the one most often missing. Doing something yourself is delivery. Getting other people to act differently is leadership, and it needs naming: who they were, what they thought before, what changed their minds.</p>
+<h3>The evidence hierarchy</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Type of evidence</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Transformation</td>
+<td>Something changed because of what you did</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Influence</td>
+<td>You persuaded, mobilised, mentored or coordinated others</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Responsibility</td>
+<td>You took ownership of a problem nobody had claimed</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Decision-making</td>
+<td>You made a consequential choice or changed strategy</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Learning</td>
+<td>The experience changed how you think or work</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Application</td>
+<td>You subsequently used what you learned elsewhere</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Participation</td>
+<td>You were involved in something</td>
+</tr>
+</tbody></table></div>
+<p>Participation is where most rejected essays spend their words. If your best story sits at rank six or seven, find a different story rather than better adjectives.</p>
+<h3>Replace claims with evidence</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Instead of writing</th>
+<th>Write about</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“I am a passionate leader.”</td>
+<td>What you did that a reader would call leadership</td>
+</tr>
+<tr>
+<td>“I have excellent networking skills.”</td>
+<td>One relationship you built, and what it produced</td>
+</tr>
+<tr>
+<td>“This is a world-class university.”</td>
+<td>The specific feature that closes your capability gap</td>
+</tr>
+<tr>
+<td>“I want to make a positive impact.”</td>
+<td>The problem, your method, and what will be different</td>
+</tr>
+<tr>
+<td>“I will improve my country.”</td>
+<td>The sector, the institution, the change, the measure</td>
+</tr>
+</tbody></table></div>
+<h3>Numbers, and the precision rule</h3>
+<p>Aim for at least two concrete figures in every essay, placed at the outcome.</p>
+<p><strong>Use the exact number, not the rounded one.</strong><br>1,281 polling stations rather than “over a thousand”. 43 clinics rather than “dozens”. 68 per cent rather than “roughly two thirds”. A round number reads as an estimate; an odd number reads as something you measured. This is one of the cheapest credibility gains available.</p>
+<p><strong>Never manufacture a number.</strong><br>A panel will ask how you measured it. If your work genuinely has no metrics, use a concrete change of state: a process changed, an institution adopted a practice, a collaboration was established between bodies that had never worked together, a template you wrote is still in use, a service reached somewhere it had not. Each is checkable.</p>
+<h3>Authenticity</h3>
+<p>Never manufacture leadership, numbers, partnerships, outcomes, responsibilities, influence, achievements, future commitments or impact. The commonest version is not invention but quiet inflation of your role in a team achievement. Say what the team achieved and then state precisely what you contributed. A modest contribution described accurately reads as credible; a large one described vaguely reads as evasive.</p>
+<p>Your strongest essay is not the one containing your biggest achievement. It is the one containing your strongest evidence.</p>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s6">
+    <span class="section-label">Section 7</span>
+    <h2>Strategic naming</h2>
+    <p>This is the technique that separates strong Chevening essays from competent ones. It runs through all four answers.</p>
+<h3>Why naming works</h3>
+<p>A name does two jobs at once. It makes the claim checkable, which converts an assertion into evidence. And it locates you inside a professional world that reaches decision-makers — precisely what Chevening is investing in.</p>
+<p>Compare:</p>
+<blockquote>
+<p>“I worked with senior officials to improve access to identity documents.”</p>
+</blockquote>
+<blockquote>
+<p>“I briefed Dr Amina Sesay, the Registrar General, whose office then appointed me to the Civil Registration Technical Advisory Group.”</p>
+</blockquote>
+<p>The second is barely longer. It contains a person, a title, an institution, an appointment and an implied relationship, and every element could be verified.</p>
+<h3>The rule</h3>
+<p><strong>Name the person or institution, and in the same sentence say what you did with them.</strong></p>
+<p>A name with a working relationship attached is evidence. A name with nothing attached is a list of contacts — exactly the failure Chevening’s committees warn against.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Weak (contact list)</th>
+<th>Strong (working relationship)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“I have worked with the Ministry of Health, the World Bank and several universities.”</td>
+<td>“I ran the district pilot with the Ministry of Health’s Quality Assurance Unit, which adopted the referral form as its default in 2025.”</td>
+</tr>
+<tr>
+<td>“I have met the Registrar General.”</td>
+<td>“The Registrar General appointed me to the technical advisory group after my three-province study.”</td>
+</tr>
+<tr>
+<td>“I know Professor Aird’s work.”</td>
+<td>“Professor Aird supervised the chapter I contributed to her edited volume on frontline service design.”</td>
+</tr>
+</tbody></table></div>
+<h3>What is worth naming</h3>
+<ul>
+<li>People, with their title attached. The title carries the information.</li>
+<li>Your own institutions, including small ones.</li>
+<li>Named schemes, programmes and funds you have worked on.</li>
+<li>National strategies and policy documents that already name your problem.</li>
+<li>Bilateral frameworks and donor programmes, in the funder’s own wording.</li>
+<li>Conferences, fellowships and appointments you were selected for, with the selecting body named.</li>
+<li>Academic modules, research centres and faculty (Essay 3).</li>
+<li>The artefact that changed: the guideline, the dataset, the form, the standard operating procedure, by its actual name.</li>
+</ul>
+<h3>Density</h3>
+<p>Aim for roughly four to eight proper nouns in a 300-word essay. Fewer and the essay floats free of the world. More and it becomes a directory. Every one of them should be attached to a verb describing what you did.</p>
+<h3>When not to name</h3>
+<p>Do not name individuals who are beneficiaries, patients, clients or minors, or anyone whose identification could expose them. Use their role instead.</p>
+<p>Do not name someone you barely know in the hope that recognition transfers. Interview panels ask follow-up questions about relationships. A name you cannot discuss for two minutes is a liability.</p>
+<hr>
+
+</section>
+
+<section class="guide-section alt-bg" id="s7">
+    <span class="section-label">Section 8</span>
+    <h2>Twenty structural moves that make essays work</h2>
+    <p>Use five or six of these deliberately. Using all twenty would be unreadable.</p>
+<h3>Opening moves</h3>
+<ol>
+<li><strong>The diagnostic opening.</strong> Name what kind of problem it is, in a sentence only a practitioner could write.  </li>
+<li><strong>The contradiction.</strong> Two facts that should not coexist, side by side.  </li>
+<li><strong>Lived experience, converted immediately.</strong> If you belong to the group you serve, or come from the region you will return to, say so in the first two sentences and convert it into evidence in the same breath.  </li>
+<li><strong>The scarcity claim.</strong> “I am one of perhaps six people in the country working on this.” Use only where true and defensible.</li>
+</ol>
+<h3>Evidence moves</h3>
+<ol start="5">
+<li><strong>The named initiative.</strong> Give what you built a proper name.  </li>
+<li><strong>External appointment and selection, stated flatly.</strong> Somebody else has already bet on you.  </li>
+<li><strong>The obstacle chain.</strong> Act, hit a constraint, adapt, act again.  </li>
+<li><strong>The adaptation beat.</strong> One thing that failed, honestly reported, and the redesign it forced.  </li>
+<li><strong>Prioritisation under constraint.</strong> What you could not afford to do, and how you chose.  </li>
+<li><strong>Odd numbers.</strong> 1,281 rather than “over a thousand”.  </li>
+<li><strong>The impact ladder.</strong> Results at three levels: national/institutional, organisational, individual.  </li>
+<li><strong>The named artefact.</strong> State exactly what changed and what it is called.  </li>
+<li><strong>The micro-case.</strong> One sentence about one person, after the numbers, never before.  </li>
+<li><strong>Insider vocabulary, lightly glossed.</strong> The shorthand practitioners use, explained in three words where needed.</li>
+</ol>
+<h3>Relationship moves</h3>
+<ol start="15">
+<li><strong>The escalation ladder.</strong> The relationship changes state over time.  </li>
+<li><strong>Network multiplication, with the broker named.</strong> One relationship produces an introduction that produces an outcome.</li>
+</ol>
+<h3>Forward-looking moves</h3>
+<ol start="17">
+<li><strong>The zoom.</strong> National statistic, then your own province or district.  </li>
+<li><strong>Dated futures.</strong> By 2032, by 2035. Not “in the long term”.  </li>
+<li><strong>The bilateral hook.</strong> One clause placing your work inside a real UK partnership framework or FCDO programme.  </li>
+<li><strong>The personal barrier fused with Chevening.</strong> The strongest barrier answers concern the applicant’s own standing and resolve into the scholarship.</li>
+</ol>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s8">
+    <span class="section-label">Section 9</span>
+    <h2>Build the thread before you draft anything</h2>
+    <p>The four essays must be four views of one professional life. Fill this in on one page first.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th>Your answer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The problem I work on, in one specific sentence</td>
+<td></td>
+</tr>
+<tr>
+<td>The UK priority area it sits under</td>
+<td></td>
+</tr>
+<tr>
+<td>What I have already changed, with two exact numbers</td>
+<td></td>
+</tr>
+<tr>
+<td>The thing I founded, and its name</td>
+<td></td>
+</tr>
+<tr>
+<td>The appointment or selection somebody else gave me</td>
+<td></td>
+</tr>
+<tr>
+<td>The relationship that made the work possible, with name and title</td>
+<td></td>
+</tr>
+<tr>
+<td>The artefact that changed, by its actual name</td>
+<td></td>
+</tr>
+<tr>
+<td>What I still cannot do (the capability gap)</td>
+<td></td>
+</tr>
+<tr>
+<td>First-choice course, two modules, two academics</td>
+<td></td>
+</tr>
+<tr>
+<td>Year one back: where, with whom, measured how</td>
+<td></td>
+</tr>
+<tr>
+<td>Years three to five: the capability I build</td>
+<td></td>
+</tr>
+<tr>
+<td>Years eight to ten: the institution or system, with a date</td>
+<td></td>
+</tr>
+<tr>
+<td>The barrier I will genuinely hit, including barriers about me</td>
+<td></td>
+</tr>
+<tr>
+<td>What Chevening specifically unlocks</td>
+<td></td>
+</tr>
+</tbody></table></div>
+<h3>The altitude ladder</h3>
+<p>Strong sets rise through the four essays. Essay 1 sits at village, clinic or booth level. Essay 2 moves to coalitions, associations and officials. Essay 3 is the university and its international standing. Essay 4 is a national institution with regional reach. The ascent makes the set feel like a trajectory rather than four samples.</p>
+<h3>The recurring cast</h3>
+<p>Let people and institutions reappear across essays. This is a stronger form of coherence than merely keeping the topic consistent.</p>
+<h3>Worked thread (invented, for shape only)</h3>
+<p>Fewer than half the children in Katiba Province hold a birth certificate, locking them out of national exams and later land title. Priority area: supporting development for more inclusive and effective societies. I founded Kalima Registration Outreach, a mobile registration service that has registered 3,142 children across 40 villages and cut median distance to a registrar from 26 km to 4 km. It runs through the Katiba Midwives’ Association, whose members now issue notification slips at delivery. On the strength of the three-province study, Dr Amina Sesay, the Registrar General, appointed me to the Civil Registration Technical Advisory Group, where the late-registration procedure I drafted became national guidance in 2025. What I cannot do is evaluate whether the effect holds or cost it for national rollout. MSc Social Policy and Evaluation at Northgate University; modules in Impact Evaluation and Public Service Design; Professor Helen Aird and Dr Marcus Oyelaran. Year one: replicate in Molo and Sisan with the Provincial Registrar’s office. Years three to five: build the evaluation function inside the National Civil Registration Authority. By 2035: quarterly national monitoring showing which districts fail which groups. Barrier: registrars are assessed on volume rather than coverage. Chevening: the alumni fund to extend Kalima, and access to a UK registration service that solved this decades ago.</p>
+<p>Every essay is now written in note form, and the cast recurs.</p>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s9">
+    <span class="section-label">Section 10</span>
+    <h2>The work experience section</h2>
+    <p>This is the most under-prepared part of the application.</p>
+<p>Chevening does not ask for a CV. It asks for employment history entered as separate entries, each with around 100 words describing roles and responsibilities in your own words. Confirm the exact limit in the form.</p>
+<p>These entries are not supporting material. They are the only place in the entire application where an assessor sees your actual career. The four essays cover a handful of chosen episodes; everything else about your working life exists here or nowhere.</p>
+<p>Three consequences follow:</p>
+<ul>
+<li>It is often the largest piece of writing in the application.  </li>
+<li>It carries your progression on its own.  </li>
+<li>It corroborates the essays.</li>
+</ul>
+<h3>Five moves per entry</h3>
+<ol>
+<li>Scope, with a number.  </li>
+<li>Two or three responsibilities as verbs you own.  </li>
+<li>One responsibility that faces outward, with the external body named.  </li>
+<li>One measurable result the essays can build on without repeating.  </li>
+<li>Full sentences, first person, no bullet points.</li>
+</ol>
+<h3>Gloss employers the assessor will not know</h3>
+<p>A short factual clause converts an unknown name into a known quantity: <em>a national non-profit representing the technology industry</em>, <em>the state’s largest referral hospital</em>, <em>a policy institute funded by the Ministry of Finance</em>.</p>
+<p>Keep it factual. “One of the country’s three licensed credit bureaux” is a fact. “A highly reputable and prestigious organisation” is not.</p>
+<h3>Showing the arc</h3>
+<p>Read your entries in sequence and ask what is growing: scope, team, decision rights, money, altitude, externality. If two consecutive entries look identical in scope, the second is under-described.</p>
+<h3>Awkward cases</h3>
+<ul>
+<li>Sideways move or step down: describe what it gave you access to.  </li>
+<li>Self-employment: state the client base, that you scope and price the work, and who receives the output.  </li>
+<li>Voluntary roles: write them exactly as paid roles (only post-graduation hours count toward 2,800).  </li>
+<li>Two roles at the same employer: separate entries showing what changed.  </li>
+<li>Job outside your field: one factual entry; if it built something you still use, say so in a clause.  </li>
+<li>Very early roles: keep them short and factual.</li>
+</ul>
+<h3>Model entries (all invented)</h3>
+<p><strong>Public sector (98 words)</strong><br>I run the non-revenue water programme at Katiba Water Utility, a municipally owned utility serving 340,000 connections, managing a field team of nine and the district metering budget. I set leak-detection priorities, negotiate excavation access with Katiba Municipal Council, and present quarterly performance to the utility board. I also chair the joint technical group with the National Water Regulatory Authority, where I drafted the reporting template now used for water losses nationally. Since I rebuilt our zoning and metering approach in 2024, losses in the pilot zones have fallen from 41 per cent to 28.</p>
+<p><strong>Private sector (99 words)</strong><br>I manage credit risk at Sahel Trade Finance, one of the country’s three licensed non-bank lenders to small traders, covering 8,140 active loans. I built and own the scoring model, set provisioning policy with the finance director, and chair the monthly arrears committee. I represent the firm on the Bankers’ Association working group on responsible lending, where I drafted the affordability testing section of the 2025 code. Since I rebuilt the model to use cash-flow rather than collateral data, approvals for women-owned businesses have risen 34 per cent with no increase in default.</p>
+<p><strong>NGO (97 words)</strong><br>I run the livelihoods programme at Ubuntu Futures, a national employment charity, across Molo and Sisan districts, managing eleven staff and an annual budget of £412,000. I design the training curriculum, negotiate placement agreements with employers, and report quarterly to the donor and to the District Commissioner’s office. I sit on the district inter-agency coordination group, where I lead on employer engagement. Last year we placed 643 participants, 71 per cent of whom were still in work at six-month follow-up, and two employers have since hired independently of us.</p>
+<p><strong>Self-employed (94 words)</strong><br>I run an independent policy research practice, working on commission for two regulators and three donor programmes. I scope and price each engagement, design the research, and present findings directly to commissioning officials rather than through an intermediary. I have built a standing panel of twelve field researchers whom I train and supervise across engagements. My 2025 study of licensing costs for small operators was cited in the National Energy Regulatory Commission’s consultation document, and its recommendation on tiered licensing was adopted.</p>
+<h3>Checklist</h3>
+<ul class="checklist">
+<li class="chk">Every role since graduation entered once, with no duplicates  </li>
+<li class="chk">Weeks and hours entered correctly and plausibly  </li>
+<li class="chk">Each entry has scope, decision verbs, an outward-facing responsibility and a result  </li>
+<li class="chk">Unfamiliar employers glossed in a factual clause  </li>
+<li class="chk">Something grows between each consecutive pair of entries  </li>
+<li class="chk">Every essay claim about a role is corroborated here  </li>
+<li class="chk">No sentence repeated from an essay  </li>
+<li class="chk">Organisation names spelled identically throughout  </li>
+<li class="chk">Full sentences, first person, no bullet points  </li>
+<li class="chk">I could expand on every entry for five minutes at interview</li>
+</ul>
+<hr>
+
+</section>
+
+<section class="guide-section alt-bg" id="s10">
+    <span class="section-label">Section 11</span>
+    <h2>Word budgets (at 300 words)</h2>
+    <div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Essay</th>
+<th>Recommended split</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. Leadership (STARL)</td>
+<td>S 40 · T 30 · A 110 · R 70 · L 50</td>
+</tr>
+<tr>
+<td>2. Relationships (STARL)</td>
+<td>S 55 · T 35 · A 90 · R 50 · L + Chevening 70</td>
+</tr>
+<tr>
+<td>3. Course choice</td>
+<td>Problem + priority 70 · Course + modules 110 · University + faculty 60 · Immediate application 60</td>
+</tr>
+<tr>
+<td>4. Career plan</td>
+<td>Impact intent 60 · Medium term 70 · Long term 70 · Barriers 55 · Chevening 45</td>
+</tr>
+</tbody></table></div>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s11">
+    <span class="section-label">Section 12</span>
+    <h2>The writing process</h2>
+    <h3>Phase one: research</h3>
+<ul>
+<li>Full module list and handbook for the first choice  </li>
+<li>Two academics, exact titles, one specific recent piece of work each  </li>
+<li>How the course is taught and assessed  </li>
+<li>Research centre or institute attached to the programme  </li>
+<li>Any departmental partnership with institutions in your country  </li>
+<li>One national strategy or policy document that names your problem  </li>
+<li>One UK institution, bilateral framework or FCDO programme in your sector  </li>
+<li>Every statistic you intend to use, with its source  </li>
+<li>Correct legal name and spelling of every organisation  </li>
+<li>The capability gap written as a sentence beginning “I cannot currently…”</li>
+</ul>
+<h3>Phase two: structure</h3>
+<p>One line per paragraph, checked against the sub-questions, with word counts assigned. Do not begin prose until the outline covers every sub-bullet.</p>
+<h3>Phase three: draft</h3>
+<p>One idea per paragraph, active voice, first person, specifics everywhere. Do not edit while drafting.</p>
+<h3>Phase four: cut</h3>
+<ol>
+<li>Delete every sentence that could appear unchanged in another applicant’s essay.  </li>
+<li>Delete adjectives doing the work numbers should do.  </li>
+<li>Replace weak verbs with decisions.  </li>
+<li>Replace round numbers with exact figures.  </li>
+<li>Check every proper noun is attached to something you did.  </li>
+<li>Verify every figure; remove any you cannot source.  </li>
+<li>Confirm every sub-question is still answered.  </li>
+<li>Read aloud, then give it to a colleague who knows your work.</li>
+</ol>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s12">
+    <span class="section-label">Section 13</span>
+    <h2>Voice and style</h2>
+    <p>Explain, do not list.<br>There is no CV in this application. The essays answer why it mattered, what you personally did, what changed, what you learned and what you will do next.</p>
+<p>Avoid the sophisticated English trap.<br>Write: “I will use what I learn to redesign how Katiba allocates maintenance budgets.”<br>Not: “I aspire to leverage my transformative leadership paradigm…”</p>
+<p>Word economy.<br>Delete on sight: “it is important to note that”, “in my opinion”, “as we all know”, “in today’s rapidly changing world”, “various stakeholders”, “in order to” where “to” will do.</p>
+<p>Every paragraph must earn its place.<br>Ask what it proves. If it is merely interesting, cut it.</p>
+<p><strong>Do</strong>  </p>
+<ul>
+<li>Write “I” for your own contribution and attribute team work precisely  </li>
+<li>Use full sentences throughout  </li>
+<li>Prefer concrete nouns, including proper nouns  </li>
+<li>Keep your own idiom where it is clear</li>
+</ul>
+<p><strong>Don’t</strong>  </p>
+<ul>
+<li>Use bullet points in the essay boxes  </li>
+<li>Quote anyone, define abstract concepts, or open with a proverb  </li>
+<li>Write “we” where you mean “I”  </li>
+<li>Use passionate, dynamic, holistic, synergy, game-changing or impactful  </li>
+<li>Import phrasing from university websites or policy boilerplate</li>
+</ul>
+<hr>
+
+</section>
+
+<section class="guide-section alt-bg" id="s13">
+    <span class="section-label">Section 14</span>
+    <h2>Consistency across the four essays</h2>
+    <ul class="checklist">
+<li class="chk">The problem in Essay 3 is recognisably the problem in Essays 1 and 2  </li>
+<li class="chk">The capability gap in Essay 3 is one my experience in Essay 1 would plausibly have exposed  </li>
+<li class="chk">At least one named person or institution recurs across essays  </li>
+<li class="chk">The altitude rises from Essay 1 to Essay 4  </li>
+<li class="chk">The first-year plan appears in Essay 3 and is not repeated in Essay 4  </li>
+<li class="chk">The priority area is named once in Essay 3 and echoed in Essay 4  </li>
+<li class="chk">Dates, titles and employers match the work history exactly  </li>
+<li class="chk">My three course choices point at the same career  </li>
+<li class="chk">No number appears twice with two different values  </li>
+<li class="chk">Every organisation is spelled identically each time it appears  </li>
+<li class="chk">Every claim my essays make about a role is corroborated in that role’s work history entry  </li>
+<li class="chk">No sentence appears in both an essay and a work history entry</li>
+</ul>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s14">
+    <span class="section-label">Section 15</span>
+    <h2>Final quality control</h2>
+    <p><strong>Evidence</strong>  </p>
+<ul class="checklist">
+<li class="chk">At least two exact figures in each of Essays 1 and 2, at the result  </li>
+<li class="chk">Every statistic sourced; anything unverifiable removed  </li>
+<li class="chk">Four to eight proper nouns per essay, each attached to something I did  </li>
+<li class="chk">Module names checked against the current handbook  </li>
+<li class="chk">Every person, institution and scheme spelled correctly</li>
+</ul>
+<p><strong>Strategy</strong>  </p>
+<ul class="checklist">
+<li class="chk">One UK priority area, in Chevening’s wording  </li>
+<li class="chk">University justified on substance, never ranking  </li>
+<li class="chk">A named role for the UK and for Chevening  </li>
+<li class="chk">The career plan addresses a real challenge in my country or region</li>
+</ul>
+<p><strong>Mechanics</strong>  </p>
+<ul class="checklist">
+<li class="chk">Citizenship, work hours, three courses, English, word limits  </li>
+<li class="chk">Written entirely by me</li>
+</ul>
+<h3>The test suite</h3>
+<ul>
+<li><strong>Specificity test.</strong> For any abstract statement, ask who, what, why, how and what changed.  </li>
+<li><strong>So-what test.</strong> After every achievement, keep asking “so what?” until the answer is something that changed for somebody else.  </li>
+<li><strong>Name test.</strong> Circle every proper noun. Is each attached to a verb describing what you did with it?  </li>
+<li><strong>Job title test.</strong> Remove your job title from Essay 1. Do your actions still demonstrate leadership?  </li>
+<li><strong>Network test.</strong> Does Essay 2 prove you build relationships that produce results, or only that you know people?  </li>
+<li><strong>University swap test.</strong> Replace your university’s name with another. Does most of Essay 3 still work? If yes, it is generic.  </li>
+<li><strong>Altitude test.</strong> Read the four essays in order. Does the scale of what you affect increase?  </li>
+<li><strong>Why-you test.</strong> Would a reader understand why you in particular can carry out this plan?  </li>
+<li><strong>Why-now test.</strong> Can a reader follow: I reached this stage → hit this limitation → now need this capability → this course provides it → I will apply it here?  </li>
+<li><strong>Why-Chevening test.</strong> What becomes impossible, or much slower, without it?  </li>
+<li><strong>Golden thread test.</strong> Read the first sentence of all four essays back to back. Do they form one storyline?  </li>
+<li><strong>Colleague test.</strong> Would someone who works with you recognise this as you?  </li>
+<li><strong>Interview test.</strong> Could you talk for five minutes about any claim, any name and any number, without notes?  </li>
+<li><strong>CV test.</strong> What does the reader now know that they could not have learned from your CV?</li>
+</ul>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s15">
+    <span class="section-label">Section 16</span>
+    <h2>Fifteen questions before you submit</h2>
+    <ol>
+<li>Can the reader identify my strongest leadership example immediately?  </li>
+<li>Can the reader see exactly what I personally did?  </li>
+<li>Have I demonstrated influence rather than participation?  </li>
+<li>Have I shown what changed because of my actions?  </li>
+<li>Does my relationship example show a partnership rather than a contact list?  </li>
+<li>Have I said what I contributed to that relationship?  </li>
+<li>Is my capability gap unmistakably clear?  </li>
+<li>Does every course feature I mention address that gap directly?  </li>
+<li>Would my course argument survive a change of university name?  </li>
+<li>Have I named a credible priority for my future impact?  </li>
+<li>Are medium and long-term goals connected, with each stage enabling the next?  </li>
+<li>Can the reader see credible evidence that the impact will happen?  </li>
+<li>Have I named realistic barriers, including one about my own standing, with practical responses?  </li>
+<li>Is Chevening relevant to the plan rather than a source of funding?  </li>
+<li>Do all four essays tell one coherent story about the professional I am becoming?</li>
+</ol>
+<p><strong>The final rule.</strong><br>Do not tell the reader you are a leader. Give them enough evidence to conclude it.<br>Do not tell them the university is world-class. Show them it provides precisely the capability you lack.<br>Do not tell them you will improve your country. Show them the problem, the method, the partner, and what will be different.  </p>
+
+</section>
+
+</article>
+</div>
+
+
+<div class="series-nav">
+    <span></span>
+    <a href="essay-1-leadership.html" class="next-item"><span class="dir">Next →</span><span class="lbl">Essay 1: Leadership</span></a>
+</div>
+
+<!-- MENTORSHIP + COMMUNITY CTA -->
+<section id="mentorship-cta">
+    <span class="kicker">Two Ways To Keep Going With TAL</span>
+    <h2>Everything in this guide is easy to see in someone else's essay and hard to see in your own.</h2>
+    <p>That is what a second pair of eyes is for. Whether you want a mentor who has actually won Chevening reading your drafts, or just a place to ask questions as you go, TAL has a path that costs nothing to start.</p>
+    <div class="cta-paths">
+        <div class="cta-path">
+            <span class="cta-path-kicker">1:1 Support</span>
+            <h3>Work with a mentor</h3>
+            <p>A mentor who has been through this exact application, knows what the sub-questions are really asking, and will tell you honestly where your draft is decoration.</p>
+            <ul class="cta-path-list">
+                <li>Scholarship Essay Review, two rounds of feedback</li>
+                <li>Lab Focus sessions for strategy, drafts and mock interviews</li>
+            </ul>
+            <a href="../../apply.html" class="btn btn-blue">Apply for Mentorship</a>
+        </div>
+        <div class="cta-path">
+            <span class="cta-path-kicker">Free, Always</span>
+            <h3>Join the community</h3>
+            <p>Thousands of applicants figuring this out together. No cost, no commitment, and a place to ask the questions that come up between drafts.</p>
+            <ul class="cta-path-list">
+                <li>Webinars and Lab Clinic Hours</li>
+                <li>Scholarship and programme opportunities, shared as they come up</li>
+            </ul>
+            <a href="../../community.html" class="btn btn-outline-white">Join the Free Community</a>
+        </div>
+    </div>
+    <p class="cta-note">Free to apply, no commitment &nbsp;·&nbsp; Prefer email? <a href="mailto:info@theapplicationlab.com?subject=Chevening Essay Support">info@theapplicationlab.com</a></p>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <img src="../../logo.png" alt="The Application Lab" width="1920" height="1080"/>
+        <div class="footer-links">
+            <a href="../../index.html">Website</a>
+            <a href="../../resources.html">Free Resources</a>
+            <a href="../../community.html">Free Community</a>
+            <a href="../../mentorship.html">Mentorship &amp; Pricing</a>
+            <a href="https://www.linkedin.com/company/theapplicationlab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.instagram.com/theapplicationlab" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.youtube.com/@TheApplicationLab" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
+        <p class="footer-bottom">The Application Lab &nbsp;·&nbsp; Edspire Labs Ltd &nbsp;·&nbsp; Company No. 16751243 &nbsp;·&nbsp; Cambridge, UK</p>
+    </div>
+</footer>
+
+<script>
+const burger = document.getElementById('mob-burger');
+const mobMenu = document.getElementById('mob-menu');
+if (burger && mobMenu) {
+    burger.addEventListener('click', function() {
+        const isOpen = mobMenu.style.display === 'flex';
+        mobMenu.style.display = isOpen ? 'none' : 'flex';
+    });
+    mobMenu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { mobMenu.style.display = 'none'; });
+    });
+}
+const navLinks = document.querySelectorAll('.guide-sidebar a[data-nav]');
+const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href')));
+if (navLinks.length) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const idx = sections.indexOf(entry.target);
+            if (idx === -1) return;
+            if (entry.isIntersecting) {
+                navLinks.forEach(a => a.classList.remove('active'));
+                navLinks[idx].classList.add('active');
+            }
+        });
+    }, { rootMargin: '-15% 0px -75% 0px', threshold: 0 });
+    sections.forEach(s => { if (s) sectionObserver.observe(s); });
+}
+</script>
+
+</body>
+</html>

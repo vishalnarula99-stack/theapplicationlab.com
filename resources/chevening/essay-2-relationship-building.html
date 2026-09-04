@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essay 2: Relationship Building and Influence | The Application Lab</title>
+    <meta name="description" content="Turning a professional relationship into evidence of influence, not just a contact list.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.theapplicationlab.com/resources/chevening/essay-2-relationship-building.html">
+    <meta property="og:title" content="Essay 2: Relationship Building and Influence | The Application Lab">
+    <meta property="og:description" content="Turning a professional relationship into evidence of influence, not just a contact list.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.theapplicationlab.com/resources/chevening/essay-2-relationship-building.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { overflow-x: hidden; max-width: 100%; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; color: #0f1e35; background: #f7f9fc; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        :root {
+            --navy: #0f1e35; --blue: #2e8bc0; --blue-050: #eaf4fb; --bg: #f7f9fc;
+            --muted: #6b7c93; --border: #dde4ee; --body-text: #3d4f63; --gold: #c9a84c; --amber-bg: #fbf3e6;
+        }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--navy); line-height: 1.25; }
+        section[id] { scroll-margin-top: 24px; }
+        body { padding-top: 72px; }
+        @media (min-width: 769px) { #desktop-nav { display: flex; } #mob-burger { display: none; } }
+        @media (max-width: 768px) {
+            #desktop-nav { display: none !important; } #mob-burger { display: flex !important; }
+            #hdr { height: 64px !important; } #hdr img { height: 42px !important; }
+            #mob-menu { top: 64px !important; } body { padding-top: 64px; }
+        }
+
+        .breadcrumb { max-width: 1180px; margin: 0 auto; padding: 22px 24px 0; font-size: 0.78rem; color: var(--muted); }
+        .breadcrumb a { color: var(--blue); text-decoration: none; font-weight: 600; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        #hero-guide {
+            position: relative; min-height: 46vh; display: flex; align-items: flex-end;
+            background-image: url('../../oxford-hero.jpg'); background-size: cover; background-position: center center;
+            margin-top: 18px;
+        }
+        .hero-guide-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,15,24,0.35) 0%, rgba(8,15,24,0.55) 55%, rgba(8,15,24,0.94) 100%); }
+        .hero-guide-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 44px 24px 40px; text-align: center; }
+        .hero-guide-inner .kicker { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #7ac8e8; margin-bottom: 18px; }
+        .hero-guide-inner h1 { color: #fff; font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -1px; line-height: 1.18; margin-bottom: 18px; text-shadow: 0 2px 24px rgba(0,0,0,0.4); }
+        .hero-guide-inner .byline { font-family: 'Lora', serif; font-style: italic; font-size: 1.02rem; color: rgba(255,255,255,0.88); line-height: 1.75; max-width: 580px; margin: 0 auto; }
+
+        #facts { background: var(--navy); padding: 0 24px 40px; }
+        .facts-strip { max-width: 800px; margin: 0 auto; display: flex; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 26px; }
+        .facts-strip > div { flex: 1; text-align: center; padding: 0 12px; border-right: 1px solid rgba(255,255,255,0.12); }
+        .facts-strip > div:last-child { border-right: none; }
+        .facts-strip strong { display: block; font-size: 1.3rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; line-height: 1; }
+        .facts-strip span { display: block; font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); font-weight: 600; margin-top: 8px; line-height: 1.5; }
+
+        .pdf-strip { background: var(--blue-050); border-bottom: 1px solid var(--border); text-align: center; padding: 16px 24px; }
+        .pdf-strip a { font-size: 0.82rem; font-weight: 700; color: var(--blue); text-decoration: none; }
+        .pdf-strip a:hover { text-decoration: underline; }
+
+        .guide-layout { max-width: 1180px; margin: 0 auto; padding: 48px 24px 0; display: flex; gap: 56px; align-items: flex-start; }
+        .guide-sidebar { display: none; }
+        .toc-wrap {
+            background: var(--navy); border-radius: 4px; max-width: 760px; margin: 0 auto 8px; padding: 28px 32px;
+            background-image: repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
+        }
+        .toc-wrap h2 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7ac8e8; margin-bottom: 16px; }
+        .toc-list { list-style: none; columns: 2; column-gap: 32px; }
+        .toc-list li { break-inside: avoid; margin-bottom: 10px; }
+        .toc-list a { font-size: 0.86rem; color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; }
+        .toc-list a:hover { color: #fff; }
+
+        article.guide-main { max-width: 720px; margin: 0 auto; padding: 8px 24px 0; flex: 1; min-width: 0; counter-reset: section 0; }
+        .guide-section { padding: 56px 0; border-bottom: 1px solid var(--border); counter-increment: section; }
+        .guide-section:last-of-type { border-bottom: none; }
+        .section-label { display: flex; align-items: center; gap: 12px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); margin-bottom: 18px; }
+        .section-label::before {
+            content: counter(section, decimal-leading-zero);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            width: 34px; height: 34px; border-radius: 50%; background: var(--blue-050); color: var(--blue);
+            font-family: 'Lora', serif; font-style: italic; font-weight: 600; font-size: 0.9rem; letter-spacing: 0;
+        }
+        .guide-section h2 { font-size: clamp(1.3rem, 2.5vw, 1.65rem); letter-spacing: -0.5px; margin-bottom: 20px; }
+        .guide-section h3 { font-size: 1.08rem; margin: 32px 0 14px; scroll-margin-top: 90px; }
+        .guide-section h3:first-of-type { margin-top: 0; }
+        .guide-section h4 { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 22px 0 8px; }
+        .guide-section p { font-size: 0.96rem; color: var(--body-text); margin-bottom: 16px; }
+        .guide-section p:last-child { margin-bottom: 0; }
+        .guide-section ul, .guide-section ol { margin: 0 0 16px 22px; color: var(--body-text); font-size: 0.96rem; }
+        .guide-section li { margin-bottom: 8px; }
+        .guide-section li::marker { color: var(--blue); }
+        .guide-section strong { color: var(--navy); }
+        .guide-section.alt-bg { background: #fff; border-radius: 6px; padding: 48px 36px; margin: 8px 0; border-bottom: none; box-shadow: 0 1px 0 var(--border); }
+
+        .callout { border-radius: 4px; padding: 18px 22px; margin: 0 0 20px; font-size: 0.92rem; line-height: 1.8; }
+        .callout p { margin: 0 0 12px; font-size: 0.9rem; }
+        .callout p:last-child { margin-bottom: 0; }
+        .callout strong { display: block; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+        .callout-rule { background: var(--blue-050); border: 1px solid rgba(46,139,192,0.25); color: var(--navy); }
+        .callout-trap { background: var(--amber-bg); border: 1px solid rgba(184,134,58,0.3); color: #6b4f1f; font-size: 0.84rem; }
+        .callout-trap strong { color: #8a6a2a; }
+        .meta-wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 0; }
+
+        .table-scroll { overflow-x: auto; margin: 18px 0; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.85rem; }
+        table th, table td { padding: 11px 13px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; }
+        table thead th { background: var(--navy); color: #fff; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+        table thead th:first-child { border-top-left-radius: 4px; }
+        table thead th:last-child { border-top-right-radius: 4px; }
+        table tbody th { background: var(--bg); color: var(--navy); font-weight: 700; white-space: nowrap; }
+        table tbody td { color: var(--body-text); }
+        table tbody tr:last-child td, table tbody tr:last-child th { border-bottom: none; }
+
+        ul.checklist { list-style: none; margin: 0 0 8px; }
+        ul.checklist li.chk { display: flex; gap: 12px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--body-text); }
+        ul.checklist li.chk:last-child { border-bottom: none; }
+        ul.checklist li.chk::before { content: ''; flex-shrink: 0; width: 16px; height: 16px; margin-top: 3px; border: 1.5px solid var(--blue); border-radius: 3px; }
+
+        .series-nav { max-width: 720px; margin: 0 auto; padding: 8px 24px 56px; display: flex; justify-content: space-between; gap: 16px; }
+        .series-nav a { flex: 1; text-decoration: none; border: 1px solid var(--border); border-radius: 4px; padding: 16px 18px; background: #fff; transition: box-shadow 0.2s ease, transform 0.2s ease; }
+        .series-nav a:hover { box-shadow: 0 10px 28px rgba(15,30,53,0.1); transform: translateY(-2px); }
+        .series-nav .dir { display: block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+        .series-nav .lbl { display: block; font-size: 0.88rem; font-weight: 700; color: var(--navy); }
+        .series-nav .next-item { text-align: right; }
+
+        #mentorship-cta { background: var(--navy); background-image: repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px); padding: 72px 24px; text-align: center; }
+        #mentorship-cta .kicker { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #4a9fd4; margin-bottom: 16px; }
+        #mentorship-cta h2 { color: #fff; font-size: clamp(1.4rem, 3vw, 1.9rem); max-width: 640px; margin: 0 auto 18px; }
+        #mentorship-cta p { color: rgba(255,255,255,0.78); font-size: 0.96rem; line-height: 1.85; max-width: 600px; margin: 0 auto 32px; }
+        .cta-paths { display: flex; gap: 20px; max-width: 800px; margin: 0 auto 8px; text-align: left; }
+        .cta-path { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14); border-top: 3px solid var(--blue); border-radius: 4px; padding: 28px 26px; display: flex; flex-direction: column; }
+        .cta-path:nth-child(2) { border-top-color: var(--gold); }
+        .cta-path-kicker { display: block; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #7ac8e8; margin-bottom: 12px; }
+        .cta-path:nth-child(2) .cta-path-kicker { color: #e4cb7a; }
+        .cta-path h3 { color: #fff; font-size: 1.15rem; margin-bottom: 10px; }
+        .cta-path p { color: rgba(255,255,255,0.68); font-size: 0.86rem; line-height: 1.75; margin: 0 0 16px; max-width: none; }
+        .cta-path-list { list-style: none; margin: 0 0 22px; flex: 1; }
+        .cta-path-list li { color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.6; padding-left: 18px; position: relative; margin-bottom: 8px; }
+        .cta-path-list li::before { content: '→'; position: absolute; left: 0; color: var(--blue); }
+        .cta-path:nth-child(2) .cta-path-list li::before { color: var(--gold); }
+        .btn { display: inline-block; padding: 14px 26px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.25s ease; text-align: center; }
+        .btn-blue { background: var(--blue); color: #fff; border: none; }
+        .btn-blue:hover { background: #1a6fa0; box-shadow: 0 8px 24px rgba(46,139,192,0.4); transform: translateY(-2px); }
+        .btn-outline-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
+        .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+        .cta-note { margin-top: 30px; font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+        .cta-note a { color: #7ac8e8; text-decoration: none; font-weight: 600; }
+
+        footer { background: #080f18; padding: 48px 7% 28px; }
+        footer .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+        footer img { height: 60px; width: auto; filter: brightness(0) invert(1); }
+        .footer-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+        .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.55); text-decoration: none; }
+        .footer-links a:hover { color: #fff; }
+        .footer-bottom { font-size: 0.68rem; color: rgba(255,255,255,0.25); margin-top: 6px; }
+
+        @media (min-width: 1024px) {
+            .toc-wrap { display: none; }
+            .guide-sidebar {
+                display: block; position: sticky; top: 88px; width: 230px; flex-shrink: 0;
+                max-height: calc(100vh - 112px); overflow-y: auto;
+                background: var(--navy); border-radius: 4px; padding: 26px 22px;
+                background-image: repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
+            }
+            .guide-sidebar h2 { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7ac8e8; margin-bottom: 18px; }
+            .guide-sidebar ul { list-style: none; }
+            .guide-sidebar li { margin-bottom: 4px; }
+            .guide-sidebar a {
+                display: block; font-size: 0.79rem; font-weight: 600; color: rgba(255,255,255,0.6); text-decoration: none;
+                padding: 8px 0 8px 14px; border-left: 2px solid rgba(255,255,255,0.14); transition: all 0.15s ease; line-height: 1.4;
+            }
+            .guide-sidebar a:hover { color: #fff; border-left-color: rgba(255,255,255,0.4); }
+            .guide-sidebar a.active { color: #7ac8e8; border-left-color: var(--blue); font-weight: 700; }
+        }
+        @media (max-width: 640px) {
+            .toc-list { columns: 1; }
+            .hero-guide-inner { padding: 32px 20px 32px; }
+            .facts-strip { flex-wrap: wrap; }
+            .facts-strip > div { flex: 1 1 45%; padding-bottom: 14px; }
+            .guide-section { padding: 40px 0; }
+            .guide-section.alt-bg { padding: 32px 20px; }
+            table { min-width: 460px; }
+            .cta-paths { flex-direction: column; }
+            .series-nav { flex-direction: column; }
+            .series-nav .next-item { text-align: left; }
+        }</style>
+</head>
+<body>
+
+<header id="hdr" style="position:fixed; top:0; left:0; right:0; width:100%; height:72px; z-index:9999; display:flex; align-items:center; justify-content:space-between; padding:0 5%; background:rgba(15,30,53,0.97); box-shadow:0 2px 20px rgba(0,0,0,0.3);">
+  <a href="../../index.html" style="display:flex; align-items:center; text-decoration:none; flex-shrink:0; margin-right:20px;">
+    <img src="../../logo.png" alt="The Application Lab" width="1920" height="1080" style="height:56px; width:auto; display:block; object-fit:contain; filter:brightness(0) invert(1);"/>
+  </a>
+  <nav id="desktop-nav" style="align-items:center; gap:26px; margin-left:auto;">
+    <a href="index.html#about" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">About</a>
+    <a href="index.html#services" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Mentorship</a>
+    <a href="index.html#how" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">How It Works</a>
+    <a href="index.html#founders" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Founders</a>
+    <a href="../../community.html" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Community</a>
+    <a href="../../resources.html" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">Resources</a>
+    <a href="../../immersive.html" style="font-size:0.7rem; font-weight:600; color:rgba(255,255,255,0.8); letter-spacing:0.8px; text-transform:uppercase; text-decoration:none;">The Immersive Lab</a>
+    <a href="../../apply.html" style="font-size:0.7rem; font-weight:700; color:#fff; letter-spacing:1px; text-transform:uppercase; text-decoration:none; background:#2e8bc0; padding:10px 20px; border-radius:2px;">Apply Now</a>
+  </nav>
+  <button id="mob-burger" aria-label="Open menu" style="flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; margin-left:16px;">
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+    <span style="display:block; width:22px; height:1.5px; background:#fff;"></span>
+  </button>
+</header>
+
+<div id="mob-menu" style="display:none; position:fixed; top:72px; left:0; right:0; z-index:9998; background:rgba(15,30,53,0.98); flex-direction:column; padding:16px 5%; border-top:1px solid rgba(255,255,255,0.08);">
+  <a href="index.html#about" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">About</a>
+  <a href="index.html#services" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Mentorship</a>
+  <a href="index.html#how" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">How It Works</a>
+  <a href="index.html#founders" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Founders</a>
+  <a href="../../community.html" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Community</a>
+  <a href="../../resources.html" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">Resources</a>
+  <a href="../../immersive.html" style="display:block; padding:13px 0; font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.85); text-transform:uppercase; letter-spacing:0.5px; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.06);">The Immersive Lab</a>
+  <a href="../../apply.html" style="display:block; margin-top:16px; padding:13px 20px; font-size:0.82rem; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:1px; text-decoration:none; background:#2e8bc0; text-align:center; border-radius:2px;">Apply Now</a>
+</div>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../../resources.html">Resources</a> / <a href="../../resources.html#chevening">Chevening</a> / Essay 2: Relationship Building and Influence
+</nav>
+
+<section id="hero-guide">
+    <div class="hero-guide-overlay" aria-hidden="true"></div>
+    <div class="hero-guide-inner">
+        <span class="kicker">Chevening Guide · 3 of 5</span>
+        <h1>Essay 2: Relationship Building and Influence</h1>
+        <p class="byline">Turning a professional relationship into evidence of influence, not just a contact list.</p>
+    </div>
+</section>
+
+<div id="facts">
+    <div class="facts-strip">
+        <div><strong>~300</strong><span>Words</span></div>
+        <div><strong>4</strong><span>Sub-Questions</span></div>
+        <div><strong>STARL</strong><span>Structure</span></div>
+        <div><strong>Free</strong><span>To Read & Download</span></div>
+    </div>
+</div>
+
+<div class="pdf-strip">
+    <a href="essay-2-relationship-building.pdf" target="_blank" rel="noopener">Download this guide as a PDF ↓</a>
+</div>
+
+<div class="meta-wrap"><div class="callout callout-trap"><p><strong>About the examples.</strong><br>All names, institutions and statistics below are invented and exist only to show technique. Yours must be real.</p>
+</div></div>
+<div class="meta-wrap"><div class="callout callout-rule"><p><strong>The question.</strong><br>Tell us about a professional relationship you have built and maintained. Address: how was the relationship formed, and what made it important; what did you contribute, and what did you gain; how have you sustained or developed it over time; how will these skills help you build connections within the Chevening community and beyond.</p>
+<p><strong>What is being scored.</strong><br>Not sociability, and not the seniority of the people you know. Chevening’s criteria ask for collaboration producing real, measurable outcomes: how you brought people together, and what changed as a result.</p>
+<p><strong>Structure.</strong> STARL, with the Learning section doing double duty. The learning is the transferable method; the Chevening paragraph is that method applied forwards.</p>
+<p><strong>Alternative frame.</strong><br>Connection → trust → contribution → collaboration → result → continued relationship. Equivalent beats.</p>
+<p><strong>Word plan at 300 words</strong><br>S 55 · T 35 · A 90 · R 50 · L + Chevening 70</p>
+</div></div>
+
+<nav class="toc-wrap" aria-label="Table of contents">
+    <h2>In This Guide</h2>
+    <ul class="toc-list">
+        <li><a href="#s0">01. Part one: what this question actually tests</a></li>
+        <li><a href="#s1">02. Part two: naming in this essay</a></li>
+        <li><a href="#s2">03. Part three: choosing the relationship</a></li>
+        <li><a href="#s3">04. Part four: writing it, beat by beat</a></li>
+        <li><a href="#s4">05. Part five: two full sample answers</a></li>
+        <li><a href="#s5">06. Part six: dos and don’ts</a></li>
+        <li><a href="#s6">07. Part seven: common mistakes and the fix</a></li>
+        <li><a href="#s7">08. Part eight: checklists</a></li>
+    </ul>
+</nav>
+
+<div class="guide-layout">
+<nav class="guide-sidebar" aria-label="Section navigation">
+    <h2>In This Guide</h2>
+    <ul>
+        <li><a href="#s0" data-nav>01. Part one: what this question actually tests</a></li>
+        <li><a href="#s1" data-nav>02. Part two: naming in this essay</a></li>
+        <li><a href="#s2" data-nav>03. Part three: choosing the relationship</a></li>
+        <li><a href="#s3" data-nav>04. Part four: writing it, beat by beat</a></li>
+        <li><a href="#s4" data-nav>05. Part five: two full sample answers</a></li>
+        <li><a href="#s5" data-nav>06. Part six: dos and don’ts</a></li>
+        <li><a href="#s6" data-nav>07. Part seven: common mistakes and the fix</a></li>
+        <li><a href="#s7" data-nav>08. Part eight: checklists</a></li>
+    </ul>
+</nav>
+<article class="guide-main">
+
+<section class="guide-section" id="s0">
+    <span class="section-label">Section 1</span>
+    <h2>Part one: what this question actually tests</h2>
+    <p>Applicants read “networking” and write about their personality. Assessors want something narrower: evidence that you can build a working alliance with somebody whose cooperation you need and cannot compel, and that the alliance produced a result.</p>
+<p>Three things must therefore be in the essay (most drafts contain none of them):</p>
+<ol>
+<li>A named counterpart with a title.  </li>
+<li>An exchange — what you brought and what you gained, both directions.  </li>
+<li>An outcome with a number or a named artefact attached.</li>
+</ol>
+<h3>What this essay is not</h3>
+<p>Not a list of countries visited, conferences attended, famous people met, memberships held or connections collected. The question is not how large your network is. It is what you do with professional relationships.</p>
+<p><strong>The network test.</strong><br>Does your draft prove that you build relationships producing results, or only that you know people? If the second, rebuild it around one relationship and one outcome.</p>
+<hr>
+
+</section>
+
+<section class="guide-section alt-bg" id="s1">
+    <span class="section-label">Section 2</span>
+    <h2>Part two: naming in this essay</h2>
+    <p>This is the essay where naming does the most work and where applicants are most reluctant to use it.</p>
+<p><strong>Name the counterpart, with their position.</strong><br>“Mr Joseph Adeyemi, chair of the Katiba Small Installers’ Association” tells the reader where in the system he sits. “A stakeholder in the sector” tells them nothing.</p>
+<p><strong>Name the forum where you met.</strong><br>The National Health Financing Forum. The Standards Review Workshop. A named fellowship cohort.</p>
+<p><strong>Name the broker and the introduction.</strong><br>If the relationship produced an introduction that produced an outcome, name both ends.</p>
+<p><strong>Name the joint output.</strong><br>The consultation response, the co-authored chapter, the memorandum, the revised framework, by what it is called.</p>
+<p><strong>The rule again:</strong> name and action in the same sentence. Four to eight proper nouns in 300 words, every one attached to something you did together.</p>
+<p><strong>When not to name.</strong><br>Do not name beneficiaries, service users, patients or minors. Do not name a person you could not discuss for two minutes at interview.</p>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s2">
+    <span class="section-label">Section 3</span>
+    <h2>Part three: choosing the relationship</h2>
+    <p>Pick one. The question says a relationship, singular, and depth earns the mark.</p>
+<h3>Who the counterpart can be</h3>
+<p>A colleague, a supervisor, a researcher, a policymaker, an entrepreneur, a community leader, an employer, an international collaborator, a mentor, a professional association, or an institution rather than an individual. It does not have to be somebody senior.</p>
+<h3>Four questions to test a candidate</h3>
+<ol>
+<li>What did we build together that neither of us would have built alone?  </li>
+<li>What did I bring? (Skill, access, evidence, delivery, credibility, or the willingness to do work nobody else would.)  </li>
+<li>How did the relationship change state over time?  </li>
+<li>Can I attach a number or a named artefact to what came out of it?</li>
+</ol>
+<h3>Strong and weak candidates</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Strong</th>
+<th>Weak</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A counterpart in another institution you had no authority over</td>
+<td>Your line manager</td>
+</tr>
+<tr>
+<td>Somebody who began as an obstacle or a critic</td>
+<td>A friend from your degree</td>
+</tr>
+<tr>
+<td>A community body with reason to distrust your employer</td>
+<td>A famous person you met once</td>
+</tr>
+<tr>
+<td>A mentor who became a collaborator</td>
+<td>A mentor who stayed only a mentor</td>
+</tr>
+<tr>
+<td>A peer in another discipline whose method you needed</td>
+<td>Somebody whose function is to be impressive</td>
+</tr>
+</tbody></table></div>
+<p>The best category, if you have it, is the relationship that began in disagreement. It demonstrates influence rather than affinity.</p>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s3">
+    <span class="section-label">Section 4</span>
+    <h2>Part four: writing it, beat by beat</h2>
+    <h3>S. Situation — how it formed (~55 words)</h3>
+<p>Name the setting, name the person, and say why the relationship was necessary to you at that moment.</p>
+<p>Frame the gap as distance, not need. Who did you have to reach, and why were they out of reach? A professional silo, an institutional boundary, a hierarchy, a community with no reason to trust your employer, a discipline whose language you did not speak. The distance is what makes the relationship an achievement rather than a coincidence of employment.</p>
+<p><strong>Variant one — the capability you lacked</strong><br>“Moving from a ward at St Anselm’s into budget work, I had the clinical knowledge and no standing with the people who set allocations. At the National Health Financing Forum I met Mr Peter Danso of the Molo District Finance Office, who had the opposite problem: authority to reallocate, and no sense of what a ward consumes.”</p>
+<p><strong>Variant two — persistence rather than a single meeting</strong><br>“I met Dr Ruth Nyaga as an intern at the Bureau of Statistics and told her plainly that survey design was the field I wanted. I kept turning up to the Bureau’s monthly methods seminars for a year. She later taught me sampling at the Regional Statistical Training Centre, and then supervised my first survey module.”</p>
+<p><strong>Variant three — the relationship that began as friction</strong><br>“Mr Joseph Adeyemi had spent an hour at the Standards Review Workshop explaining why our draft licensing thresholds would push half the members of the Katiba Small Installers’ Association into informality. Rather than defend the draft, I asked him to walk me through it properly.”</p>
+<p><strong>Variant four — the relationship you had to earn access to</strong><br>“The Riverine Growers’ Union had been surveyed four times in three years and seen nothing come back. Their chair, Mrs Grace Owusu, told me they would not sit for a fifth. I offered to publish whatever we found in the Union’s own newsletter before it went to the ministry.”</p>
+<p>Cross-boundary work counts double. If the relationship crossed a boundary of culture, language, sector, discipline or country, say so in a clause.</p>
+<h3>T. Task — the shared goal (~35 words)</h3>
+<p>Name the specific thing you were both trying to achieve. Narrow and technical beats broad and worthy, because a narrow aim explains why two busy people kept meeting for four years.</p>
+<p>“We agreed on one aim: a tiered licence that let small installers operate legally without pretending they were utilities.”</p>
+<p>“We wanted a single indicator for informal-sector employment added to the National Labour Force Survey.”</p>
+<p>Compare “we shared a passion for development”, which explains nothing about why either of you attended the second meeting.</p>
+<h3>A. Action — what you gave, what you gained, how you sustained it (~90 words)</h3>
+<p>State the exchange as a transaction, both directions, in that order.</p>
+<p>“What I brought was access and analysis. I turned the Association’s complaints into an evidence submission the ministry could act on, modelling compliance cost against installer revenue at each threshold. What I gained was a reality check I could never have got from the file: how quotes are priced, why paperwork gets abandoned, which rules are simply ignored.”</p>
+<p>Show the cultivation. How did you build the bridge deliberately? A mutual contact who introduced you. A forum you kept attending. Analysis you sent unprompted. An offer to publish their findings first.</p>
+<p>Work both directions of the hierarchy. Strong applicants show they build horizontally (peers, community members, counterparts) and vertically (ministers, chief executives, regulators).</p>
+<p>Show maintenance as work, not goodwill. Use the escalation ladder: visible stages across stated time.</p>
+<p>“Over four years we have sustained it through output rather than contact, co-drafting two consultation responses, running five installer workshops, and jointly presenting the tiered proposal to the National Energy Regulatory Commission.”</p>
+<p>The words doing real work are “over four years”. Duration is evidence.</p>
+<p>Network multiplication, with the broker named:<br>“Mr Adeyemi introduced me to Mrs Beatrice Kwarteng, who chairs the Regional Installers’ Forum, which is how the proposal reached the Commission’s agenda at all.”</p>
+<h3>R. Result (~50 words)</h3>
+<p>What changed, with a number or a named artefact, and what the relationship is now.</p>
+<p>“The Commission adopted the tiered licence in 2024. Registered small installers in Katiba rose from 60 to 214 the following year. He now calls me before submissions rather than after them.”</p>
+<p>That last sentence earns its place. Assessors are marking “maintained”. A relationship described entirely in the past tense does not evidence it.</p>
+<p>Outcomes that count: a signed memorandum; a co-authored paper, submission or policy document; a joint initiative still running; a change to a rule, a form or a standard, named; a body that now convenes because you convened it; funding secured jointly.</p>
+<p>Optional transfer example: one sentence showing the same method in a second setting proves it is a technique rather than a lucky friendship.</p>
+<h3>L. Learning and the Chevening plan (~70 words)</h3>
+<p><strong>One — the method, named</strong><br>“I build relationships around a specific shared problem rather than a job title.”</p>
+<p><strong>Two — whom you will seek out in the Chevening community, and for what</strong><br>Name a gap you are positioned to fill.</p>
+<p>“I will use Chevening events to build a working group of energy regulators from countries at a similar stage of grid liberalisation, a group in which women practitioners are markedly under-represented, and seek out alumni working on informal-sector regulation for joint research.”</p>
+<p><strong>Three — what you will contribute</strong><br>The alumni community runs to tens of thousands across government, industry and civil society. Committees ask both which doors it opens and what you bring. An answer missing the second half reads as though you want the degree rather than the network.</p>
+<p>What you can offer: professional expertise, regional or country knowledge few in the cohort will have, sector experience, research interests, a cultural perspective, problem-solving experience, your own relationships, and a willingness to introduce people to each other.</p>
+<p>“Katiba has run informal-sector licensing for a decade, and I would host visiting scholars in that regime rather than only visiting theirs.”</p>
+<hr>
+
+</section>
+
+<section class="guide-section alt-bg" id="s4">
+    <span class="section-label">Section 5</span>
+    <h2>Part five: two full sample answers</h2>
+    <p><em>All names, places and statistics are invented. Do not copy.</em></p>
+<h3>Sample one — civil registration (298 words)</h3>
+<p>Registration reform in Katiba failed twice before I arrived because it was designed in the capital. The people who could make it work were midwives, and my employer, the Institute for Public Administration, had no standing with them at all. At a maternal health review in Sisan, Mrs Esther Bediako, president of the Katiba Midwives’ Association, told me plainly that her members had been “consulted” three times and never told the outcome.</p>
+<p>We set one aim: getting the birth notification slip issued at delivery rather than at the registrar’s office, which is where families were being lost.</p>
+<p>I brought the evidence and the route into government. I ran the three-province study that showed 71 per cent of unregistered children had been born with a skilled attendant present, and I took it to the Registrar General’s office. Mrs Bediako brought legitimacy I did not have, convening four member consultations I could never have called. Over three years we have sustained it through joint work: co-drafting the notification protocol, training 34 midwives together, and presenting twice to the Civil Registration Technical Advisory Group. She introduced me to Dr Amina Sesay, the Registrar General, which is how the protocol reached national consideration.</p>
+<p>The protocol was issued as national guidance in 2025, and 3,142 children have been registered through it in Katiba alone. Mrs Bediako now sits on the advisory group in her own right, which she does independently of me.</p>
+<p>I learned that the sharpest critic of your programme is usually its most useful collaborator, because they have already done the analysis. Through Chevening I want to find alumni working on civil registration in comparable systems and propose a comparative study. I can offer a protocol that survived the full political process, including the parts that failed.</p>
+<h3>Sample two — school inspection (297 words)</h3>
+<p>The Katiba Inspectorate published school ratings that head teachers regarded as arbitrary, and compliance with our recommendations sat at 31 per cent. At a regional heads’ meeting convened largely to complain about us, Mrs Doris Ankrah, head of Sisan Girls’ Secondary, took the inspection framework apart clause by clause in front of forty colleagues. She was right about most of it. I asked whether she would help me rewrite it.</p>
+<p>We set ourselves one objective: a framework head teachers could predict, measuring what a school can actually control.</p>
+<p>I brought the data and the institutional route. I ran the analysis showing which of our eighteen indicators had no relationship with pupil outcomes, and I got the revision onto the Inspectorate’s agenda. She brought legitimacy I did not have, convening three consultation sessions in schools that would not have opened their doors to me. Over three years we kept it going through joint work rather than goodwill: piloting the revised framework in eleven schools, co-presenting twice to the Ministry of Education, and running the annual induction for new inspectors together.</p>
+<p>The revised framework was adopted regionally in 2025, compliance with inspection recommendations rose from 31 per cent to 68 in the first year, and four neighbouring regions have requested the induction materials. Mrs Ankrah now chairs the heads’ panel that reviews the framework annually.</p>
+<p>I learned to build around a shared technical problem rather than a title. In the Chevening community I want to find alumni working on school accountability, particularly in systems moving from compliance inspection toward improvement models, and propose a comparative study. I can contribute a framework that went through the full political process, including the two indicators we lost.</p>
+<p><strong>What both samples do</strong><br>They open on friction, in a named forum, with a named counterpart holding a stated position. They state one narrow shared aim. They give both sides of the exchange explicitly. They mark duration in years and show maintenance through joint outputs. They name the broker and the introduction. They put an exact number and a named artefact in the result, and a present-tense sentence proving the relationship is current. They close on a named gap in the alumni network and something specific offered back.</p>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s5">
+    <span class="section-label">Section 6</span>
+    <h2>Part six: dos and don’ts</h2>
+    <p><strong>Do</strong>  </p>
+<ul>
+<li>Choose one relationship and go deep  </li>
+<li>Name the counterpart with their position, and the forum where you met  </li>
+<li>Frame the gap as distance: who was out of reach, and why  </li>
+<li>State one narrow, technical shared goal  </li>
+<li>Give both sides of the exchange  </li>
+<li>Show the deliberate move you made to build the bridge  </li>
+<li>Show you work both horizontally and vertically  </li>
+<li>Mark duration in years  </li>
+<li>Show maintenance through joint output  </li>
+<li>Name the broker if an introduction produced an outcome  </li>
+<li>Name the joint artefact  </li>
+<li>Prove the relationship is current with a present-tense sentence  </li>
+<li>Name specific alumni, sectors or forums in the Chevening paragraph  </li>
+<li>Offer something back</li>
+</ul>
+<p><strong>Don’t</strong>  </p>
+<ul>
+<li>Describe your networking philosophy or personality  </li>
+<li>List contacts, conferences, memberships or countries  </li>
+<li>Write only about what a mentor gave you  </li>
+<li>Name a famous person as if the acquaintance were the achievement  </li>
+<li>Name anyone you could not discuss for two minutes at interview  </li>
+<li>Name beneficiaries, service users or minors  </li>
+<li>Let the essay end when the job ended  </li>
+<li>Write “I will engage with the diverse Chevening community”  </li>
+<li>Talk only about what the network will do for you  </li>
+<li>Invent a number to make the outcome look larger</li>
+</ul>
+<hr>
+
+</section>
+
+<section class="guide-section" id="s6">
+    <span class="section-label">Section 7</span>
+    <h2>Part seven: common mistakes and the fix</h2>
+    <div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Mistake</th>
+<th>Why it costs marks</th>
+<th>The fix</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“I value honesty, trust and empathy.”</td>
+<td>Character description, not evidence</td>
+<td>Replace with the problem you solved together and its number.</td>
+</tr>
+<tr>
+<td>No named network anywhere</td>
+<td>The most common failure on this question</td>
+<td>Add real people with titles, bodies and forums. Fewer than four is too few.</td>
+</tr>
+<tr>
+<td>Names with nothing attached</td>
+<td>A contact list</td>
+<td>Put the name and what you did together in one sentence.</td>
+</tr>
+<tr>
+<td>A list of six contacts</td>
+<td>Depth is scored; none of the six lands</td>
+<td>Cut to one and spend the words on exchange and result.</td>
+</tr>
+<tr>
+<td>Only what your mentor gave you</td>
+<td>Patronage, not partnership</td>
+<td>Add what you brought that they lacked.</td>
+</tr>
+<tr>
+<td>The whole action paragraph is the first meeting</td>
+<td>Leaves “sustained” unanswered</td>
+<td>Add stages: what you did together in year two, and in year four.</td>
+</tr>
+<tr>
+<td>The relationship happened to you</td>
+<td>Shows luck rather than skill</td>
+<td>Add the deliberate move you made.</td>
+</tr>
+<tr>
+<td>Only senior contacts, or only peers</td>
+<td>Suggests one register</td>
+<td>One clause showing the other direction.</td>
+</tr>
+<tr>
+<td>No number and no named artefact</td>
+<td>The missing R</td>
+<td>Attach a figure or name the document that changed.</td>
+</tr>
+<tr>
+<td>Everything in the past tense</td>
+<td>Does not evidence maintenance</td>
+<td>One present-tense sentence about the relationship now.</td>
+</tr>
+<tr>
+<td>“I will engage with the Chevening community.”</td>
+<td>Anyone could write it</td>
+<td>Name the sector, the gap and the joint output proposed.</td>
+</tr>
+<tr>
+<td>Nothing offered back</td>
+<td>Reads as extractive</td>
+<td>One sentence on what you would host, share or convene.</td>
+</tr>
+</tbody></table></div>
+<hr>
+
+</section>
+
+<section class="guide-section alt-bg" id="s7">
+    <span class="section-label">Section 8</span>
+    <h2>Part eight: checklists</h2>
+    <h3>While drafting</h3>
+<ul class="checklist">
+<li class="chk">One relationship, counterpart named with their position  </li>
+<li class="chk">The forum where it formed, and why they were out of reach  </li>
+<li class="chk">One narrow, specific shared goal  </li>
+<li class="chk">What I contributed stated as plainly as what I gained  </li>
+<li class="chk">The deliberate move I made to build the bridge  </li>
+<li class="chk">Evidence of working horizontally and vertically, if I have it  </li>
+<li class="chk">Duration marked in years  </li>
+<li class="chk">Maintenance shown through joint outputs  </li>
+<li class="chk">The broker named, if an introduction produced an outcome  </li>
+<li class="chk">One exact number or one named artefact at the result  </li>
+<li class="chk">A present-tense sentence proving it is current</li>
+</ul>
+<h3>Before submitting</h3>
+<ul class="checklist">
+<li class="chk">All four sub-questions visibly answered  </li>
+<li class="chk">Four to eight proper nouns, each attached to joint work  </li>
+<li class="chk">No beneficiaries, service users or minors named  </li>
+<li class="chk">The Chevening paragraph names a sector, a gap and a proposed output  </li>
+<li class="chk">One line on what I contribute to the alumni community  </li>
+<li class="chk">The essay proves I produce results through relationships  </li>
+<li class="chk">Every figure real and every name spelled correctly  </li>
+<li class="chk">At least one name here recurs in Essay 1 or Essay 4  </li>
+<li class="chk">Within the word limit shown next to the box</li>
+</ul>
+
+</section>
+
+</article>
+</div>
+
+
+<div class="series-nav">
+    <a href="essay-1-leadership.html" class="prev-item"><span class="dir">← Previous</span><span class="lbl">Essay 1: Leadership</span></a>
+    <a href="essay-3-course-choice.html" class="next-item"><span class="dir">Next →</span><span class="lbl">Essay 3: Course Choice</span></a>
+</div>
+
+<!-- MENTORSHIP + COMMUNITY CTA -->
+<section id="mentorship-cta">
+    <span class="kicker">Two Ways To Keep Going With TAL</span>
+    <h2>Everything in this guide is easy to see in someone else's essay and hard to see in your own.</h2>
+    <p>That is what a second pair of eyes is for. Whether you want a mentor who has actually won Chevening reading your drafts, or just a place to ask questions as you go, TAL has a path that costs nothing to start.</p>
+    <div class="cta-paths">
+        <div class="cta-path">
+            <span class="cta-path-kicker">1:1 Support</span>
+            <h3>Work with a mentor</h3>
+            <p>A mentor who has been through this exact application, knows what the sub-questions are really asking, and will tell you honestly where your draft is decoration.</p>
+            <ul class="cta-path-list">
+                <li>Scholarship Essay Review, two rounds of feedback</li>
+                <li>Lab Focus sessions for strategy, drafts and mock interviews</li>
+            </ul>
+            <a href="../../apply.html" class="btn btn-blue">Apply for Mentorship</a>
+        </div>
+        <div class="cta-path">
+            <span class="cta-path-kicker">Free, Always</span>
+            <h3>Join the community</h3>
+            <p>Thousands of applicants figuring this out together. No cost, no commitment, and a place to ask the questions that come up between drafts.</p>
+            <ul class="cta-path-list">
+                <li>Webinars and Lab Clinic Hours</li>
+                <li>Scholarship and programme opportunities, shared as they come up</li>
+            </ul>
+            <a href="../../community.html" class="btn btn-outline-white">Join the Free Community</a>
+        </div>
+    </div>
+    <p class="cta-note">Free to apply, no commitment &nbsp;·&nbsp; Prefer email? <a href="mailto:info@theapplicationlab.com?subject=Chevening Essay Support">info@theapplicationlab.com</a></p>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <img src="../../logo.png" alt="The Application Lab" width="1920" height="1080"/>
+        <div class="footer-links">
+            <a href="../../index.html">Website</a>
+            <a href="../../resources.html">Free Resources</a>
+            <a href="../../community.html">Free Community</a>
+            <a href="../../mentorship.html">Mentorship &amp; Pricing</a>
+            <a href="https://www.linkedin.com/company/theapplicationlab" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.instagram.com/theapplicationlab" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.youtube.com/@TheApplicationLab" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
+        <p class="footer-bottom">The Application Lab &nbsp;·&nbsp; Edspire Labs Ltd &nbsp;·&nbsp; Company No. 16751243 &nbsp;·&nbsp; Cambridge, UK</p>
+    </div>
+</footer>
+
+<script>
+const burger = document.getElementById('mob-burger');
+const mobMenu = document.getElementById('mob-menu');
+if (burger && mobMenu) {
+    burger.addEventListener('click', function() {
+        const isOpen = mobMenu.style.display === 'flex';
+        mobMenu.style.display = isOpen ? 'none' : 'flex';
+    });
+    mobMenu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { mobMenu.style.display = 'none'; });
+    });
+}
+const navLinks = document.querySelectorAll('.guide-sidebar a[data-nav]');
+const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href')));
+if (navLinks.length) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const idx = sections.indexOf(entry.target);
+            if (idx === -1) return;
+            if (entry.isIntersecting) {
+                navLinks.forEach(a => a.classList.remove('active'));
+                navLinks[idx].classList.add('active');
+            }
+        });
+    }, { rootMargin: '-15% 0px -75% 0px', threshold: 0 });
+    sections.forEach(s => { if (s) sectionObserver.observe(s); });
+}
+</script>
+
+</body>
+</html>
