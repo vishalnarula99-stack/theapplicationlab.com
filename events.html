@@ -84,20 +84,29 @@
       @media (max-width: 768px){ #desktop-nav{ display:none !important; } #mob-burger{ display:flex !important; } }
       @media (min-width: 769px){ #desktop-nav{ display:flex; } #mob-burger{ display:none; } }
 
-      /* ===== Workshop sub-nav (sticky, sits just under the site header) ===== */
-      header.event-nav{
-        position:sticky; top:72px; z-index:40;
-        background:color-mix(in srgb, var(--bg) 90%, transparent);
-        backdrop-filter: blur(6px);
-        border-bottom:1px solid var(--line);
+      /* ===== Section nav: heading + vertical link list, with a Register button ===== */
+      /* Mobile/tablet: a clean card at the top of the page. Desktop (>=1100px): sticky left sidebar. */
+      .main-layout{ display:block; padding:0 24px; max-width:968px; margin:0 auto; }
+      .side-nav{
+        display:flex; flex-direction:column;
+        background:#fff; border:1px solid var(--line-strong); border-radius:14px;
+        padding:24px; margin:28px 0 0;
+        box-shadow:0 4px 16px rgba(15,30,53,0.08);
       }
-      .nav-row{ max-width:1080px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
-      .event-title{ font-weight:700; font-size:.86rem; color:var(--ink); white-space:nowrap; }
-      .event-title span{ color:var(--accent); }
-      nav.links{ display:flex; gap:22px; overflow-x:auto; scrollbar-width:none; }
-      nav.links::-webkit-scrollbar{ display:none; }
-      nav.links a{ font-size:.8rem; font-weight:500; text-decoration:none; color:var(--muted); white-space:nowrap; padding-bottom:3px; border-bottom:2px solid transparent; transition:border-color .15s ease, color .15s ease; }
-      nav.links a:hover, nav.links a:focus-visible{ color:var(--ink); border-color:var(--ink); }
+      .side-nav-label{ font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 14px; }
+      .side-nav-links{ display:flex; flex-direction:column; gap:3px; margin-bottom:20px; }
+      .side-nav-links a{
+        font-size:.92rem; font-weight:700; text-decoration:none; color:var(--ink);
+        padding:11px 12px; border-radius:8px; border-left:3px solid transparent;
+        transition:background .15s ease, border-color .15s ease, color .15s ease, padding-left .15s ease;
+      }
+      .side-nav-links a:hover, .side-nav-links a:focus-visible{ color:var(--accent); background:var(--tint); border-left-color:var(--accent); padding-left:16px; }
+      .side-nav .btn{ width:100%; text-align:center; font-size:.85rem; padding:14px 20px; box-shadow:0 4px 12px rgba(46,139,192,0.3); }
+      @media (min-width:1100px){
+        .main-layout{ display:flex; align-items:flex-start; gap:32px; max-width:1180px; padding:0 24px; margin:0 auto; }
+        .side-nav{ position:sticky; top:calc(72px + 28px); width:230px; flex-shrink:0; margin:28px 0 0; }
+        .page-content{ flex:1; min-width:0; }
+      }
       .btn{ font-size:.78rem; font-weight:700; letter-spacing:.03em; text-decoration:none; color:#fff; background:var(--ink); padding:11px 20px; white-space:nowrap; display:inline-block; border:1px solid var(--ink); transition:opacity .15s ease; border-radius:2px; }
       .btn:hover, .btn:focus-visible{ opacity:.85; }
       .btn.ghost{ background:transparent; color:var(--ink); border:1px solid var(--line-strong); }
@@ -124,7 +133,8 @@
           url('oxford-hero.jpg') center 68% / cover no-repeat;
       }
       .hero .kicker{ font-size:.86rem; font-weight:600; color:#8FCBEE; margin:0 0 16px; }
-      .hero h1{ font-size:clamp(2rem, 4.6vw, 2.9rem); line-height:1.15; margin:0 0 18px; max-width:22ch; color:#fff; }
+      .hero h1{ font-size:clamp(2.2rem, 5vw, 3.2rem); line-height:1.12; margin:0 0 14px; max-width:24ch; color:#fff; }
+      .hero .hero-subheading{ font-size:clamp(1rem, 2vw, 1.35rem); font-weight:600; color:rgba(255,255,255,0.88); white-space:nowrap; margin:0 0 18px; }
       .hero .lede{ font-size:1.08rem; color:rgba(255,255,255,0.86); max-width:62ch; margin:0 0 30px; font-weight:400; }
       .kpi-row{ display:grid; grid-template-columns:repeat(4,1fr); border-top:2px solid var(--ink); margin:0 0 30px; }
       @media (max-width:640px){ .kpi-row{ grid-template-columns:repeat(2,1fr); } }
@@ -244,29 +254,14 @@
 
 <main id="top">
 
-<!-- ======= WORKSHOP SUB-NAV ======= -->
-<header class="event-nav">
-  <div class="nav-row">
-    <span class="event-title">PhD Research Proposal Workshop<span>.</span></span>
-    <nav class="links">
-      <a href="#overview">Overview</a>
-      <a href="#who">Who it's for</a>
-      <a href="#day1">Day 1</a>
-      <a href="#day2">Day 2</a>
-      <a href="#register">Pricing</a>
-    </nav>
-    <a class="btn blue" href="#register">Register</a>
-  </div>
-</header>
-
 <section class="hero" id="overview">
   <div class="wrap">
-    <p class="kicker">Events — The Application Lab</p>
-    <h1>From a research idea to a proposal blueprint</h1>
-    <p class="lede">PhD applications are coming up, but your research idea still isn't quite a proposal? On <strong>10th and 11th October 2026</strong>, The Application Lab is hosting a two-day online PhD Research Proposal Workshop for prospective PhD applicants who already have a research idea and are ready to develop it further.</p>
+    <h1>Research Proposal Workshop</h1>
+    <p class="hero-subheading">From a research idea to a proposal blueprint</p>
+    <p class="lede">PhD applications are coming up, but your research idea still isn't quite a proposal? On <strong>10th and 11th October 2026</strong>, The Application Lab is hosting a two-day online Research Proposal Workshop for prospective PhD applicants who already have a research idea and are ready to develop it further.</p>
     <div class="kpi-row">
       <div class="kpi"><p class="label">Dates</p><p class="value">10–11 October 2026</p></div>
-      <div class="kpi"><p class="label">Format</p><p class="value">Online, 9:00am–2:30pm BST</p></div>
+      <div class="kpi"><p class="label">Format</p><p class="value">Online<br>9:00am–2:30pm BST</p></div>
       <div class="kpi"><p class="label">Places</p><p class="value">Limited (small group)</p></div>
       <div class="kpi"><p class="label">Early registration</p><p class="value">£99, until 30 Sept / first 15 places</p></div>
     </div>
@@ -277,6 +272,20 @@
     <p class="foot-note">Registrations are now open.</p>
   </div>
 </section>
+
+<div class="main-layout">
+<aside class="side-nav">
+  <p class="side-nav-label">On this page</p>
+  <nav class="side-nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#who">Who it's for</a>
+    <a href="#day1">Day 1</a>
+    <a href="#day2">Day 2</a>
+    <a href="#register">Pricing</a>
+  </nav>
+  <a class="btn blue" href="#register">Register</a>
+</aside>
+<div class="page-content">
 
 <section class="sec-white">
   <div class="wrap">
@@ -310,7 +319,7 @@
     <p>This workshop is for prospective PhD applicants who already have a research idea they want to develop into a proposal.</p>
     <p>You do not need to arrive with a finished proposal or a perfectly formulated research question. But you should be able to explain, in a few sentences, what you want to study, why you are interested in it, and the kind of question or problem you may want to investigate. You should also have done some preliminary reading around your topic.</p>
     <div class="panel">
-      <p class="callout-strong">This workshop is not designed for someone who is still at the very beginning of deciding what they might want to do a PhD on. If your starting point is still "I want to do something on gender", "I am interested in AI", or "I want to do a PhD, but I don't know what I want to research yet", we would recommend spending some more time developing your research interests before joining.</p>
+      <p class="callout-strong">This workshop is not designed for those who are still at the very beginning of deciding what they might want to pursue for a PhD. If your starting point is still quite broad, for example, "I want to do something on gender," "I'm interested in AI," or "I want to do a PhD, but I'm not yet sure what I want to research", we recommend spending some more time developing and narrowing your research interests before joining the workshop.</p>
     </div>
   </div>
 </section>
@@ -353,11 +362,11 @@
           <div class="r-title">Welcome: What is a PhD proposal actually doing?</div>
           <div class="r-glance">What supervisors, departments and funding panels look for in a proposal; how the different parts of a proposal fit together; introduction to the TAL PhD Proposal Blueprint.</div>
         </div>
-        <span class="r-mentor-col">Dr Kanupriya Sharma, Post-Doc Research Fellow in Sociology &amp; Social Policy, University of Nottingham</span>
+        <span class="r-mentor-col">Speaker: Dr Kanupriya Sharma, Post-Doc Research Fellow in Sociology &amp; Social Policy, University of Nottingham</span>
         <span class="chevron" aria-hidden="true"></span>
       </summary>
       <div class="r-body">
-        <p class="mentor-mobile">Dr Kanupriya Sharma, Post-Doc Research Fellow in Sociology &amp; Social Policy, University of Nottingham</p>
+        <p class="mentor-mobile">Speaker: Dr Kanupriya Sharma, Post-Doc Research Fellow in Sociology &amp; Social Policy, University of Nottingham</p>
         <p>A brief introduction to what a PhD proposal is expected to do and what supervisors, departments and funding panels are assessing when they read one. We will introduce the TAL PhD proposal blueprint that participants will work on over the two days and look at how the different parts of a proposal need to work together.</p>
         <p class="facilitator">Facilitator: Haimanti Mukhoti</p>
       </div>
@@ -370,11 +379,11 @@
           <div class="r-title">1. From a Research Interest to a Research Problem and Question</div>
           <div class="r-glance">Narrowing your research idea; identifying the problem or puzzle; developing strong and feasible research questions. Includes a live-worked example.</div>
         </div>
-        <span class="r-mentor-col">Sonakshi Grover, PhD Candidate in International Development, University of Oxford</span>
+        <span class="r-mentor-col">Speaker: Sonakshi Grover, PhD Candidate in International Development, University of Oxford</span>
         <span class="chevron" aria-hidden="true"></span>
       </summary>
       <div class="r-body">
-        <p class="mentor-mobile">Sonakshi Grover, PhD Candidate in International Development, University of Oxford</p>
+        <p class="mentor-mobile">Speaker: Sonakshi Grover, PhD Candidate in International Development, University of Oxford</p>
         <p>How do you move from "I am interested in this topic" to a question that could sustain a PhD?</p>
         <p>The session will look at narrowing a broad research idea, identifying what specifically needs explaining or understanding, distinguishing a topic from a research problem, developing an overarching research question and possible sub-questions, and assessing whether those questions are focused and feasible.</p>
         <p>The mentor will take one broad research idea and develop it live to show how it moves from an area of interest to a researchable problem and question.</p>
@@ -391,11 +400,11 @@
           <div class="r-title">2. Literature Review, Research Gap and Contribution</div>
           <div class="r-glance">Mapping the relevant literature; synthesising debates and themes; identifying a defensible research gap; explaining what your project will contribute and why it matters.</div>
         </div>
-        <span class="r-mentor-col">Dr Darshini Nadarajan, PhD in Education, University of Oxford</span>
+        <span class="r-mentor-col">Speaker: Dr Darshini Nadarajan, PhD in Education, University of Oxford</span>
         <span class="chevron" aria-hidden="true"></span>
       </summary>
       <div class="r-body">
-        <p class="mentor-mobile">Dr Darshini Nadarajan, PhD in Education, University of Oxford</p>
+        <p class="mentor-mobile">Speaker: Dr Darshini Nadarajan, PhD in Education, University of Oxford</p>
         <p>What is the literature review actually doing in a PhD proposal?</p>
         <p>This session will look at how to identify the scholarly conversations that matter to your project, organise literature around arguments, debates and themes rather than individual authors, and synthesise rather than simply summarise what you have read.</p>
         <p>We will then look at how to identify a defensible research gap, move beyond simply saying "this has not been studied before", and explain what your project will contribute and why that contribution matters.</p>
@@ -410,11 +419,11 @@
           <div class="r-title">3. Theory and Conceptual Framing</div>
           <div class="r-glance">What theory and concepts actually do in a research project; whether your project needs a theoretical framework; connecting theory to your questions and analysis.</div>
         </div>
-        <span class="r-mentor-col">Radhika Pradhan, PhD Candidate in Gender Studies, LSE</span>
+        <span class="r-mentor-col">Speaker: Radhika Pradhan, PhD Candidate in Gender Studies, LSE</span>
         <span class="chevron" aria-hidden="true"></span>
       </summary>
       <div class="r-body">
-        <p class="mentor-mobile">Radhika Pradhan, PhD Candidate in Gender Studies, LSE</p>
+        <p class="mentor-mobile">Speaker: Radhika Pradhan, PhD Candidate in Gender Studies, LSE</p>
         <p>Does every PhD proposal need a theoretical framework? What is the difference between using a theory and using a concept?</p>
         <p>This session will look at what theory and concepts actually do within a research project, how they relate to the research questions and eventual analysis, when a theoretical framework is useful, and when a conceptual approach may make more sense. It will also address the common problem of introducing theories without showing what they actually help the researcher understand.</p>
         <p class="facilitator">Facilitator: Kanupriya Sharma</p>
@@ -474,11 +483,11 @@
           <div class="r-title">Day 1 Recap: From Question to Research Design</div>
           <div class="r-glance">Moving from what you want to understand in deciding what evidence you need and how you will obtain it.</div>
         </div>
-        <span class="r-mentor-col">Haimanti Mukhoti, PhD Candidate in Theatre and Performance Studies, University of Warwick</span>
+        <span class="r-mentor-col">Speaker: Haimanti Mukhoti, PhD Candidate in Theatre and Performance Studies, University of Warwick</span>
         <span class="chevron" aria-hidden="true"></span>
       </summary>
       <div class="r-body">
-        <p class="mentor-mobile">Haimanti Mukhoti, PhD Candidate in Theatre and Performance Studies, University of Warwick</p>
+        <p class="mentor-mobile">Speaker: Haimanti Mukhoti, PhD Candidate in Theatre and Performance Studies, University of Warwick</p>
         <p>A short recap of Day 1 before moving from what you want to understand to how you are going to investigate it.</p>
         <p>The key principle for this introductory session is that your research design and methods should follow from your research question. Methods should not simply be selected because they are familiar or sound sophisticated.</p>
         <p class="facilitator">Facilitator: Kanupriya</p>
@@ -490,16 +499,15 @@
         <span class="r-time">9:15–10:00</span>
         <div class="r-main">
           <div class="r-title">4. Working with Archives, Documents and Texts</div>
-          <div class="r-glance">Designing archival and textual research; choosing and analysing sources; access, feasibility, limitations and ethics.</div>
+          <div class="r-glance">Designing archival and textual research; identifying, selecting and analysing sources; navigating access, feasibility, limitations and ethics; and justifying your methodological choices.</div>
         </div>
-        <span class="r-mentor-col">Feryal Banday, PhD Candidate in English, University of Cambridge</span>
+        <span class="r-mentor-col">Speaker: Feryal Banday, PhD Candidate in English, University of Cambridge</span>
         <span class="chevron" aria-hidden="true"></span>
       </summary>
       <div class="r-body">
-        <p class="mentor-mobile">Feryal Banday, PhD Candidate in English, University of Cambridge</p>
-        <p>What kinds of research questions can be answered through archives, documents, and texts?</p>
-        <p>This session will introduce archival research and primary-source analysis, including what can count as an archive or textual source, how sources are identified and selected, and approaches to documentary and textual analysis.</p>
-        <p>It will also address access, feasibility, archival limitations, and ethical considerations, and show how an archival methodology can be explained and justified within a PhD proposal.</p>
+        <p class="mentor-mobile">Speaker: Feryal Banday, PhD Candidate in English, University of Cambridge</p>
+        <p>What kinds of research questions can be answered through archives, documents and texts?</p>
+        <p>This session will introduce different ways of designing archival and textual research, including what can count as an archive, document or textual source, how sources are identified and selected, and different approaches to their analysis. It will focus on the key choices applicants need to make: identifying appropriate sources, defining the scope of the material, navigating access and feasibility, recognising the limitations and silences of archives, and addressing ethical considerations. It will also consider how to explain and justify archival and textual methods within a PhD proposal.</p>
         <p class="facilitator">Facilitator: Haimanti</p>
       </div>
     </details>
@@ -510,16 +518,17 @@
       <summary>
         <span class="r-time">10:15–11:00</span>
         <div class="r-main">
-          <div class="r-title">5. Designing Qualitative Research</div>
-          <div class="r-glance">Interviews, ethnography, focus groups and case studies; selecting participants or cases; access, ethics and analysis; justifying your methodological choices.</div>
+          <div class="r-title">5. Designing a Qualitative Research Project: Approaches, Methods and Analysis</div>
+          <div class="r-glance">Qualitative approaches and methods, from interviews and focus groups to ethnography and case studies; selecting participants or cases; navigating access and ethics; analysing qualitative data; and justifying methodological choices.</div>
         </div>
-        <span class="r-mentor-col">Preeti Pratishruti Dash, PhD Candidate in Law, University of Cambridge</span>
+        <span class="r-mentor-col">Speaker: Preeti Pratishruti Dash, PhD Candidate in Law, University of Cambridge</span>
         <span class="chevron" aria-hidden="true"></span>
       </summary>
       <div class="r-body">
-        <p class="mentor-mobile">Preeti Pratishruti Dash, PhD Candidate in Law, University of Cambridge</p>
-        <p>How do you decide whether interviews, ethnography, focus groups, case studies or another qualitative approach will actually help you answer your research question?</p>
-        <p>This session will introduce different approaches to qualitative research while focusing on the choices applicants need to make when designing their own projects. This includes selecting participants or cases, choosing appropriate forms of data collection, thinking through access and ethics, and explaining how the material will eventually be analysed. The session will also briefly introduce comparative and mixed-method designs and, crucially, how to justify methodological choices rather than simply listing methods in a proposal.</p>
+        <p class="mentor-mobile">Speaker: Preeti Pratishruti Dash, PhD Candidate in Law, University of Cambridge</p>
+        <p>How do you decide which qualitative methodology and methods will best answer your research question?</p>
+        <p>This session introduces different ways of designing qualitative research, distinguishing between methodological approaches, methods of data collection and methods of analysis. We will explore approaches such as ethnography, case study, phenomenology and grounded theory, alongside methods including interviews, focus groups, observation, life histories, and visual and participatory methods.</p>
+        <p>The session will focus on the key choices applicants need to make: selecting participants or cases, choosing methods that fit their research questions, navigating access and ethics, and planning analysis. We will also briefly introduce comparative and mixed-methods designs, with a particular focus on how to justify methodological choices rather than simply listing methods in a proposal.</p>
         <p class="facilitator">Facilitator: Kanupriya</p>
       </div>
     </details>
@@ -533,11 +542,11 @@
           <div class="r-title">6. Writing the Research Proposal</div>
           <div class="r-glance">Bringing the project together into a coherent proposal; section structure, academic writing, referencing, word limits, tailoring and common mistakes.</div>
         </div>
-        <span class="r-mentor-col">Shagun Bhargava, PhD Candidate in Criminology, University of Cambridge</span>
+        <span class="r-mentor-col">Speaker: Shagun Bhargava, PhD Candidate in Criminology, University of Cambridge</span>
         <span class="chevron" aria-hidden="true"></span>
       </summary>
       <div class="r-body">
-        <p class="mentor-mobile">Shagun Bhargava, PhD Candidate in Criminology, University of Cambridge</p>
+        <p class="mentor-mobile">Speaker: Shagun Bhargava, PhD Candidate in Criminology, University of Cambridge</p>
         <p>How do you bring all of these elements together into a proposal that makes sense to someone encountering your project for the first time? This session will work through the overall structure of a proposal, from the research problem and literature to the questions, contribution, conceptual framing, methodology, feasibility, and timeline.</p>
         <p>It will cover what belongs in each section, academic writing and signposting, referencing, working with different university word limits, tweaking proposals to meet supervisory needs, and common proposal-writing mistakes.</p>
         <p class="facilitator">Facilitator: Kanupriya</p>
@@ -553,11 +562,11 @@
           <div class="r-title">7. Finding the Right Supervisor, University and Funding</div>
           <div class="r-glance">Finding intellectual and supervisory fit; approaching potential supervisors; tailoring your proposal; identifying PhD funding and scholarships.</div>
         </div>
-        <span class="r-mentor-col">Dr Kanupriya Sharma, Post-Doc Research Fellow in Sociology and Social Policy, University of Nottingham</span>
+        <span class="r-mentor-col">Speaker: Dr Kanupriya Sharma, Post-Doc Research Fellow in Sociology and Social Policy, University of Nottingham</span>
         <span class="chevron" aria-hidden="true"></span>
       </summary>
       <div class="r-body">
-        <p class="mentor-mobile">Dr Kanupriya Sharma, Post-Doc Research Fellow in Sociology and Social Policy, University of Nottingham</p>
+        <p class="mentor-mobile">Speaker: Dr Kanupriya Sharma, Post-Doc Research Fellow in Sociology and Social Policy, University of Nottingham</p>
         <p>This session moves from developing the proposal to thinking strategically about where to apply. We will look at how to identify universities and departments that genuinely fit your project, find potential supervisors through their research, assess how closely their work needs to align with yours, and use their recent publications to understand intellectual fit.</p>
         <p>We will also cover when and how to approach potential supervisors, what to include in the first email, how a proposal may need to be adapted for different departments, and how to begin identifying funded PhDs, university funding and external scholarships.</p>
         <p class="facilitator">Facilitator: Haimanti</p>
@@ -620,6 +629,9 @@
     <a class="btn blue" href="https://buy.stripe.com/dRmfZi9NZ17r0zKczsdby0n" target="_blank" rel="noopener">Register now</a>
   </div>
 </section>
+
+</div>
+</div>
 
 </main>
 
