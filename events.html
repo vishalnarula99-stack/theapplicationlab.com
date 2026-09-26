@@ -228,6 +228,14 @@
         footer.site > .wrap > div:last-child{ flex-direction:column; gap:6px; text-align:center; }
       }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-38MQ1E8CW3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-38MQ1E8CW3');
+    </script>
 </head>
 <body>
 
@@ -275,7 +283,7 @@
       <div class="kpi"><p class="label">Early registration</p><p class="value">£99, until 30 Sept / first 15 places</p></div>
     </div>
     <div class="hero-ctas">
-      <a class="btn blue" href="https://buy.stripe.com/dRmfZi9NZ17r0zKczsdby0n" target="_blank" rel="noopener">Register now</a>
+      <a class="btn blue" href="https://buy.stripe.com/dRmfZi9NZ17r0zKczsdby0n" target="_blank" rel="noopener" onclick="gtag('event','register_click',{'link_location':'hero'});">Register now</a>
       <a class="btn ghost" href="#day1">See the full programme</a>
     </div>
     <p class="foot-note">Registrations are now open.</p>
@@ -290,11 +298,11 @@
     <a href="#who">Who it's for</a>
     <a href="#day1">Day 1</a>
     <a href="#day2">Day 2</a>
-    <a href="#register">Pricing</a>
     <a href="#mentors">Mentors</a>
+    <a href="#register">Pricing</a>
     <a href="#faq">FAQs</a>
   </nav>
-  <a class="btn blue" href="https://buy.stripe.com/dRmfZi9NZ17r0zKczsdby0n" target="_blank" rel="noopener">Register</a>
+  <a class="btn blue" href="https://buy.stripe.com/dRmfZi9NZ17r0zKczsdby0n" target="_blank" rel="noopener" onclick="gtag('event','register_click',{'link_location':'side_nav'});">Register</a>
 </aside>
 <div class="page-content">
 
@@ -620,31 +628,9 @@
   </div>
 </section>
 
-<section class="sec-tint" id="register">
-  <div class="wrap">
-    <div class="tag"><span class="n">06</span><span>Registration</span></div>
-    <h2 class="title">Registrations are now open</h2>
-    <div class="pricing">
-      <div class="price-card featured">
-        <p class="plabel">Early registration</p>
-        <p class="amount">£99</p>
-        <p class="cond">Offer ends 30 September 2026, 11:59 PM BST, or after the first 15 registrations, whichever comes first.</p>
-      </div>
-      <div class="price-card">
-        <p class="plabel">Standard registration</p>
-        <p class="amount">£120</p>
-        <p class="cond">Available from 1–9 October 2026, subject to availability. Only 30 places available in total.</p>
-      </div>
-    </div>
-    <p>Please register through this link now:</p>
-    <a class="btn blue" href="https://buy.stripe.com/dRmfZi9NZ17r0zKczsdby0n" target="_blank" rel="noopener">Register now</a>
-    <p style="margin-top:24px;"><strong>Cancellation and Refund Policy</strong><br>All workshop registrations are non-refundable. If The Application Lab cancels the workshop and does not offer a suitable alternative, participants will receive a full refund.</p>
-  </div>
-</section>
-
 <section class="sec-white" id="mentors">
   <div class="wrap">
-    <div class="tag"><span class="n">07</span><span>Meet the mentors</span></div>
+    <div class="tag"><span class="n">06</span><span>Meet the mentors</span></div>
     <h2 class="title">Your mentors for this workshop</h2>
     <p>Eight mentors bring different disciplinary and methodological backgrounds to the workshop, so you learn from a range of perspectives rather than a single approach to proposal writing.</p>
 
@@ -757,6 +743,28 @@
       </div>
     </details>
 
+  </div>
+</section>
+
+<section class="sec-tint" id="register">
+  <div class="wrap">
+    <div class="tag"><span class="n">07</span><span>Registration</span></div>
+    <h2 class="title">Registrations are now open</h2>
+    <div class="pricing">
+      <div class="price-card featured">
+        <p class="plabel">Early registration</p>
+        <p class="amount">£99</p>
+        <p class="cond">Offer ends 30 September 2026, 11:59 PM BST, or after the first 15 registrations, whichever comes first.</p>
+      </div>
+      <div class="price-card">
+        <p class="plabel">Standard registration</p>
+        <p class="amount">£120</p>
+        <p class="cond">Available from 1–9 October 2026, subject to availability. Only 30 places available in total.</p>
+      </div>
+    </div>
+    <p>Please register through this link now:</p>
+    <a class="btn blue" href="https://buy.stripe.com/dRmfZi9NZ17r0zKczsdby0n" target="_blank" rel="noopener" onclick="gtag('event','register_click',{'link_location':'registration_section'});">Register now</a>
+    <p style="margin-top:24px;"><strong>Cancellation and Refund Policy</strong><br>All workshop registrations are non-refundable. If The Application Lab cancels the workshop and does not offer a suitable alternative, participants will receive a full refund.</p>
   </div>
 </section>
 
